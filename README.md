@@ -6,7 +6,7 @@ Final Project for UC Berkeley Extension Bootcamp in Data Analytics (March 2021)
 ### Purpose
 
 ### Resources
-- Data Source: city_data.csv, ride_data.csv
+- Data Source: 
 - Software:
  
 ## Results of Analysis
