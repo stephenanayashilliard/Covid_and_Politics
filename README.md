@@ -8,10 +8,12 @@ Final Project for UC Berkeley Extension Bootcamp in Data Analytics (March 2021)
  - Isaac D. Tucker-Rasbury
 
 ## Overview
-Using data acquired from multiple sources, we set out to discover if there are correlations with Covid 19 rates of infection and a group's political views, race or ethnicity, age, gender or economic status.  To allow for the greatest possible diversity in our data, we drew our data from over 3000 counties in the United States. 
+Using data acquired from multiple sources, we set out to discover if there are correlations with Covid 19 rates of infection and a group's political views, race or ethnicity, age, gender or economic status.  
+
+To allow for the greatest possible diversity in our data, we drew our data from over 3000 counties in the United States. We retrieved our data on race, ethnicity, age, gender and economic status from the United States Census Bureau.  the Association of Statisticians of American Religious Bodies (ASARB) provided our data for the religious affiliations of a counties population.  We used statistics from kaggle for details on individual countie's Covid 19 rates of infections and death rates. 
 
  - ### Purpose
-To answer the question is there a correlation between Covid 19 transfer rates and a countie's population's political views, race or ethnicity make up, age, gender or economic status. 
+To answer the question is there a correlation between Covid 19 transfer rates and a countie's population's political views, race or ethnicity make up, age, gender or economic status. We used statistics from kaggle for details on individual countie's Covid 19 rates of infections and death rates.
 
  - ###  Project Breakdown
  The project was broken down into four segments.
@@ -19,6 +21,11 @@ To answer the question is there a correlation between Covid 19 transfer rates an
      - Flesh out overall project
      - Build a model of our fabricated database
      - Build a simple model for machine learning.
+       - Role Breakdown:
+         - Stephen Anayas-Hilliard:  Responsible for repository, intitial data research and clean up.
+         - John Phillips: Mockup of machine learning model.
+         - Isaac D. Tucker-Rasbury: Mockup of sample database.
+         - Melyssa Sibal: Technologies used in each step of project
    - Segment Two:
      - Refine our database
      - Train our model
@@ -28,9 +35,8 @@ To answer the question is there a correlation between Covid 19 transfer rates an
      - Create dashboard and presentation
    - Segment Four:
      - Final touches on model, database and dashboard
-
-### 
- - Questions we hope to answer with the data.
+  
+  - ### Communication Protocols
 
 ### Resources
 - Data Source: 
@@ -44,6 +50,7 @@ To answer the question is there a correlation between Covid 19 transfer rates an
  - Languages
     - Python (ie. pandas, numpy)
  - Tools
+  - www.quickdatabaseddiagrams.com:  Used to flesh out our fabricated database
  - Algorithms
 
 ### Data Exploration
