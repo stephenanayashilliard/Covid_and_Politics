@@ -17,7 +17,7 @@ To answer the question is there a correlation between Covid 19 transfer rates an
 
  - ### Project Breakdown
  The project was broken down into four segments.
-       - Segment One: 
+   - Segment One: 
          - Flesh out overall project
          - Build a model of our fabricated database
          - Build a simple model for machine learning.
