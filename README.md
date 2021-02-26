@@ -1,7 +1,7 @@
 # Covid_and_Politics
 Final Project for UC Berkeley Extension Bootcamp in Data Analytics (March 2021)
 
-## Members in Alphabetical Order
+## Team Members in Alphabetical Order
  - Stephen Anayas-Hilliard
  - John Phillips
  - Melyssa Sibal
