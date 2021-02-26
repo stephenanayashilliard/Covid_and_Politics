@@ -8,8 +8,28 @@ Final Project for UC Berkeley Extension Bootcamp in Data Analytics (March 2021)
  - Isaac D. Tucker-Rasbury
 
 ## Overview
+Using data acquired from multiple sources, we set out to discover if there are correlations with Covid 19 rates of infection and a group's political views, race or ethnicity, age, gender or economic status.  To allow for the greatest possible diversity in our data, we drew our data from over 3000 counties in the United States. 
 
-### Purpose
+ - ### Purpose
+To answer the question is there a correlation between Covid 19 transfer rates and a countie's population's political views, race or ethnicity make up, age, gender or economic status. 
+
+ - ###  Project Breakdown
+ The project was broken down into four segments.
+   - Segment One: 
+     - Flesh out overall project
+     - Build a model of our fabricated database
+     - Build a simple model for machine learning.
+   - Segment Two:
+     - Refine our database
+     - Train our model
+   - Segment Three:
+     - Connect final database to our model.
+     - Continue to train our model
+     - Create dashboard and presentation
+   - Segment Four:
+     - Final touches on model, database and dashboard
+
+### 
  - Questions we hope to answer with the data.
 
 ### Resources
