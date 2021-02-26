@@ -22,6 +22,7 @@ Final Project for UC Berkeley Extension Bootcamp in Data Analytics (March 2021)
 - Software:
  - Technologies
  - Languages
+    - Python (ie. pandas, numpy)
  - Tools
  - Algorithms
 
