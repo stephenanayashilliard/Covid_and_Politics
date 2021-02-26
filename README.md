@@ -17,15 +17,15 @@ To answer the question is there a correlation between Covid 19 transfer rates an
 
  - ### Project Breakdown
  The project was broken down into four segments.
-   - Segment One: 
+      - Segment One: 
          - Flesh out overall project
          - Build a model of our fabricated database
          - Build a simple model for machine learning.
            - Role Breakdown:
-             - Stephen Anayas-Hilliard:  Responsible for repository, intitial data research and clean up.
-             - John Phillips: Mockup of machine learning model.
-             - Isaac D. Tucker-Rasbury: Mockup of sample database.
-             - Melyssa Sibal: Technologies used in each step of project
+              - Stephen Anayas-Hilliard:  Responsible for repository, intitial data research and clean up.
+              - John Phillips: Mockup of machine learning model.
+              - Isaac D. Tucker-Rasbury: Mockup of sample database.
+              - Melyssa Sibal: Technologies used in each step of project
       - Segment Two:
         - Refine our database
         - Train our model
