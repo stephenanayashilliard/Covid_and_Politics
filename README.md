@@ -44,8 +44,8 @@ To answer the question is there a correlation between Covid 19 transfer rates an
    - ##### Emergencies
    Team members are encouraged to call or text team members in case of an Emergency.
    - ##### Deliverables
-           - Rough drafts of individual deliverables are due by Thursday of each week and must be pushed to Github   
-           - Final draft of deliverables are due by Saturday of each week and must be pushed to Github. 
+     - Rough drafts of individual deliverables are due by Thursday of each week and must be pushed to Github   
+     - Final draft of deliverables are due by Saturday of each week and must be pushed to Github. 
 
 - ### Resources
   - Data Source: 
