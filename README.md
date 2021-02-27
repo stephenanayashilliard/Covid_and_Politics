@@ -47,8 +47,12 @@ To answer the question is there a correlation between Covid 19 transfer rates an
   - [us-county_pop_and_shps.csv](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/us_county_pop_and_shps.csv)
 - Software:
  - Technologies
+ - Requirements List
+  - PythonData 
  - Languages
-    - Python (ie. pandas, numpy)
+    - Python
+     -  Pandas: Used to create and clean DataFrames.
+     -  Numpy 
  - Tools
   - www.quickdatabaseddiagrams.com:  Used to flesh out our fabricated database
  - Algorithms
