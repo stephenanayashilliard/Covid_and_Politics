@@ -26,14 +26,14 @@ To answer the question is there a correlation between Covid 19 transfer rates an
        - John Phillips: Mockup of machine learning model.
        - Isaac D. Tucker-Rasbury: Mockup of sample database.
        - Melyssa Sibal: Technologies used in each step of project
-     - Segment Two:
+   - Segment Two:
        - Refine our database
        - Train our model
-     - Segment Three:
+   - Segment Three:
        - Connect final database to our model.
        - Continue to train our model
        - Create dashboard and presentation
-     - Segment Four:
+   - Segment Four:
        - Final touches on model, database and dashboard
   
  - ### Communication Protocols
@@ -57,13 +57,13 @@ To answer the question is there a correlation between Covid 19 transfer rates an
  - Software:
  - Technologies
  - Requirements List
-  - PythonData 
+   - PythonData 
  - Languages
-    - Python
-     -  Pandas: Used to create and clean DataFrames.
-     -  Numpy 
+   - Python
+     - Pandas: Used to create and clean DataFrames.
+     - Numpy 
  - Tools
-  - www.quickdatabaseddiagrams.com:  Used to flesh out our fabricated database
+   - www.quickdatabaseddiagrams.com:  Used to flesh out our fabricated database
  - Algorithms
 
 ### Data Exploration
