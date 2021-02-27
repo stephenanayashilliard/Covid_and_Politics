@@ -48,13 +48,13 @@ To answer the question is there a correlation between Covid 19 transfer rates an
     - Final draft of deliverables are due by Saturday of each week and must be pushed to Github. 
 
 - ### Resources
- - Data Source: 
-  - [county Statistics](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/county_statistics.csv)
-  - [U.S Religion Census Religious Congregations and Membership](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/U.S.%20Religion%20Census%20Religious%20Congregations%20and%20Membership%20Study%2C%202010%20(County%20File).csv)
-  - [covid19_us_county.csv](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/covid19_us_county.csv)
-  - [us_county_demographics.csv](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/us_county_demographics.csv)
-  - [us-county_pop_and_shps.csv](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/us_county_pop_and_shps.csv)
-- Software:
+  - Data Source: 
+    - [county Statistics](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/county_statistics.csv)
+    - [U.S Religion Census Religious Congregations and Membership](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/U.S.%20Religion%20Census%20Religious%20Congregations%20and%20Membership%20Study%2C%202010%20(County%20File).csv)
+    - [covid19_us_county.csv](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/covid19_us_county.csv)
+    - [us_county_demographics.csv](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/us_county_demographics.csv)
+    - [us-county_pop_and_shps.csv](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/us_county_pop_and_shps.csv)
+ - Software:
  - Technologies
  - Requirements List
   - PythonData 
@@ -67,11 +67,16 @@ To answer the question is there a correlation between Covid 19 transfer rates an
  - Algorithms
 
 ### Data Exploration
+To be filled in future deliverables
 
 ### Analysis
- 
-## Results of Analysis
+To be filled in future deliverables 
 
-## Recomendations for future analysis
+ - ## Results of Analysis
+To be filled in future deliverables
 
-## Summary
+ - ## Recomendations for future analysis
+To be filled in future deliverables
+
+### Summary
+To be filled in future deliverables
