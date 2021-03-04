@@ -67,7 +67,24 @@ To answer the question is there a correlation between Covid 19 transfer rates an
  - Algorithms
 
 ### Data Exploration
-To be filled in future deliverables
+ - #### Machine Learning
+The goal of the model was to predict whether certain variables such as economic status, political behavior and population demographics would have a postive or negative linear relationship with Covid 19 spread.
+   - ##### Models used
+     - Random Forest Regressor:  Used to rank feature importance since it has better score metrics and R Squared values than the linear model. This was important since we were measuring and testing so many different points of data.  The only limitations was that a Linear model would have provided better extrapolating of the data.
+   - ##### Scaler
+     - Robust Scaler and Standard Scaler were needed for clarification on outlier sensitivity.
+   - ##### Data Prepocessing
+   Specific targets and features were selected from the central dataframe using principal component analysis (PCA) to reduce dimensions and make the model more graphable.
+     - ####### Features:
+       - Feature Set 1: Related to politics and voting
+         - Target: Covid Cases
+         - Predictions: Line of best fit for cases and politics.
+       - Feature Set 2: Related to Economic Status
+         - Target: Covid Cases
+         - Predictions: Line of best for economic status and cases.
+       - Feature Set 3:  Related to Population Demographics
+         - Target: Covid Cases
+         - Predictions:  Line of best fit for demographics and cases. 
 
 ### Analysis
 To be filled in future deliverables 
