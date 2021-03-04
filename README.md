@@ -66,14 +66,15 @@ The project was broken down into four segments.
   - www.quickdatabaseddiagrams.com:  Used to flesh out our fabricated database
 - Algorithms
 
-### Data Exploration
- - #### Machine Learning
+### Database
+
+### Machine Learning
    The goal of the model was to predict whether certain variables such as economic status, political behavior and population demographics would have a postive or negative linear relationship with Covid 19 spread.
-   - ##### Models used
+   - #### Models used
      - Random Forest Regressor:  Used to rank feature importance since it has better score metrics and R Squared values than the linear model. This was important since we              were measuring and testing so many different points of data.  The only limitations was that a Linear model would have provided better extrapolating of the data.
-   - ##### Scaler
+   - #### Scaler
      - Robust Scaler and Standard Scaler were needed for clarification on outlier sensitivity.
-   - ##### Data Prepocessing
+   - #### Data Prepocessing
      Specific targets and features were selected from the central dataframe using principal component analysis (PCA) to reduce dimensions and make the model more graphable.
      - Features:
        - Feature Set 1: Related to politics and voting
@@ -85,6 +86,11 @@ The project was broken down into four segments.
        - Feature Set 3:  Related to Population Demographics
          - Target: Covid Cases
          - Predictions:  Line of best fit for demographics and cases.  
+
+### Dashboard
+ - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
+ - Dashboard Tools
+   
 
 ### Analysis
 To be filled in future deliverables 
