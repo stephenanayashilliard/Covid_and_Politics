@@ -12,12 +12,12 @@ Using data acquired from multiple sources, we set out to discover if there are c
 
 To allow for the greatest possible diversity in our data, we drew our data from over 3000 counties in the United States. We retrieved our data on race, ethnicity, age, gender and economic status from the United States Census Bureau.  the Association of Statisticians of American Religious Bodies (ASARB) provided our data for the religious affiliations of a counties population.  We used statistics from kaggle for details on individual countie's Covid 19 rates of infections and death rates. 
 
- - ### Purpose
+## Purpose
 To answer the question is there a correlation between Covid 19 transfer rates and a countie's population's political views, race or ethnicity make up, age, gender or economic status. 
 
- - ### Project Breakdown
-   The project was broken down into four segments.
-       - Segment One: 
+### Project Breakdown
+The project was broken down into four segments.
+    - Segment One: 
          - Flesh out overall project
          - Build a model of our fabricated database
          - Build a simple model for machine learning.
