@@ -36,16 +36,16 @@ The project was broken down into four segments.
   - Segment Four:
     - Final touches on model, database and dashboard
   
- - ### Communication Protocols
-   - ##### Information Updates
-   Regular updates on progress should be given through the team's Slack channel.
-   - ##### Team Meetings
-   The team will meet regularly on Tuesdays and Thursdays at 6:30 pm.  Tuesday's meetings will be used to clarify and assign duties for that week.  Thursday's meets will cover updates on assignments as well as any other team questions and/or issues.
-   - ##### Emergencies
-   Team members are encouraged to call or text team members in case of an Emergency.
-   - ##### Deliverables
-     - Rough drafts of individual deliverables are due by Thursday of each week and must be pushed to Github   
-     - Final draft of deliverables are due by Saturday of each week and must be pushed to Github. 
+- ### Communication Protocols
+  - ##### Information Updates
+  Regular updates on progress should be given through the team's Slack channel.
+  - ##### Team Meetings
+  The team will meet regularly on Tuesdays and Thursdays at 6:30 pm.  Tuesday's meetings will be used to clarify and assign duties for that week.  Thursday's meets will cover updates on assignments as well as any other team questions and/or issues.
+  - ##### Emergencies
+  Team members are encouraged to call or text team members in case of an Emergency.
+  - ##### Deliverables
+   - Rough drafts of individual deliverables are due by Thursday of each week and must be pushed to Github   
+   - Final draft of deliverables are due by Saturday of each week and must be pushed to Github. 
 
 - ### Resources
   - Data Source: 
