@@ -16,25 +16,25 @@ To allow for the greatest possible diversity in our data, we drew our data from 
 To answer the question is there a correlation between Covid 19 transfer rates and a countie's population's political views, race or ethnicity make up, age, gender or economic status. 
 
  - ### Project Breakdown
- The project was broken down into four segments.
-  - Segment One: 
-     - Flesh out overall project
-     - Build a model of our fabricated database
-     - Build a simple model for machine learning.
-     - Role Breakdown:
-       - Stephen Anayas-Hilliard:  Responsible for repository, intitial data research and clean up.
-       - John Phillips: Mockup of machine learning model.
-       - Isaac D. Tucker-Rasbury: Mockup of sample database.
-       - Melyssa Sibal: Technologies used in each step of project
-   - Segment Two:
-       - Refine our database
-       - Train our model
-   - Segment Three:
-       - Connect final database to our model.
-       - Continue to train our model
-       - Create dashboard and presentation
-   - Segment Four:
-       - Final touches on model, database and dashboard
+   The project was broken down into four segments.
+       - Segment One: 
+         - Flesh out overall project
+         - Build a model of our fabricated database
+         - Build a simple model for machine learning.
+       - Role Breakdown:
+         - Stephen Anayas-Hilliard:  Responsible for repository, intitial data research and clean up.
+         - John Phillips: Mockup of machine learning model.
+         - Isaac D. Tucker-Rasbury: Mockup of sample database.
+         - Melyssa Sibal: Technologies used in each step of project
+       - Segment Two:
+         - Refine our database
+         - Train our model
+       - Segment Three:
+         - Connect final database to our model.
+         - Continue to train our model
+         - Create dashboard and presentation
+       - Segment Four:
+         - Final touches on model, database and dashboard
   
  - ### Communication Protocols
    - ##### Information Updates
