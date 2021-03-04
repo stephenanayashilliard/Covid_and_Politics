@@ -67,12 +67,12 @@ The project was broken down into four segments.
 - Algorithms
 
 ### Data Exploration
- - #### Machine Learning
-The goal of the model was to predict whether certain variables such as economic status, political behavior and population demographics would have a postive or negative linear relationship with Covid 19 spread.
-   - #### Models used
-     - Random Forest Regressor:  Used to rank feature importance since it has better score metrics and R Squared values than the linear model. This was important since we were measuring and testing so many different points of data.  The only limitations was that a Linear model would have provided better extrapolating of the data.
-   - #### Scaler
-     - Robust Scaler and Standard Scaler were needed for clarification on outlier sensitivity.
+    - #### Machine Learning
+      The goal of the model was to predict whether certain variables such as economic status, political behavior and population demographics would have a postive or negative linear relationship with Covid 19 spread.
+    - #### Models used
+          - Random Forest Regressor:  Used to rank feature importance since it has better score metrics and R Squared values than the linear model. This was important since we              were measuring and testing so many different points of data.  The only limitations was that a Linear model would have provided better extrapolating of the data.
+    - #### Scaler
+          - Robust Scaler and Standard Scaler were needed for clarification on outlier sensitivity.
    - #### Data Prepocessing
    Specific targets and features were selected from the central dataframe using principal component analysis (PCA) to reduce dimensions and make the model more graphable.
      - Features:
