@@ -75,7 +75,7 @@ The goal of the model was to predict whether certain variables such as economic 
      - Robust Scaler and Standard Scaler were needed for clarification on outlier sensitivity.
    - ##### Data Prepocessing
    Specific targets and features were selected from the central dataframe using principal component analysis (PCA) to reduce dimensions and make the model more graphable.
-    - #### Features:
+           - #### Features:
       - Feature Set 1: Related to politics and voting
         - Target: Covid Cases
         - Predictions: Line of best fit for cases and politics.
