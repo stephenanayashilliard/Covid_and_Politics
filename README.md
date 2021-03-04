@@ -84,7 +84,7 @@ The project was broken down into four segments.
          - Predictions: Line of best for economic status and cases.
        - Feature Set 3:  Related to Population Demographics
          - Target: Covid Cases
-         - Predictions:  Line of best fit for demographics and cases. 
+         - Predictions:  Line of best fit for demographics and cases.  
 
 ### Analysis
 To be filled in future deliverables 
