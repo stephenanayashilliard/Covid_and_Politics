@@ -71,7 +71,7 @@ The project was broken down into four segments.
 ### Machine Learning
    The goal of the model was to predict whether certain variables such as economic status, political behavior and population demographics would have a postive or negative linear relationship with Covid 19 spread.
    - #### Model Used
-     - Random Forest Regressor: The random forest regressor model was chosen for two main reasons- it has the ability to rank the importance of features and showed a better R Squared value and model score than the standard linear regression model. The ranking of features can provide insight into which features have the greatest effect on the target- covid cases. This aligns with the goal of the project which is to understand which economic, political, or demographic are most related to the transmission of covid-19. 
+     - Random Forest Regressor: The random forest regressor model was chosen for two main reasons- it has the ability to rank the importance of features and showed a better R Squared value and model score than the standard linear regression model. The ranking of features can provide insight into which features have the greatest effect on the target- covid cases. This aligns with the goal of the project which is to understand if economic, political, or demographic data is most related to the transmission of covid-19. 
    - #### Scaler
      - Robust Scaler is used because of its sensitivity to outliers via its use of the interquartile range to scale data.
    - #### Data Prepocessing
