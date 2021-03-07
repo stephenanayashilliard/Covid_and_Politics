@@ -70,23 +70,24 @@ The project was broken down into four segments.
 
 ### Machine Learning
    The goal of the model was to predict whether certain variables such as economic status, political behavior and population demographics would have a postive or negative linear relationship with Covid 19 spread.
-   - #### Models used
-     - Random Forest Regressor:  Used to rank feature importance since it has better score metrics and R Squared values than the linear model. This was important since we              were measuring and testing so many different points of data.  The only limitations was that a Linear model would have provided better extrapolating of the data.
+   - #### Model Used
+     - Random Forest Regressor: The random forest regressor model was chosen for two main reasons- it has the ability to rank the importance of features and showed a better R Squared value and model score than the standard linear regression model. The ranking of features can provide insight into which features have the greatest effect on the target- covid cases. This aligns with the goal of the project which is to understand which economic, political, or demographic are most related to the transmission of covid-19. 
    - #### Scaler
-     - Robust Scaler and Standard Scaler were needed for clarification on outlier sensitivity.
+     - Robust Scaler is used because of its sensitivity to outliers via its use of the interquartile range to scale data.
    - #### Data Prepocessing
-     Specific targets and features were selected from the central dataframe using principal component analysis (PCA) to reduce dimensions and make the model more graphable.
-     - Features:
-       - Feature Set 1: Related to politics and voting
+     The target of covid cases per county were selected from the central dataframe. This dataframe also included data on voting behavior in the 2020 election, economic indicators such as employment, types of employment, and income, and demographic data such as gender and ethnicity. The columns containing these types of data were selected and put into unique dataframes that were segemented based on economics, voting, and demographics. These dimensions of these individual dataframes were reduced using the principal component analysis package in scikit learn in order to improve the model's ability to perform accurately and to make the findings more graphable. Below is a further breakdown of the features and targets of the three dataframes:
+     - Features and Target:
+       - Feature Set 1: Related to politics and voting in the 2020 election
          - Target: Covid Cases
-         - Predictions: Line of best fit for cases and politics.
-       - Feature Set 2: Related to Economic Status
+         - Predictions: output into a dataframe to compare actual values with predicted values
+       - Feature Set 2: Related to Economic Indicators
          - Target: Covid Cases
-         - Predictions: Line of best for economic status and cases.
+         - Predictions: output into a dataframe to compare actual values with predicted values
        - Feature Set 3:  Related to Population Demographics
          - Target: Covid Cases
-         - Predictions:  Line of best fit for demographics and cases.  
-
+         - Predictions: output into a dataframe to compare actual values with predicted values  
+    - #### Limitations
+      - The main limitation of the machine learning portion of this project is from the dataset. Because the dataset is based on a single moment in time, the linear model can not extrapolate the predictions into the future. If the dataset was organized in a time-series format that tracked the amount of covid cases over time, then this model could predict the amount of covid cases based on the time-series data.
 ### Dashboard
  - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
  - Dashboard Tools
