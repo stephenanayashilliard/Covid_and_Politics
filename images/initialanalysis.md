@@ -56,14 +56,12 @@ Population by gender is shown in relation to the number of COVID cases. Gender i
 
 **Cases Heat Map**
 
-![Cases Heat Map](/CasesHeatMap.png)
+![Cases Heat Map](CasesHeatMap.png)
 
 Latitude and longitudes for each county is plotted with the color of each point relating to the number of reported COVID cases. Darker points have relatively more COVID cases, which is defined in the legend. It would be interesting to explore in further depth where the hot spots are and if there are any similarities between the counties in terms of the factors previously mentioned.  
 
 **Cases vs. Religion**
 
-![casesvsreligion](/CasesvsReligion.png)
+![casesvsreligion](CasesvsReligion.png)
 
 This factor was not included in the machine learning portion, but data on religion is available for the counties included in this project. Religion was grouped into six categories and is plotted as the population percentage of the county against the number of COVID reported cases. Again, further analysis could be conducted to provide further insight. 
-
-
