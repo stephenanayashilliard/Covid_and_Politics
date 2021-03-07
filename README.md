@@ -86,7 +86,7 @@ The project was broken down into four segments.
        - Feature Set 3:  Related to Population Demographics
          - Target: Covid Cases
          - Predictions: output into a dataframe to compare actual values with predicted values  
-    - #### Limitations
+- #### Limitations
       - The main limitation of the machine learning portion of this project is from the dataset. Because the dataset is based on a single moment in time, the linear model can not extrapolate the predictions into the future. If the dataset was organized in a time-series format that tracked the amount of covid cases over time, then this model could predict the amount of covid cases based on the time-series data.
 ### Dashboard
  - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
