@@ -8,17 +8,17 @@ This section of the project explores the data through Tableau, which will provid
 
 **Total Cases by State** 
 
-![totalcases](/TotalCasesByState.png)
+![totalcases](TotalCasesByState.png)
 
 The above bar graph shows the total number of cases per state. While this image gives some information on the number of cases reported within each state, further analysis could provide insight into how the number of cases fits within the total population. This comparison of states does not consider population size. An additional comparison of population per square mile would also be interesting to examine. 
 
 **Cases vs. Voting Count/Percentage**
 
-![casesvsvotingcount](/CasesvsVotingCount.png)
+![casesvsvotingcount](CasesvsVotingCount.png)
 
 The scatter plot illustrates the number of votes for Joe Biden or Donald Trump during the 2020 Presidental Election against the number of cases by county. While this provides a comparison between votes, it does not provide information within the context of total votes.   
 
-![casesvsvotingpercentage](/CasesvsVotingPercentage.png)
+![casesvsvotingpercentage](CasesvsVotingPercentage.png)
 
 The scatter plot shows the percentage of total votes for each presidential candidate against the number of cases by county. 
 
@@ -26,11 +26,11 @@ While both plots explore a connection between presidental votes and reported COV
 
 **Cases vs. Age Groups** 
 
-![casesvsallagegroups](/CasesvsAllAgeGroups.png)
+![casesvsallagegroups](CasesvsAllAgeGroups.png)
 
 The graph plots the population percent within given age brackets against number of cases per county. 
 
-![casesvsagegroups](/CasesvsAgeGroups.png)
+![casesvsagegroups](CasesvsAgeGroups.png)
 
 Due to the low percentages of age groups on opposite sides of the age range, the above graph combines age groups, which may be reconsidered for additional analysis. 
 
@@ -38,19 +38,19 @@ Again, the effect of age on reported cases may be explored further.
 
 **Cases vs. Racial Groups** 
 
-![casesvsrace](/casesvsrace.png)
+![casesvsrace](casesvsrace.png)
 
 The scatter plot disaggregates the country population by race against the number of reported COVID cases. Race in this graph is reported by the population percentage. Again, from this initial analysis, it is difficult to interpret what effect race has on COVID infection, if any. 
 
 **Cases vs. Median Income**
 
-![casesvsincome](/casesvsincome.png)
+![casesvsincome](casesvsincome.png)
 
 Median income for counties is plotted against number of cases. Further analysis could examine the difference between median income and income per capita and if either influence reported COVID cases. 
 
 **Cases vs. Gender Percentage**
 
-![casesvsgenderpercentage](/CasesvsGenderPercentage.png)
+![casesvsgenderpercentage](CasesvsGenderPercentage.png)
 
 Population by gender is shown in relation to the number of COVID cases. Gender is reported in percentage of the county population. Similarly to the other graphs, it is difficult to see a clear correlation. 
 
