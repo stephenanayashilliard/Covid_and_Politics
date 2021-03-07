@@ -29,6 +29,11 @@ The project was broken down into four segments.
   - Segment Two:
     - Refine our database
     - Train our model
+      - Role Breakdown:
+       - Stephen Anayas-Hilliard:  Responsible for respository,  back end clean up of data, and created Mock up Dashboard
+       - John Phillips: Machine Learning Model
+       - Isaac D. Tucker-Rasbury:  Took care of Database interface,  the table and joined all 4 of our original tables.
+       - Melyssa Sibal: Continued with analysis and sample visuals.
   - Segment Three:
     - Connect final database to our model.
     - Continue to train our model
@@ -88,6 +93,7 @@ The project was broken down into four segments.
          - Predictions: output into a dataframe to compare actual values with predicted values  
 - #### Limitations
   - The main limitation of the machine learning portion of this project is from the dataset. Because the dataset is based on a single moment in time, the linear model can not extrapolate the predictions into the future. If the dataset was organized in a time-series format that tracked the amount of covid cases over time, then this model could predict the amount of covid cases based on the time-series data.
+
 ### Dashboard
  - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
  - Dashboard Tools
@@ -102,8 +108,12 @@ The project was broken down into four segments.
 ### Analysis
 To be filled in future deliverables 
 
- - ## Results of Analysis
+ - ## Results of Melyssa's Analysis
 To be filled in future deliverables
+
+- ## Results of Isaac's Analysis
+
+- ## Results of Stephen's Analysis
 
  - ## Recomendations for future analysis
 To be filled in future deliverables
