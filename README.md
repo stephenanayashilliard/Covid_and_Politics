@@ -173,6 +173,12 @@ This factor was not included in the machine learning portion, but data on religi
 
 - ## Results of Isaac's Analysis
 
+In order to create the database, I needed to join the datasets detailing the following: a) covid cases and deaths, b) two tables with demographic data, and c) religion. Each table had county and state details as well that I leveraged to join the tables. Once the tables were joined, I uploaded the database to an AWS S3 bucket to allow my colleagues to access the database  by using Pyspark and the object URL. The breakdown of the steps are as follows.
+
+1. _Creating the Join Key_: To perform a join, there needs to be a field to join on. Unfortunately, we did not have one native to the data so we created one. I created a column to hold the key and then set the value equal to the result of county and state column data combined in each row. I then used our county data as the primary table because it had the most results.
+2. _Joining in Parts_: To execute the join, I joined two tables into an interim table, table_one, and joined the third table to it creating a table_two. I repeated this again to get the fourth table into the final database.
+3. _Troubleshooting Issues_: The fields that were null after the joins from part two needed to be filled in in order to not obstruct the upcoming machine learning model. I turned the null values into zeros and then kept the result.
+
 - ## Results of Stephen's Analysis
 
  - ## Recomendations for future analysis
