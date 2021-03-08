@@ -1,0 +1,12 @@
+body {
+
+    background-color: #72a0c5;
+
+}
+
+.jumbotron {
+    background-image: url(C:/Users/Stephen/Desktop/Class%20Projects/Covid_and_Politics/Dashboard/images/woman_in_mask.png); 
+    background-size: 100% 100%;
+    text-align: left;
+    color: #060879;
+  }
