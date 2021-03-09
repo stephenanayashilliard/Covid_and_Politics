@@ -4,9 +4,57 @@ body {
 
 }
 
+/* Styling for top of page */
 .jumbotron {
     background-image: url(C:/Users/Stephen/Desktop/Class%20Projects/Covid_and_Politics/Dashboard/images/woman_in_mask.png); 
     background-size: 100% 100%;
     text-align: left;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+   
     color: #060879;
   }
+
+  /* Styling for Tabs */
+  .tab {
+      overflow: hidden;
+      border: 1px solid #0e0000;
+      text-align: center;
+      background-color: inherit;
+      display: flexbox;
+      
+    }
+
+/* Styling the Buttons that open up the tab contents */
+  .tab button {
+      background-color: #72a0c5;
+      float: center;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;        /* for hover */
+      color:black;           /* font color */
+      font: 600 16px Lato, sans-serif;
+
+  }
+
+/* Change Color of Button when hovered over */
+.tab  button:hover {
+    background-color: #b9c1c7;
+}
+
+/* Change Color of Active Button */
+.tab button.active{
+    background-color: #0a72c7
+}
+
+/* Style Tab Contents */
+.tabcontent{
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #9fb6c7;
+    border-top: none;
+}
+ 
+
+  

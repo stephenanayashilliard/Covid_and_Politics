@@ -10,25 +10,127 @@
    <!--Bootstrap_CDN and style.css-->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
    <link rel="stylesheet" href="css/style.css">
- </head>
  
- <!--Top of Dashboard-->
+</head>
+ 
+ <!--Header-->
  <body>
     <div class="container">
         <div class="row">
            <div class='col-md-12 jumbotron text-left' style="background-image:url('images/woman_in_mask.png'); border: thick double; color:black">
-                <p style = "font-family:serif;">
+                <p style = "font-family: Roboto, RobotoDraft, Helvetica,Arial,sans-serif;">
                     <h1>The<br>Politics<br>of<br>Covid</h1>
                 </p>
             </div>
-        </div>
-             <h3>Is there correlations with the rate of infections for Covid 19 and a countie's political leanings, 
-                the race or ethnicity, age, gender or ecnomic status of it's general population?</h3>  
-                <p> To allow for the greatest possible diversity, or data was drawn from over 3000 counties in the
-            United States.  Our data was obtained from the United States Census Bureau, the Association of Statisticians
-            of American Religious Bodies (ASARB) as well as Covid 19 rates of infection and death rates from Kaggle.
-                </p>
-    </div>            
+
+           <!--Tab Buttons-->
+            
+                <div class= 'tab'>
+                    <button class = "tablinks" onclick= "openCity (event, 'About Our Project')">About Our Project</button>
+                    <button class = "tablinks" onclick= "openCity (event, 'Database')">Database</button>
+                    <button class = "tablinks" onclick= "openCity (event, 'Machine Learning')">Machine Learning</button>
+                    <button class = "tablinks" onclick= "openCity (event, 'Population')">Population</button>
+                    <button class = "tablinks" onclick= "openCity (event, 'Religion')">Religion</button>
+                    <button class = "tablinks" onclick= "openCity (event, 'Tab 6')">Tab 6</button>
+                    <button class = "tablinks" onclick= "openCity (event, 'Team Members')">Team Members</button>
+                </div>
+
+                <!--Add contents to Tabs-->
+                <div class= "tabcontent" id="About Our Project">
+                    <h2>About Our Project</h2>
+                    <p>Using data acquired from multiple sources, we set out to discover if there are correlations 
+                    with Covid 19 rates of infection and a countie's political views,  the race makeup or ethnicity, age, gender or economic status of it's population. </p>
+                </div>   
+                
+                <!--Database-->
+                <div class= "tabcontent" id="Database">
+                    <h2>Database</h2>
+                    <p>To allow for the greatest possible diversity, or data was drawn from over 3000 counties in the
+                        United States.  Our data was obtained from the United States Census Bureau, the Association of Statisticians
+                        of American Religious Bodies (ASARB) as well as Covid 19 rates of infection and death rates from Kaggle. </p>
+                </div> 
+
+                <!--Machine Learning-->
+                <div class= "tabcontent" id="Machine Learning">
+                    <h2>Machine Learning</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id nibh pellentesque eget imperdiet quam lobortis et id. Phasellus tristique euismod quisque tortor eget mollis ultricies. Vel quam nunc, et tellus eu in. Semper scelerisque amet eget dictum sit. Vulputate bibendum rutrum vitae viverra sit. Quam aliquet at lectus sit mus non diam lectus.
+                        Semper scelerisque sed risus posuere molestie sed sed feugiat. Erat adipiscing vehicula nec platea sollicitudin enim dictum faucibus adipiscing. Mattis sollicitudin vulputate massa vivamus facilisis. </p>
+                </div> 
+
+                <!--Population-->
+                <div class= "tabcontent" id="Population">
+                    <h2>Tab 4</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id nibh pellentesque eget imperdiet quam lobortis et id. Phasellus tristique euismod quisque tortor eget mollis ultricies. Vel quam nunc, et tellus eu in. Semper scelerisque amet eget dictum sit. Vulputate bibendum rutrum vitae viverra sit. Quam aliquet at lectus sit mus non diam lectus.
+                        Semper scelerisque sed risus posuere molestie sed sed feugiat. Erat adipiscing vehicula nec platea sollicitudin enim dictum faucibus adipiscing. Mattis sollicitudin vulputate massa vivamus facilisis. </p>
+                </div> 
+
+                <!--Religion-->
+                <div class= "tabcontent" id="Religion">
+                    <h2>Tab 5</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id nibh pellentesque eget imperdiet quam lobortis et id. Phasellus tristique euismod quisque tortor eget mollis ultricies. Vel quam nunc, et tellus eu in. Semper scelerisque amet eget dictum sit. Vulputate bibendum rutrum vitae viverra sit. Quam aliquet at lectus sit mus non diam lectus.
+                        Semper scelerisque sed risus posuere molestie sed sed feugiat. Erat adipiscing vehicula nec platea sollicitudin enim dictum faucibus adipiscing. Mattis sollicitudin vulputate massa vivamus facilisis. </p>
+                </div>
+                
+                <!--Tab 6-->
+                <div class= "tabcontent" id="Tab 6">
+                    <h2>Tab 6</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id nibh pellentesque eget imperdiet quam lobortis et id. Phasellus tristique euismod quisque tortor eget mollis ultricies. Vel quam nunc, et tellus eu in. Semper scelerisque amet eget dictum sit. Vulputate bibendum rutrum vitae viverra sit. Quam aliquet at lectus sit mus non diam lectus.
+                        Semper scelerisque sed risus posuere molestie sed sed feugiat. Erat adipiscing vehicula nec platea sollicitudin enim dictum faucibus adipiscing. Mattis sollicitudin vulputate massa vivamus facilisis. </p>
+                </div>
+                
+                <!--Team Members-->
+                <div class= "tabcontent" id="Team Members">
+                    <h2>Team Members</h2>
+                    <p>In Alphabetical Order</p>
+                    <p> Stephen Anayas-Hilliard</p>
+                    <p> John Phillips</p>
+                    <p> Melyssa Sibal</p>
+                    <p> Isaac D. Tucker-Rasbury</p>
+                </div>  
+                
+                <!-- Open Tab Contents when Tab is click upon -->
+                <script type="text/javascript">
+                    function openCity (event, cityName){
+                        
+                        //Declare the variables
+                        var i, tabcontent, tablinks;
+                        
+                        // Get all Elements with tab_content and hide them
+                        tabcontent = document.getElementsByClassName("tabcontent");
+                        for(i= 0; i < tabcontent.length; i++){
+                            tabcontent[i].style.display = "none";
+                        }
+
+                        //Get all the elements with class "tablinks" and remove the class
+                        tablinks = document.getElementsByClassName("tablinks"); 
+                        for(i = 0; i < tablinks.length; i++){
+                            tablinks[i].className = tablinks[i].className.replace(" active", "");
+                        }
+
+                        // Show the Current Tab and add an "active" class to the button that opened the tab 
+                        // so that it becomes the active tab
+                        document.getElementById(cityName).style.display = "block";
+                        evt.currentTarget.className += " active";
+                    }
+                    </script>
+                
+                <!-- Dropdown menu with County and State-->
+                <div class = "row">
+                    <div class = "col-md-2"; style = "border: thick double #141f24; color: #290a42">
+                        <div class="dropdown">
+                            <h3>County and State</h3>
+                            <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                        </div>
+                </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="charts.js"></script>
+    <script src="css/style.css"></script>
+
+    
+    
   </body>
   </html>      
                    
