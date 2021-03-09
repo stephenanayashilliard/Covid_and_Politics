@@ -31,7 +31,7 @@
                     <button class = "tablinks" onclick= "openCity (event, 'Machine Learning')">Machine Learning</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Population')">Population</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Religion')">Religion</button>
-                    <button class = "tablinks" onclick= "openCity (event, 'Tab 6')">Tab 6</button>
+                    <button class = "tablinks" onclick= "openCity (event, 'Economics vs Cases/Deaths')">Economics vs Cases/Deaths</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Team Members')">Team Members</button>
                 </div>
 
@@ -66,14 +66,14 @@
 
                 <!--Religion-->
                 <div class= "tabcontent" id="Religion">
-                    <h2>Tab 5</h2>
+                    <h2>Religion</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id nibh pellentesque eget imperdiet quam lobortis et id. Phasellus tristique euismod quisque tortor eget mollis ultricies. Vel quam nunc, et tellus eu in. Semper scelerisque amet eget dictum sit. Vulputate bibendum rutrum vitae viverra sit. Quam aliquet at lectus sit mus non diam lectus.
                         Semper scelerisque sed risus posuere molestie sed sed feugiat. Erat adipiscing vehicula nec platea sollicitudin enim dictum faucibus adipiscing. Mattis sollicitudin vulputate massa vivamus facilisis. </p>
                 </div>
                 
                 <!--Tab 6-->
-                <div class= "tabcontent" id="Tab 6">
-                    <h2>Tab 6</h2>
+                <div class= "tabcontent" id="Economics vs Cases/Deaths">
+                    <h2>Economics vs Cases/Deaths</h2>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id nibh pellentesque eget imperdiet quam lobortis et id. Phasellus tristique euismod quisque tortor eget mollis ultricies. Vel quam nunc, et tellus eu in. Semper scelerisque amet eget dictum sit. Vulputate bibendum rutrum vitae viverra sit. Quam aliquet at lectus sit mus non diam lectus.
                         Semper scelerisque sed risus posuere molestie sed sed feugiat. Erat adipiscing vehicula nec platea sollicitudin enim dictum faucibus adipiscing. Mattis sollicitudin vulputate massa vivamus facilisis. </p>
                 </div>
@@ -115,11 +115,25 @@
                     </script>
                 
                 <!-- Dropdown menu with County and State-->
-                <div class ="dropdown">
-                    <h4>Please select your county by state to use the interactive charts</h4>
-                    <div id = "menu"></div>
-                <select id="selectoption">
-                    <option value="County and State">County and State</option>
+                <div class = "row">
+                    <div class ="dropdown">
+                        <div class="col-md-12";>
+                            <!--div class="well"-->
+                                <h4> County and State</h4>
+                                <!--Dropdown menu with id of selDataset-->
+                                <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                            </div>
+                            
+                                </div>
+                            </div>        
+                        
+                        </div>
+                        
+                    </div>
+                </divd>
+                
+                
+
                 </select>
                 
                 </div>

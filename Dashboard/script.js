@@ -1,14 +1,14 @@
-d3.json("covid.json", function(data) {
-    console.log(data);
-});
 
-d3.selectAll("body").on("change", updatePage);
 
-function updatePage() {
-  var dropdownMenu = d3.selectAll("#selectOption").node();
-  var dropdownMenuID = dropdownMenu.id;
-  var selectedOption = dropdownMenu.value;
+// Use the list of sample names to populate the select options
+d3.json("covid.json").then((data) => {
+    var sampleNames = data.county_state;
 
-  console.log(dropdownMenuID);
-  console.log(selectedOption);
-};
+    sampleNames.forEach((sample) => {
+      selector
+        .append("option")
+        .text(sample)
+        .property("value", sample);
+  });
+
+})

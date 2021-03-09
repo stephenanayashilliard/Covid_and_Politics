@@ -55,6 +55,27 @@ body {
     border: 1px solid #9fb6c7;
     border-top: none;
 }
+
+/* Style for pull down menu */
+.dropdown {
+    background-color: #72a0c5;
+    padding: 6px 12px;
+    text-align: center;
+    font: 600 16px Lato, sans-serif;
+    border: none;
+    outline: nn1px solid #0e0000;
+    cursor: pointer;
+    color:black;           /* font color */
+    
+   
+      
+    }
+
+
+
+
+
+
  
 
   
