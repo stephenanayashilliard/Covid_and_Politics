@@ -2,9 +2,13 @@
 function buildMetadata(sample) {
 
     d3.json("covid.json").then((data) => {
-      var metadata = data.county_state; data.totalpop; data.income; data.cases_per_capita_100k;
-      data.deaths_per_capita_100k; data.pop_per_sq_mile_2010
-
+        var datacounty = data.county_name;
+        var datapop =  data.totalpop; 
+        var dataincome = data.income; 
+        var datacases = data.cases_per_capita_100k; 
+        var datadeaths = data.deaths_per_capita_100k;
+    
+     
       // Filter the data for the object with the desired sample number
       var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
       var result = resultArray[0];
