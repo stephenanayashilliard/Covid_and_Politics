@@ -7,9 +7,15 @@
    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
    <title>The Politics of Covid</title>
 
-   <!--Bootstrap_CDN and style.css-->
+   <!--Bootstrap_CDN and leaflet CSS and style.css-->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" 
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin=""/>
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  
  
 </head>
  
@@ -136,7 +142,17 @@
                         
                     </div>
                 </div>
-                
+
+                <!--Div that holds are you map-->
+                <div id="mapid"></div>
+
+                <!--Leaflet JavaScript-->
+                <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+                integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+                crossorigin=""></script>
+                <!--API-->
+                <script type="text/javascript" src = "config.js"></script>
+                <scipt type="text/javascript" src = "logic.js"></scipt>
                 
 
                 </select>
