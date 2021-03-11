@@ -3,7 +3,13 @@
 console.log("working");
 
 // Create the map object with a center and zoom level.
-let map = L.map('mapid').setView([40.7, -94.5], 4);
+// let map = L.map('mapid') //setView([40.7, -94.5], 4);
+
+// initialize the map on the "map" div with a given center and zoom
+var map = L.map('mapid', {
+    center: [51.505, -0.09],
+    zoom: 13
+});
 
 // Add Tile Layer for the Map
 let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {

@@ -10,11 +10,12 @@
    <!--Bootstrap_CDN and leaflet CSS and style.css-->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
    <link rel="stylesheet" href="css/style.css">
+   
    <!--Leaflet-->
    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
    crossorigin=""/>
-   <link rel="stylesheet" type="text/css" href="css/style.css">
+   
 
    <!--Leaflet JavaScript-->
    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
@@ -26,8 +27,6 @@
    <!--JavaScript-->
    <scipt type="text/javascript" src = "logic.js"></scipt>
 
-  
- 
 </head>
  
  <!--Header-->
@@ -138,7 +137,7 @@
                             <!--div class="well"-->
                                 <h4>County and State</h4>
                                 <!--Dropdown menu with id of selDataset-->
-                                <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                                <select id="selDataset" onchange="buildMetadata(this.selectedIndex)"></select>
                             </div>
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
@@ -154,8 +153,8 @@
                     </div>
                 </div>
 
-                <!--Div that holds are you map-->
-                <div id="mapid"></div>
+            <!--Div that holds are you map-->
+            <div id="mapid"></div>
 
                 
                 
