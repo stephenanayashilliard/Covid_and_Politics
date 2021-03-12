@@ -114,7 +114,7 @@ console.log("This is value index: " + valueIndex);
       // Age Bubble Graph
         var bubbleData = [
           {
-            x: ['Infant', 'Child', 'Teen', 'Young Adult', 'Mid Thirties to Forties', 'Mid Forties to Fifties', 'Mid Sixties to Seventies', 'Mid Seventies to Eighties', 'Eighties Plus'],
+            x: ['Infant', 'Child', 'Teen', 'Young Adult', 'Thirty to Forty', 'Forty to Fifty', 'Sixty to Seventy', 'Seventy to Eighty', 'Eighty Plus'],
             y: [sampleBaby, sampleToddler, sampleTeen, sampleYoung, sampleThirty, sampleForty, sampleFifty, sampleSixty, sampleSevenity, sampleSenior],
             text: ['Infant </br>Age range: 0 - 4', 'Child </br>Age range: 5 - 14', 'Teen </br>Age range: 15 - 24','Young Adult </br>Age range: 25 - 34', 'Mid Thirties to Forties </br>Age range: 35 - 44',
                   'Mid Forties to Fifties </br>Age range: 45 - 54', 'Mid Fifties to Sixties </br>Age range: 55 - 64', 'Mid Sixties to Seventies </br>Age range: 65 - 74', 'Mid Seventies to Eighties </br>Age range: 75 - 84',
@@ -131,22 +131,22 @@ console.log("This is value index: " + valueIndex);
         var bubbleLayout = {
         title: "<b>Age Demographics for the County</b>",
         showlegend: false,
-        xaxis: {title: "Age Groups,"}
+        xaxis: {title: "Age Groups"}
       };
       
       // Use Plotly to plot the data with the layout.
-        Plotly.newPlot("bubble", bubbleData, bubbleLayout,);
+        Plotly.newPlot("bubble", bubbleData, bubbleLayout,{displayModeBar: false});
 
       // Voting Bar Graph
       var barData = [
         { 
           x: [sampleVote],
-          y: [Republican, Democrat],
-          text: ['Republican', 'Democrat'],
+          y: [Democrat, Republican],
+          text: ['Democrat', 'Republican'],
           name: 'Votes by Population',
           type: "bar",
           marker: {
-            color: ['rgb(158,202,225)', 'rgb(8,48,107)']
+            color: ['rgb(74, 166, 247)', 'rgb(240, 30, 38)']
           },
         
         }
@@ -155,18 +155,44 @@ console.log("This is value index: " + valueIndex);
       //Create the layout for the bar chart. 
       var barLayout = {
         title: "<b>How the County Voted",
-        xaxis: {title: ('Votes by Party')},
+        xaxis: {title: ('Democrat', 'Republican')},
         yaxis: {title: 'Number of Total Votes'},
-        // margin: {
-        //   l:100,
-        //   r:100,
-        //   t:100,
-        //   b:100,
-        // }
+        margin: {
+          l:100,
+          r:100,
+          t:100,
+          b:100,
+         }
       };
 
       // Plotly for bar graph
-      Plotly.newPlot("bar", barData, barLayout)
+      Plotly.newPlot("bar", barData, barLayout,{displayModeBar: false});
+
+      //Occupation Bar Graph
+      var jobBarData = [
+        {
+          x: [samplePop],
+          y: [professional, service, office, construction, production, private, public, selfEmployed, homeMaker].map(x=> x/100),
+          test: ['Professional', 'Service', 'Office', 'Construction', 'Manufacturing', 'Private Sector', 'Public Sector', 'Self Employed', 'Home Maker'],
+          name: 'Employment Demographics by Occupation',
+          type: 'bar',
+        }];
+
+      // Layout for Occupation Bar Graph
+      var jobBarLayout={
+        title:"<b>Occupation Demographics for the County",
+        xaxis: {title: 'Total Population'},
+        yaxis: {title: ('Professional', 'Service', 'Office', 'Construction', 'Manufacturing', 'Private Sector', 'Public Sector', 'Self Employed', 'Home Maker')},
+        margin: {
+          l:100,
+          r:100,
+          t:100,
+          b:100,
+         }
+      };
+
+      // Plotly for bar graph
+      Plotly.newPlot("bar2", jobBarData, jobBarLayout,{displayModeBar: false});
 
       //Create layour for Race Pie Chart
       var pieData = [{
@@ -182,7 +208,7 @@ console.log("This is value index: " + valueIndex);
       };
 
       // Plotly for pie Graph
-      Plotly.newPlot("pie", pieData, pieLayout);
+      Plotly.newPlot("pie", pieData, pieLayout,{displayModeBar: false});
 
       // Create layout for Employment
       var employmentData = [{
@@ -198,7 +224,7 @@ console.log("This is value index: " + valueIndex);
       };
 
       // Plotly for Unemployement pie Graph
-      Plotly.newPlot("pie2", employmentData, employmentLayout);
+      Plotly.newPlot("pie2", employmentData, employmentLayout, {displayModeBar: false});
       
   
 
