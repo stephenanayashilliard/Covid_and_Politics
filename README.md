@@ -80,12 +80,12 @@ In order to create the database, I needed to join the datasets detailing the fol
 3. _Troubleshooting Issues_: The fields that were null after the joins from part two needed to be filled in in order to not obstruct the upcoming machine learning model. I turned the null values into zeros and then kept the result.
 
 ### Machine Learning
-   The goal of the model was to predict whether certain variables such as economic status, political behavior and population demographics would have a postive or negative linear relationship with Covid 19 spread.
+   The goal of the model was to predict whether certain variables such as economic status, political behavior and population demographics would have a positive or negative linear relationship with Covid 19 spread.
    - #### Model Used
      - Random Forest Regressor: The random forest regressor model was chosen for two main reasons- it has the ability to rank the importance of features and showed a better R Squared value and model score than the standard linear regression model. The ranking of features can provide insight into which features have the greatest effect on the target- covid cases. This aligns with the goal of the project which is to understand if economic, political, or demographic data is most related to the transmission of covid-19. 
    - #### Scaler
      - Robust Scaler is used because of its sensitivity to outliers via its use of the interquartile range to scale data.
-   - #### Data Prepocessing
+   - #### Data Preprocessing
      The target of covid cases per county were selected from the central dataframe. This dataframe also included data on voting behavior in the 2020 election, economic indicators such as employment, types of employment, and income, and demographic data such as gender and ethnicity. The columns containing these types of data were selected and put into unique dataframes that were segemented based on economics, voting, and demographics. These dimensions of these individual dataframes were reduced using the principal component analysis package in scikit learn in order to improve the model's ability to perform accurately and to make the findings more graphable. Below is a further breakdown of the features and targets of the three dataframes:
      - Features and Target:
        - Feature Set 1: Related to politics and voting in the 2020 election
