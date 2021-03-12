@@ -81,8 +81,8 @@ console.log("This is value index: " + valueIndex);
         var pacificIslander = data.pacific[valueIndex];
       // Variables for Economics
         var samplePoverty =  data.poverty[valueIndex]; 
-       // var sampleEmployment = data.employed[valueIndex]; 
-        var sampleUnemployed = data.unemployment[valueIndex]; 
+        var employed = data.employed[valueIndex]; 
+        var unemployed = data.unemployment[valueIndex]; 
         var sampleProfessional = data.professional[valueIndex];
         var sampleService = data.service[valueIndex];
         var sampleOffice = data.office[valueIndex];
@@ -183,6 +183,22 @@ console.log("This is value index: " + valueIndex);
 
       // Plotly for pie Graph
       Plotly.newPlot("pie", pieData, pieLayout);
+
+      // Create layout for Employment
+      var employmentData = [{
+        values: [employed, unemployed],
+        labels: ['Employed','Unemployed'],
+        type: 'pie',
+      }];
+
+      var employmentLayout = {
+      title: "<b>Unemployment Rates for the County",
+      // height: 400,
+      // width: 500
+      };
+
+      // Plotly for Unemployement pie Graph
+      Plotly.newPlot("pie2", employmentData, employmentLayout);
       
       
  
