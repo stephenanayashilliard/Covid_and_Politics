@@ -83,15 +83,15 @@ console.log("This is value index: " + valueIndex);
         var samplePoverty =  data.poverty[valueIndex]; 
         var employed = data.employed[valueIndex]; 
         var unemployed = data.unemployment[valueIndex]; 
-        var sampleProfessional = data.professional[valueIndex];
-        var sampleService = data.service[valueIndex];
-        var sampleOffice = data.office[valueIndex];
-        var sampleConstruction = data.construction[valueIndex];
-        var sampleProduction = data.production[valueIndex];
-        var samplePrivate = data.privatework[valueIndex];
-        var samplePublic = data.publicwork[valueIndex];
-        var sampleSelf = data.selfemployed[valueIndex];
-        var sampleFamily = data.familywork[valueIndex];
+        var professional = data.professional[valueIndex];
+        var service = data.service[valueIndex];
+        var office = data.office[valueIndex];
+        var construction = data.construction[valueIndex];
+        var production = data.production[valueIndex];
+        var private = data.privatework[valueIndex];
+        var public = data.publicwork[valueIndex];
+        var selfEmployed = data.selfemployed[valueIndex];
+        var homeMaker = data.familywork[valueIndex];
       // Variables for Transportion
         var sampleDrive =  data.drive[valueIndex]; 
         var sampleCarpool = data.carpool[valueIndex]; 
@@ -140,7 +140,7 @@ console.log("This is value index: " + valueIndex);
       // Voting Bar Graph
       var barData = [
         { 
-          x: sampleVote,
+          x: [sampleVote],
           y: [Republican, Democrat],
           text: ['Republican', 'Democrat'],
           name: 'Votes by Population',
@@ -148,7 +148,7 @@ console.log("This is value index: " + valueIndex);
           marker: {
             color: ['rgb(158,202,225)', 'rgb(8,48,107)']
           },
-         // orientation: "v"
+        
         }
       ];
       
@@ -200,7 +200,9 @@ console.log("This is value index: " + valueIndex);
       // Plotly for Unemployement pie Graph
       Plotly.newPlot("pie2", employmentData, employmentLayout);
       
-      
+  
+
+    
  
       
   });
