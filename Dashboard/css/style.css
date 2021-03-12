@@ -79,6 +79,19 @@ body,
   margin: 0;
 }
 
+#bar {
+  height: 600px;
+}
+
+#bubble {
+  height: 600px;
+
+}
+
+#pie {
+  height: 600px;
+}
+
 
 
 

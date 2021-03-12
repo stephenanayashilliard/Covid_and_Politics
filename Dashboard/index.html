@@ -128,8 +128,9 @@
                         document.getElementById(cityName).style.display = "block";
                         evt.currentTarget.className += " active";
                     }
+                 
                     </script>
-                
+        </div>
                 <!-- Dropdown menu with County and State-->
                 <div class = "row">
                     <div class ="dropdown">
@@ -137,7 +138,7 @@
                             <!--div class="well"-->
                                 <h4>County and State</h4>
                                 <!--Dropdown menu with id of selDataset-->
-                                <select id="selDataset" onchange="buildMetadata(this.selectedIndex)"></select>
+                                <select id="selDataset" onchange="buildMetadata(this.selectedIndex);buildCharts(this.selectedIndex)"></select>
                             </div>
                             <div class="panel panel-primary">
                                 <div class="panel-heading">
@@ -150,23 +151,52 @@
                         
                         </div>
                         
+                   
+                
+
+                <!--Information Panel-->
+                <div class = 'row'>
+                    <!--Voting Bar Graph-->
+                        <div class="col-lg-5">
+                            <div id = 'bar'>
+                                <p>How the county voted in the 2020 Presidential Election</p>
+                            </div>
+                        </div>  
+                
+                        <div class="col-lg-5">
+                            <div id = 'pie'>
+                                <p>Racial Demographics for the County</p>
+                            </div>
+                        </div> 
+                </div>   
+              
+                
+                <!--Population Bubble-->
+                <div class="row"> 
+                    <div class = 'panel-body'>
+                        <div class="col-lg-12">
+                            <div id='bubble'>
+                                <p>Population Demographic of a County by Age</p>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
-            <!--Div that holds are you map-->
-            <div id="mapid"></div>
+                <!--Div that holds are you map-->
+                <div id="mapid"></div>
 
                 
                 
 
                 </select>
                 
-                </div>
+                
     </div>
+        
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="charts.js"></script>
     <script src="script.js"></script>
    
    
