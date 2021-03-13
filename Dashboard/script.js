@@ -67,8 +67,8 @@ console.log("This is value index: " + valueIndex);
       // Variables for voting
         var samplePop =  data.totalpop[valueIndex];
         var sampleVote = data.total_votes20[valueIndex];
-        var Republican = data.votes20_donald_trump[valueIndex];
-        var Democrat = data.votes20_joe_biden[valueIndex];
+        var republican = data.votes20_donald_trump[valueIndex];
+        var democrat = data.votes20_joe_biden[valueIndex];
         var sampleRepublicanPer = data.percentage20_donald_trump[valueIndex];
         var sampleDemocraticPer = data.percentage20_joe_biden[valueIndex];
       // Variables for Race 
@@ -82,16 +82,16 @@ console.log("This is value index: " + valueIndex);
       // Variables for Economics
         var samplePoverty =  data.poverty[valueIndex]; 
         var employed = data.employed[valueIndex]; 
-        var unemployed = data.unemployment[valueIndex]; 
-        var professional = data.professional[valueIndex];
-        var service = data.service[valueIndex];
-        var office = data.office[valueIndex];
-        var construction = data.construction[valueIndex];
-        var production = data.production[valueIndex];
-        var private = data.privatework[valueIndex];
-        var public = data.publicwork[valueIndex];
-        var selfEmployed = data.selfemployed[valueIndex];
-        var homeMaker = data.familywork[valueIndex];
+        var unemployedPercentage = data.unemployment[valueIndex]; 
+        var professionalPercent = data.professional[valueIndex];
+        var servicePercent = data.service[valueIndex];
+        var officePercent = data.office[valueIndex];
+        var constructionPercent = data.construction[valueIndex];
+        var productionPercent = data.production[valueIndex];
+        var privatePercent = data.privatework[valueIndex];
+        var publicPercent = data.publicwork[valueIndex];
+        var selfEmployedPercent = data.selfemployed[valueIndex];
+        var homeMakerPercent = data.familywork[valueIndex];
       // Variables for Transportion
         var sampleDrive =  data.drive[valueIndex]; 
         var sampleCarpool = data.carpool[valueIndex]; 
@@ -110,6 +110,22 @@ console.log("This is value index: " + valueIndex);
         var sampleSixty = data.age_65to74[valueIndex];
         var sampleSevenity = data.age_75to84[valueIndex];
         var sampleSenior = data.age_84plus[valueIndex];
+
+      // function to change unemploment percent to number of unemployed.
+      let unemployed = (samplePop*unemployedPercentage/100);
+
+      // functions to change occupational percentages to numbers
+      let professional = (samplePop*professionalPercent/100);
+      let service      = (samplePop*servicePercent/100);
+      let office =        (samplePop*officePercent/100);
+      let construction = (samplePop*constructionPercent/100);
+      let production = (samplePop*productionPercent/100);
+      let private = (samplePop*privatePercent/100);
+      let public = (samplePop*publicPercent/100);
+      let selfEmployed = (samplePop*selfEmployedPercent/100);
+      let homeMaker = (samplePop*homeMakerPercent/100);
+
+      
    
       // Age Bubble Graph
         var bubbleData = [
@@ -122,7 +138,7 @@ console.log("This is value index: " + valueIndex);
             mode: 'markers',
             marker: {
             size:[sampleBaby, sampleToddler, sampleTeen, sampleYoung, sampleThirty, sampleForty, sampleFifty, sampleSixty, sampleSevenity, sampleSenior].map(x=> x/100),
-            colors: ['rgb(0, 255, 255)', 'rgb(138, 43, 226)',  'rgb(44, 160, 101)', 'rgb(255, 65, 54)']
+            colors: ['rgb(166,206,227)', 'rgb(31,120,180)','rgb(178,223,138)', 'rgb(51,160,44)', 'rgb(251, 154, 153)', 'rgb(227,26,28)']
           }
         }
       ];   
@@ -137,25 +153,27 @@ console.log("This is value index: " + valueIndex);
       // Use Plotly to plot the data with the layout.
         Plotly.newPlot("bubble", bubbleData, bubbleLayout,{displayModeBar: false});
 
-      // Voting Bar Graph
-      var barData = [
-        { 
-          x: [sampleVote],
-          y: [Democrat, Republican],
-          text: ['Democrat', 'Republican'],
-          name: 'Votes by Population',
-          type: "bar",
-          marker: {
-            color: ['rgb(74, 166, 247)', 'rgb(240, 30, 38)']
-          },
-        
-        }
-      ];
+   // Voting Bar Graph
+  
+   var barData = [
+    { 
+      x: ['Democrat', 'Republican'],
+      y: [ democrat, republican],
+      offset: 1.0,
+      text: ['Democrat', 'Republican'],
+      name: 'Votes by Population',
+      type: "bar",
+      marker: {
+        color: ['rgb(74, 166, 247)', 'rgb(240, 30, 38)']
+      },
+    
+    }
+  ];
       
       //Create the layout for the bar chart. 
       var barLayout = {
         title: "<b>How the County Voted",
-        xaxis: {title: ('Democrat', 'Republican')},
+        xaxis: {title: ('Party')},
         yaxis: {title: 'Number of Total Votes'},
         margin: {
           l:100,
@@ -163,7 +181,10 @@ console.log("This is value index: " + valueIndex);
           t:100,
           b:100,
          }
-      };
+       };
+      
+    
+    
 
       // Plotly for bar graph
       Plotly.newPlot("bar", barData, barLayout,{displayModeBar: false});
@@ -171,24 +192,28 @@ console.log("This is value index: " + valueIndex);
       //Occupation Bar Graph
       var jobBarData = [
         {
-          x: [samplePop],
-          y: [professional, service, office, construction, production, private, public, selfEmployed, homeMaker].map(x=> x/100),
-          test: ['Professional', 'Service', 'Office', 'Construction', 'Manufacturing', 'Private Sector', 'Public Sector', 'Self Employed', 'Home Maker'],
+          x: [professional, service, office, construction, production, private, public, selfEmployed, homeMaker],
+          Y: ['Professional', 'Service', 'Office', 'Construction', 'Manufacturing', 'Private Sector', 'Public Sector', 'Self Employed', 'Home Maker'],
+          text: ['Professional', 'Service', 'Office', 'Construction', 'Manufacturing', 'Private Sector', 'Public Sector', 'Self Employed', 'Home Maker'],
           name: 'Employment Demographics by Occupation',
+          orientation: 'h',
           type: 'bar',
+          marker: {
+            color: ['rgb(166,206,227)', 'rgb(31,120,180)','rgb(178,223,138)', 'rgb(51,160,44)', 'rgb(251, 154, 153)', 'rgb(227,26,28)'],
+          }
         }];
 
       // Layout for Occupation Bar Graph
       var jobBarLayout={
-        title:"<b>Occupation Demographics for the County",
-        xaxis: {title: 'Total Population'},
-        yaxis: {title: ('Professional', 'Service', 'Office', 'Construction', 'Manufacturing', 'Private Sector', 'Public Sector', 'Self Employed', 'Home Maker')},
-        margin: {
-          l:100,
-          r:100,
-          t:100,
-          b:100,
-         }
+          title:"<b>Occupation Demographics for the County",
+          xaxis: {title: 'Totals'},
+          yaxis: {title: 'Occupations'},
+      //   margin: {
+      //   l:100,
+      //   r:100,
+      //   t:100,
+      //   b:100,
+      //    }
       };
 
       // Plotly for bar graph
