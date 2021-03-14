@@ -80,25 +80,19 @@ In order to create the database, I needed to join the datasets detailing the fol
 3. _Troubleshooting Issues_: The fields that were null after the joins from part two needed to be filled in in order to not obstruct the upcoming machine learning model. I turned the null values into zeros and then kept the result.
 
 ### Machine Learning
-   The goal of the model was to predict whether certain variables such as economic status, political behavior and population demographics would have a positive or negative linear relationship with Covid 19 spread.
-   - #### Model Used
-     - Random Forest Regressor: The random forest regressor model was chosen for two main reasons- it has the ability to rank the importance of features and showed a better R Squared value and model score than the standard linear regression model. The ranking of features can provide insight into which features have the greatest effect on the target- covid cases. This aligns with the goal of the project which is to understand if economic, political, or demographic data is most related to the transmission of covid-19. 
-   - #### Scaler
-     - Robust Scaler is used because of its sensitivity to outliers via its use of the interquartile range to scale data.
-   - #### Data Preprocessing
-     The target of covid cases per county were selected from the central dataframe. This dataframe also included data on voting behavior in the 2020 election, economic indicators such as employment, types of employment, and income, and demographic data such as gender and ethnicity. The columns containing these types of data were selected and put into unique dataframes that were segemented based on economics, voting, and demographics. These dimensions of these individual dataframes were reduced using the principal component analysis package in scikit learn in order to improve the model's ability to perform accurately and to make the findings more graphable. Below is a further breakdown of the features and targets of the three dataframes:
-     - Features and Target:
-       - Feature Set 1: Related to politics and voting in the 2020 election
-         - Target: Covid Cases
-         - Predictions: output into a dataframe to compare actual values with predicted values
-       - Feature Set 2: Related to Economic Indicators
-         - Target: Covid Cases
-         - Predictions: output into a dataframe to compare actual values with predicted values
-       - Feature Set 3:  Related to Population Demographics
-         - Target: Covid Cases
-         - Predictions: output into a dataframe to compare actual values with predicted values  
+   The goal of the machine learning aspect of this project is to predict if a county’s voting patterns in the 2020 election are correlated to covid transmission. Specifically, looking at the percentage of votes for Donald Trump and the percentage of votes for Joe Biden and the number of covid cases per county were used to make predictions. 
+   - #### Models Used
+     - An Ordinary Least Squares (OLS) Model was used to analyze one independent variable at a time and its relation to the dependent variable- covid cases. A Random Forest Regressor (RFR) model was used to analyze multiple independent variables in relation to the dependent variable- covid cases. The OLS model was chosen for its ability to produce descriptive summary statistics and for its ability to be graphed using statsmodels packages. The RFR model was used for its ability to rank feature importances and for its compatibility with other sklearn packages such as RobustScaler, Principal Component Analysis (PCA), and Train, Test, Split.
+   - #### Scaling and Data Preprocessing
+     For the OLS model, a new column was created titled “normalized_cases” which was created by dividing the number of covid cases per county by the population of that county. This created a more usable variable because it more closely resembled the format of the percentage of votes for Trump and Biden columns. Because both of these columns contained numbers between 0 and 1, it behaved better in the OLS model.
+
+For the RFR model, the Robust Scaler was used because of its ability to handle outliers by using the interquartile range to scale the data. The “normalized_cases” column was not used in the RFR model to preserve the original data format for the correlation matrix and for the ranking of feature importance. For both models, the data was preprocessed by another team member to include religion and age metrics by county from other datasets. This was helpful for the correlation matrix and for the ranking of feature importance. 
+- #### Targets and Features
+  For both models, the target was covid cases. The only difference is that the OLS model used the “normalized_cases” calculation and the RFR model used the raw covid cases per county data. The features for the OLS model were the percentage of votes for Donald Trump per county, percentage of votes for Joe Biden per county, and the total votes per county columns. 
+
+For the RFR model, the feature columns were divided into three categories: economic data, ethnicity data, and political data. PCA was used to reduce the dimensions of the grouped datasets to two dimensions before training, testing, and splitting the data for the model. Using PCA for the multivariate RFR model made graphing the findings easier and was useful for grouping multiple columns into two components based on the distribution and variance of the data.
 - #### Limitations
-  - The main limitation of the machine learning portion of this project is from the dataset. Because the dataset is based on a single moment in time, the linear model can not extrapolate the predictions into the future. If the dataset was organized in a time-series format that tracked the amount of covid cases over time, then this model could predict the amount of covid cases based on the time-series data.
+  - The main limitation of the machine learning portion of this project is from the dataset. Because the dataset is based on a single moment in time, the linear model can not extrapolate the predictions into the future. If the dataset was organized in a time-series format that tracked the amount of covid cases over time, then this model could predict the amount of covid cases based on the time-series data. 
 
 ### Dashboard
  - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
