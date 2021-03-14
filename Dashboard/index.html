@@ -48,7 +48,7 @@
                     <button class = "tablinks" onclick= "openCity (event, 'About Our Project')">About Our Project</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Database')">Database</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Machine Learning')">Machine Learning</button>
-                    <button class = "tablinks" onclick= "openCity (event, 'Population')">Population</button>
+                    <button class = "tablinks" onclick= "openCity (event, 'Dashboard')">Dashboard</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Race vs Cases/Deaths')">Race vs Cases/Deaths</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Economics vs Cases/Deaths')">Economics vs Cases/Deaths</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Team Members')">Team Members</button>
@@ -67,39 +67,72 @@
                     <p>To allow for the greatest possible diversity, or data was drawn from over 3000 counties in the
                         United States.  Our data was obtained from the United States Census Bureau, the Association of Statisticians
                         of American Religious Bodies (ASARB) as well as Covid 19 rates of infection and death rates from Kaggle. </p>
+                    <h3>Process</h3>
+                    <h4>Part One</h4>
+                    <p>From the intitial research, four csv files containing a total of 53 data points for 3049 counties was retrieved. Using Pandas, 
+                        the four csv files were converted to dataframes then organized, data was converted to usuable numbers where needed and null values were 
+                        converted to zeros.</p>
+                    <h4>Part Two</h4>
+                    <p>Creating the Join Key: To perform a join, there needs to be a field to join on. A common field native to the data was available so one 
+                        was created. A column was created to hold the key and then set the value equal to the result of county and state column data combined in each row. 
+                        County data was then used as the primary table because it had the most results.</p>
+                    <p>Joining in Parts: To execute the join, the two tables were joined into an interim table, table_one, and then a third table was joined, creating a table_two. 
+                        This process was repeated again to join the fourth table into the final database.</p>
+                    <p>Troubleshooting Issues: The fields that were null after the joins from part two needed to be filled in in order to not obstruct the upcoming machine learning model. 
+                        The null values were converted into zeros and the result saved.</p>
+                    
                 </div> 
 
                 <!--Machine Learning-->
                 <div class= "tabcontent" id="Machine Learning">
                     <h2>Machine Learning</h2>
+                    <p>The goal of the machine learning aspect of this project is to predict if a county’s voting patterns in the 2020 election are correlated to covid 
+                        transmission. Specifically, looking at the percentage of votes for Donald Trump and the percentage of votes for Joe Biden and the number of covid 
+                        cases per county were used to make predictions. </p>
+                    <h3>Models Used</h3>
+                    <p>An Ordinary Least Squares (OLS) Model was used to analyze one independent variable at a time and its relation to the dependent variable- covid cases. 
+                        A Random Forest Regressor (RFR) model was used to analyze multiple independent variables in relation to the dependent variable- covid cases. 
+                        The OLS model was chosen for its ability to produce descriptive summary statistics and for its ability to be graphed using statsmodels packages. 
+                        The RFR model was used for its ability to rank feature importances and for its compatibility with other sklearn packages such as RobustScaler, 
+                        Principal Component Analysis (PCA), and Train, Test, Split.</p>
+                    <h3>Scaling and Data Preprocessing</h3>
+                    <p>For the OLS model, a new column was created titled “normalized_cases” which was created by dividing the number of covid cases per county by the population
+                         of that county. This created a more usable variable because it more closely resembled the format of the percentage of votes for Trump and Biden columns. 
+                         Because both of these columns contained numbers between 0 and 1, it behaved better in the OLS model.</p>
+                    <p>For the RFR model, the Robust Scaler was used because of its ability to handle outliers by using the interquartile range to scale the data. 
+                        The “normalized_cases” column was not used in the RFR model to preserve the original data format for the correlation matrix and for the ranking of 
+                        feature importance. For both models, the data was preprocessed by another team member to include religion and age metrics by county from other datasets. 
+                        This was helpful for the correlation matrix and for the ranking of feature importance.</p>
+                    <h3>Scaling and Data Preprocessing</h3>
+                    <p></p>
+
+                    
+                </div> 
+
+                <!--Dashboard-->
+                <div class= "tabcontent" id="Dashboard">
+                    <h1>Population</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id nibh pellentesque eget imperdiet quam lobortis et id. Phasellus tristique euismod quisque tortor eget mollis ultricies. Vel quam nunc, et tellus eu in. Semper scelerisque amet eget dictum sit. Vulputate bibendum rutrum vitae viverra sit. Quam aliquet at lectus sit mus non diam lectus.
                         Semper scelerisque sed risus posuere molestie sed sed feugiat. Erat adipiscing vehicula nec platea sollicitudin enim dictum faucibus adipiscing. Mattis sollicitudin vulputate massa vivamus facilisis. </p>
                 </div> 
 
-                <!--Population-->
-                <div class= "tabcontent" id="Population">
-                    <h2>Population</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id nibh pellentesque eget imperdiet quam lobortis et id. Phasellus tristique euismod quisque tortor eget mollis ultricies. Vel quam nunc, et tellus eu in. Semper scelerisque amet eget dictum sit. Vulputate bibendum rutrum vitae viverra sit. Quam aliquet at lectus sit mus non diam lectus.
-                        Semper scelerisque sed risus posuere molestie sed sed feugiat. Erat adipiscing vehicula nec platea sollicitudin enim dictum faucibus adipiscing. Mattis sollicitudin vulputate massa vivamus facilisis. </p>
-                </div> 
-
-                <!--Religion-->
+                <!--Race vs Cases/Deaths-->
                 <div class= "tabcontent" id="Race vs Cases/Deaths">
-                    <h2>Race vs Cases/Deaths</h2>
+                    <h1>Race vs Cases/Deaths</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id nibh pellentesque eget imperdiet quam lobortis et id. Phasellus tristique euismod quisque tortor eget mollis ultricies. Vel quam nunc, et tellus eu in. Semper scelerisque amet eget dictum sit. Vulputate bibendum rutrum vitae viverra sit. Quam aliquet at lectus sit mus non diam lectus.
                         Semper scelerisque sed risus posuere molestie sed sed feugiat. Erat adipiscing vehicula nec platea sollicitudin enim dictum faucibus adipiscing. Mattis sollicitudin vulputate massa vivamus facilisis. </p>
                 </div>
                 
-                <!--Tab 6-->
+                <!--Economics vs Cases/Deaths-->
                 <div class= "tabcontent" id="Economics vs Cases/Deaths">
-                    <h2>Economics vs Cases/Deaths</h2>
+                    <h1>Economics vs Cases/Deaths</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id nibh pellentesque eget imperdiet quam lobortis et id. Phasellus tristique euismod quisque tortor eget mollis ultricies. Vel quam nunc, et tellus eu in. Semper scelerisque amet eget dictum sit. Vulputate bibendum rutrum vitae viverra sit. Quam aliquet at lectus sit mus non diam lectus.
                         Semper scelerisque sed risus posuere molestie sed sed feugiat. Erat adipiscing vehicula nec platea sollicitudin enim dictum faucibus adipiscing. Mattis sollicitudin vulputate massa vivamus facilisis. </p>
                 </div>
                 
                 <!--Team Members-->
                 <div class= "tabcontent" id="Team Members">
-                    <h2>Team Members</h2>
+                    <h1>Team Members</h1>
                     <p> In Alphabetical Order</p>
                     <p> Stephen Anayas-Hilliard</p>
                     <p> John Phillips</p>
