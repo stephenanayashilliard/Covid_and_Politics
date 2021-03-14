@@ -1,7 +1,7 @@
 # adding files for the ml segment
-classification_experiment.ipynb
-clustering_exploration.ipynb
-sv_regression.ipynb
+ml_seg2/classification_experiment.ipynb
+ml_seg2/clustering_exploration.ipynb
+ml_seg2/sv_regression.ipynb
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
