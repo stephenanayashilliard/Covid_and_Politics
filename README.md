@@ -101,18 +101,18 @@ It was determined from the onset of the project that the dashboard for the proje
   - Occupation Demographics for the County
   - Age Demogrphics for the County
 
-- #### Storyboard
-A storyboard was created to aid in the programming process.
-  - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
+ - #### Storyboard
+ A storyboard was created to aid in the programming process.
+   - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
 
-- #### Dashboard Tools
+ - #### Dashboard Tools
 The following tools were used to create the dashboard:
- - Bootstrap:  Used to create our responsive, front end.
- - D3.json:  Data format for sorting and presenting data
- - Potly:  Used to create dynamic charts to illustrated our findings.
- - Leaflet.js: Javascript Library used to build the heatmap portion of the Dashboard
- - GeoJSON: Used to create feature points for heatmap portion
- - Mapbox API: Used to pull our Maps for our heatmap portion.
+  - Bootstrap:  Used to create our responsive, front end.
+  - D3.json:  Data format for sorting and presenting data
+  - Potly:  Used to create dynamic charts to illustrated our findings.
+  - Leaflet.js: Javascript Library used to build the heatmap portion of the Dashboard
+  - GeoJSON: Used to create feature points for heatmap portion
+  - Mapbox API: Used to pull our Maps for our heatmap portion.
    
 
 ## Analysis
