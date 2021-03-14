@@ -222,7 +222,10 @@ White and Native populations come close to a p-value of 0.05.
 - ### Results of John's Machine Learning Analysis
 This analysis is based on the OLS regression model described earlier in the readme under the "Machine Learning" section. The three factors used and their relation to covid were a county's percentage of votes for Trump in the 2020 election, a county's percentage of votes for Biden in the 2020 election, and a county's total votes in the 2020 election.
 
+**Percentage of Trump Votes and Covid Cases (per county)**
 
+The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 68% and the p-value is 0. This means that 68% of the covid cases are explained by a county's votes for Donald Trump, and that we can reject the null hypothesis that this relationship is due to random chance.
+![](images/ml_trumpvotes_ols.png)
 
 
 
