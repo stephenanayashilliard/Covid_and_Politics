@@ -89,14 +89,27 @@ From the intitial research, four csv files containing a total of 53 data points 
    - For the RFR model, the Robust Scaler was used because of its ability to handle outliers by using the interquartile range to scale the data. The “normalized_cases” column was not used in the RFR model to preserve the original data format for the correlation matrix and for the ranking of feature importance. For both models, the data was preprocessed by another team member to include religion and age metrics by county from other datasets. This was helpful for the correlation matrix and for the ranking of feature importance. 
 - #### Targets and Features
    - For both models, the target was covid cases. The only difference is that the OLS model used the “normalized_cases” calculation and the RFR model used the raw covid cases per county data. The features for the OLS model were the percentage of votes for Donald Trump per county, percentage of votes for Joe Biden per county, and the total votes per county columns. 
-
    - For the RFR model, the feature columns were divided into three categories: economic data, ethnicity data, and political data. PCA was used to reduce the dimensions of the grouped datasets to two dimensions before training, testing, and splitting the data for the model. Using PCA for the multivariate RFR model made graphing the findings easier and was useful for grouping multiple columns into two components based on the distribution and variance of the data.
 - ### Limitations
   - The main limitation of the machine learning portion of this project is from the dataset. Because the dataset is based on a single moment in time, the linear model can not extrapolate the predictions into the future. If the dataset was organized in a time-series format that tracked the amount of covid cases over time, then this model could predict the amount of covid cases based on the time-series data. 
 
-### Dashboard
+## Dashboard
+- ### Process
+It was determined from the onset of the project that the dashboard for the project needed to be fully interactive and contain both information about processes for the individual deliverables, as well as a written report about the analysis.  
+
+For illustrative purposes, the dashboard allows the user to choose a county from a drop down menu.  From that choice, the following graphs were depicted:
+ - How the County Voted
+ - Racial Demographics for the County
+ - Unemployment Rates for the County
+ - Occupation Demographics for the County
+ - Age Demogrphics for the County
+
+- #### Storyboard
+A storyboard was created to aid in the programming process.
  - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
- - Dashboard Tools
+
+- #### Dashboard Tools
+The following tools were used to create the dashboard:
    - Bootstrap:  Used to create our responsive, front end.
    - D3.json:  Data format for sorting and presenting data
    - Potly:  Used to create dynamic charts to illustrated our findings.
@@ -105,10 +118,10 @@ From the intitial research, four csv files containing a total of 53 data points 
    - Mapbox API: Used to pull our Maps for our heatmap portion.
    
 
-### Analysis
+## Analysis
 To be filled in future deliverables 
 
- - ## Results of Melyssa's Analysis
+ - ### Results of Melyssa's Analysis
 This section of the project explores the data through Tableau, which will provide some framework for further statistical analysis. 
 
 **Total Cases by State** 
