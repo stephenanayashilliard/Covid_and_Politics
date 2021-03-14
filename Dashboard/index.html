@@ -49,6 +49,7 @@
                     <button class = "tablinks" onclick= "openCity (event, 'Database')">Database</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Machine Learning')">Machine Learning</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Dashboard')">Dashboard</button>
+                    <button class = "tablinks" onclick= "openCity (event, 'Politics vs Cases/Deaths')">Politics vs Cases/Deaths</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Race vs Cases/Deaths')">Race vs Cases/Deaths</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Economics vs Cases/Deaths')">Economics vs Cases/Deaths</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Team Members')">Team Members</button>
@@ -137,11 +138,65 @@
 
                 </div> 
 
+                <!--Machine Learning for Cases and Politics Analyis-->
+                <div class= "tabcontent" id="Politics vs Cases/Deaths">
+                    <h2>Politics vs Cases/Deaths</h2>
+                    <p>This analysis is based on the OLS regression model described earlier in the readme under the "Machine Learning" section. 
+                        The three factors used and their relation to covid were a county's percentage of votes for Trump in the 2020 election, 
+                        a county's percentage of votes for Biden in the 2020 election, and a county's total votes in the 2020 election.</p>
+
                 <!--Race vs Cases/Deaths-->
                 <div class= "tabcontent" id="Race vs Cases/Deaths">
-                    <h1>Race vs Cases/Deaths</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id nibh pellentesque eget imperdiet quam lobortis et id. Phasellus tristique euismod quisque tortor eget mollis ultricies. Vel quam nunc, et tellus eu in. Semper scelerisque amet eget dictum sit. Vulputate bibendum rutrum vitae viverra sit. Quam aliquet at lectus sit mus non diam lectus.
-                        Semper scelerisque sed risus posuere molestie sed sed feugiat. Erat adipiscing vehicula nec platea sollicitudin enim dictum faucibus adipiscing. Mattis sollicitudin vulputate massa vivamus facilisis. </p>
+                    <h2>Race vs Cases/Deaths</h2>
+                    <p>This analysis examines the relationship of race and COVID-19 reported cases and death using 
+                        RStudio to conduct statistical testing. The data explored comes from two separate sources. 
+                        COVID reported cases and deaths are from this source from this time point, while racial 
+                        demographics for each country are from this source from this timepoint. Insert methodology 
+                        on how data was collected. Information on race for each county is provided in percentage of 
+                        population. Race was defined into six categories: Asian, Black, Hispanic, Native, Pacific, 
+                        and White.</p>
+                    <h3>Limitations</h3>
+                    <p>Timepoints of data collection.</p>
+                    <p>Incomplete data or missing data due to US Census methodology.</p>
+                    <p>Incomplete data or missing data due to inaccuracy of COVID reporting.</p>
+                    <p>Racial categories are not broken out for further investigation.
+                    <h3>Distribution of Racial Demographics within Counties</h3>>
+                    <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/AsianPopulationDistribution.png?raw=true" 
+                    width='auto'  height ='auto' alt='Asian'>
+                    <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/BlackPopulationDistribution.png?raw=true" 
+                    width='auto'  height ='auto' alt='Black'>
+                    <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/HispanicPopulationDistribution.png?raw=true" 
+                    width='auto'  height ='auto' alt='Hispanic'>
+                    <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/NativePopulationDistribution.png?raw=true" 
+                    width='auto'  height ='auto' alt='Native'>
+                    <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/PacificPopulationDistribution.png?raw=true" 
+                    width='auto'  height ='auto' alt='Pacific'>
+                    <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/WhitePopulationDistribution.png?raw=true" 
+                    width='auto'  height ='auto' alt='White'>
+                    <p>Density plots for each racial category illustrate that populations are not normally distributed across the selected counties. Further, 
+                        that racial groups are not equally represented within each county and within the entire dataset. For Asian, Black, Hispanic, Native, 
+                        and Pacific populations, the data is right skewed. In contrast, white populations are left skewed. This shows that there is more data on 
+                        counties with larger white populations. </p>
+                    <h3>Shapiro Tests</h3>>
+                    <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/shapiro_tests.png?raw=true" 
+                    width='auto'  height ='auto' alt='Shapiro'>
+                    <p>Shapiro tests for each racial category continue to support, in addition to visual assessments of the density plots, that the data is skewed. 
+                        Because the calculated p-values are less than a significance level of 0.05, there is quantitative data to substainate that the data is not 
+                        normally distributed. </p>
+                    <h3>T-Tests</h3>
+                    <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/t-test_countyvscountry.png?raw=true" 
+                    width='auto'  height ='auto' alt='t_test'>
+                    <p>One-sample t-tests were conducted to commpare the distributions of race across counties was representative of the national demographics. 
+                        The national demographics were taken from the US Census from 2020 (https://www.census.gov/quickfacts/fact/table/US/RHI725219#RHI725219). 
+                        While it could be assumed that the categories by the US Census align with the census county data, it should be noted that the methodologies of reporting vary. 
+                        It may be possible that people may have been recorded differently and therefore, the comparison in its totality may not be accurate.
+                        Specifically, the US Census included categories "Two or more races", "White alone, not Hispanic or Latino", while the other data does not
+                        include those categories. </p>
+                    <p>In the assumption that the categories are aligned, p-values from the one-sample t-tests are calculated under the 0.05 significance level. 
+                        Therefore, county populations cannnot be generalized to the national level. </p>
+                    <p>White and Native populations come close to a p-value of 0.05.</p>
+
+
                 </div>
                 
                 <!--Economics vs Cases/Deaths-->
