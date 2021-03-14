@@ -103,8 +103,17 @@
                         The “normalized_cases” column was not used in the RFR model to preserve the original data format for the correlation matrix and for the ranking of 
                         feature importance. For both models, the data was preprocessed by another team member to include religion and age metrics by county from other datasets. 
                         This was helpful for the correlation matrix and for the ranking of feature importance.</p>
-                    <h3>Scaling and Data Preprocessing</h3>
-                    <p></p>
+                    <h3>Targets and Features</h3>
+                    <p>For both models, the target was covid cases. The only difference is that the OLS model used the “normalized_cases” calculation and the RFR model used the 
+                        raw covid cases per county data. The features for the OLS model were the percentage of votes for Donald Trump per county, percentage of votes for Joe 
+                        Biden per county, and the total votes per county columns.</p>
+                    <p>For the RFR model, the feature columns were divided into three categories: economic data, ethnicity data, and political data. PCA was used to reduce the 
+                        dimensions of the grouped datasets to two dimensions before training, testing, and splitting the data for the model. Using PCA for the multivariate RFR 
+                        model made graphing the findings easier and was useful for grouping multiple columns into two components based on the distribution and variance of the data.</p>
+                    <h3>Limitations</h3>
+                    <p>The main limitation of the machine learning portion of this project is from the dataset. Because the dataset is based on a single moment in time, 
+                        the linear model can not extrapolate the predictions into the future. If the dataset was organized in a time-series format that tracked the amount 
+                        of covid cases over time, then this model could predict the amount of covid cases based on the time-series data.</p>
 
                     
                 </div> 
