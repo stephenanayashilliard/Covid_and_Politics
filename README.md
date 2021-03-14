@@ -71,7 +71,7 @@ In order to create the database, We needed to join the datasets detailing the fo
 
 - ### Process
  - #### Part 1
-From the intitial research four csv files were retrieved. Using Pandas, the four csv files were converted to dataframes then organized, data was converted to usuable numbers where needed and null values were converted to zeros.
+From the intitial research, four csv files containing a total of 53 data points for 3049 counties was retrieved. Using Pandas, the four csv files were converted to dataframes then organized, data was converted to usuable numbers where needed and null values were converted to zeros.
  - #### Part 2
  
 
