@@ -183,7 +183,41 @@ This factor was not included in the machine learning portion, but data on religi
 For future deliverables
 
 - ## Race vs Cases/Deaths
-For future deliverables
+This analysis examines the relationship of race and COVID-19 reported cases and death using RStudio to conduct statistical testing. The data explored comes from two separate sources. COVID reported cases and deaths are from this source from this time point, while racial demographics for each country are from this source from this timepoint. Insert methodology on how data was collected. Information on race for each county is provided in percentage of population. Race was defined into six categories: Asian, Black, Hispanic, Native, Pacific, and White. 
+
+**Limitations**
+- Timepoints of data collection
+- Incomplete data or missing data due to US Census methodology
+- Incomplete data or missing data due to inaccuracy of COVID reporting
+- Racial categories are not broken out for further investigation
+
+**Distribution of Racial Demographics within Counties**
+
+![density_asian](/images/race_analysis/AsianPopulationDistribution.png)
+
+![density_black](/images/race_analysis/BlackPopulationDistribution.png)
+
+![density_hispanic](/images/race_analysis/HispanicPopulationDistribution.png)
+
+![density_native](/images/race_analysis/NativePopulationDistribution.png)
+
+![density_pacific](/images/race_analysis/PacificPopulationDistribution.png)
+
+![density_white](/images/race_analysis/WhitePopulationDistribution.png)
+
+Density plots for each racial category illustrate that populations are not normally distributed across the selected counties. Further, that racial groups are not equally represented within each county and within the entire dataset. For Asian, Black, Hispanic, Native, and Pacific populations, the data is right skewed. In contrast, white populations are left skewed. This shows that there is more data on counties with larger white populations. 
+
+![shapiro](/images/race_analysis/shapiro_tests.png)
+
+Shapiro tests for each racial category continue to support, in addition to visual assessments of the density plots, that the data is skewed. Because the calculated p-values are less than a significance level of 0.05, there is quantitative data to substainate that the data is not normally distributed. 
+
+![t_tests](/images/race_analysis/t-test_countyvscountry.png)
+
+One-sample t-tests were conducted to commpare the distributions of race across counties was representative of the national demographics. The national demographics were taken from the US Census from 2020 (https://www.census.gov/quickfacts/fact/table/US/RHI725219#RHI725219). While it could be assumed that the categories by the US Census align with the census county data, it should be noted that the methodologies of reporting vary. It may be possible that people may have been recorded differently and therefore, the comparison in its totality may not be accurate. Specifically, the US Census included categories "Two or more races", "White alone, not Hispanic or Latino", while the other data does not include those categories. 
+
+In the assumption that the categories are aligned, p-values from the one-sample t-tests are calculated under the 0.05 significance level. Therefore, county populations cannnot be generalized to the national level. 
+
+White and Native populations come close to a p-value of 0.05. 
 
 ### Summary
 To be filled in future deliverables
