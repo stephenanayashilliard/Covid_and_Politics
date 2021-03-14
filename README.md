@@ -268,5 +268,7 @@ One of the main benefits of the RFR model is its ability to rank the importance 
 
 Based on the above above information, there are several conclusions that can be made. First, the R-squared values are all within 60% to 68%, which tells us that this model only explains the relationship between covid cases and voting behavior to a certain extent. The p-values of 0 are a strong indicator that the relationship of this data is not due to random chance, and that there is a statistically significant relationship between voting behavior and covid cases.
 
+The RFR model's ranking of feature importance and the correlation matrix both demonstrate that for voting behaviors, votes for Donald Trump seem to be most correlated to covid cases per county. This is confirmed by the OLS model's R-squared and difference of means of predictions vs. real values for the percentage of votes for Donald Trump.
+
 ### Summary
 To be filled in future deliverables
