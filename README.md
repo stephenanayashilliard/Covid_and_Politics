@@ -179,14 +179,11 @@ Latitude and longitudes for each county is plotted with the color of each point 
 
 This factor was not included in the machine learning portion, but data on religion is available for the counties included in this project. Religion was grouped into six categories and is plotted as the population percentage of the county against the number of COVID reported cases. Again, further analysis could be conducted to provide further insight. 
 
-- ## Results of Isaac's Analysis
+- ## Economics vs Cases/Deaths
 For future deliverables
 
-- ## Results of Stephen's Analysis
+- ## Race vs Cases/Deaths
 For future deliverables
-
- - ## Recomendations for future analysis
-To be filled in future deliverables
 
 ### Summary
 To be filled in future deliverables
