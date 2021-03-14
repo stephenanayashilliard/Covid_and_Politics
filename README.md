@@ -225,32 +225,32 @@ This analysis is based on the OLS regression model described earlier in the read
 **Percentage of Trump Votes and Covid Cases (per county)**
 
 The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 68% and the p-value is 0. This means that 68% of the covid cases are explained by a county's votes for Donald Trump, and that we can reject the null hypothesis that this relationship is due to random chance.
-![](images/ml_trumpvotes_OLS.png)
+![](images/ml_images/ml_trumpvotes_OLS.png)
 
 The graph below visualizes the distribution of the data and the regression line with confidence intervals.
-![](images/ml_trumpvotes_graph.png)
+![](images/ml_images/ml_trumpvotes_graph.png)
 
 **Percentage of Biden Votes and Covid Cases (per county)**
 
 The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 60% and the p-value is 0. This means that 60% of the covid cases are explained by a county's votes for Joe Biden, and that we can reject the null hypothesis that this relationship is due to random chance.
-![](images/ml_bidenvotes_OLS.png)
+![](images/ml_images/ml_bidenvotes_OLS.png)
 
 The graph below visualizes the distribution of the data and the regression line with confidence intervals.
-![](images/ml_bidenvotes_graph.png)
+![](images/ml_images/ml_bidenvotes_graph.png)
 
 **Total Votes and Covid Cases (per county)**
 
 The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 65% and the p-value is 0. This means that 65% of the covid cases are explained by a county's total votes, and that we can reject the null hypothesis that this relationship is due to random chance.
-![](images/ml_total_votes_OLS.png)
+![](images/ml_images/ml_total_votes_OLS.png)
 
 The graph below visualizes the distribution of the data and the regression line with confidence intervals.
-![](images/ml_totalvotes_graph.png)
+![](images/ml_images/ml_totalvotes_graph.png)
 
 **OLS Real Values vs Predictions and Mean Difference**
 
 Another method for analyzing the regression results apart from the summary statistics is to compare the real values and the predicted values. This was done by creating a dataframe with the real values, predicted values, and the the difference between these values (by subtracting the real values from the predicted values). Next, the mean of these differences was calculated for each model and put into the dataframe below:
 
-![](images/ml_comparison.png)
+![](images/ml_images/ml_comparison.png)
 
 From this dataframe, we can conclude that the OLS model was able to best predict the amount of covid cases based on a county's percentage of votes for Donald Trump. However, there does appear to be a relationship between the R-squared value and the mean of the differences for each model's independent variable: the higher the R-squared, the lower the mean of differences is between the real values and the predicted values for each model's independent variable. From this, we can conclude that the ability of a linear regression model to explain the relationship between a dependent and an independent variable directly affects the ability of that model to make predictions. 
 
