@@ -260,10 +260,9 @@ Below is a correlation matrix graph that indicates the correlation between all f
 
 **RFR Ranking of Feature Importance**
 One of the main benefits of the RFR model is its ability to rank the importance of features based on the target of covid cases per county. The graph below ranks the top 11 most important features used in the RFR model. This provides further insight into what characteristics have the greatest effect on covid cases per county.
-![](images/ml_images/feature_importance.png)
+![](images/ml_images/feature_importances.png)
 
 **Analysis of Results**
-
 Based on the above above information, there are several conclusions that can be made. First, the R-squared values are all within 60% to 68%, which tells us that this model only explains the relationship between covid cases and voting behavior to a certain extent. The p-values of 0 are a strong indicator that the relationship of this data is not due to random chance, and that there is a statistically significant relationship between voting behavior and covid cases.
 
 ### Summary
