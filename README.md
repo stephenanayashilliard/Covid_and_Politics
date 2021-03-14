@@ -102,7 +102,7 @@ In order to create the database, We needed to join the datasets detailing the fo
        - Age Demogrphics for the County
 
    - Storyboard: A storyboard was created to aid in the programming process.
-     - ![Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
+     - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
 
    - Dashboard Tools: The following tools were used to create the dashboard:
      - Bootstrap:  Used to create our responsive, front end.
