@@ -1,4 +1,5 @@
 # adding files for the ml segment
+.DS_Store
 ml_seg2/classification_experiment.ipynb
 ml_seg2/clustering_exploration.ipynb
 ml_seg2/sv_regression.ipynb
