@@ -225,10 +225,18 @@ This analysis is based on the OLS regression model described earlier in the read
 **Percentage of Trump Votes and Covid Cases (per county)**
 
 The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 68% and the p-value is 0. This means that 68% of the covid cases are explained by a county's votes for Donald Trump, and that we can reject the null hypothesis that this relationship is due to random chance.
-![OLS Results for Trump Votes](images/ml_trumpvotes_OLS.png)
+![](images/ml_trumpvotes_OLS.png)
 
 The graph below visualizes the distribution of the data and the regression line with confidence intervals.
-![OLS Graph for Trump Votes](images/ml_trumpvotes_graph.png)
+![](images/ml_trumpvotes_graph.png)
+
+**Percentage of Biden Votes and Covid Cases (per county)**
+
+The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 60% and the p-value is 0. This means that 60% of the covid cases are explained by a county's votes for Joe Biden, and that we can reject the null hypothesis that this relationship is due to random chance.
+![](images/ml_bidenvotes_OLS.png)
+
+The graph below visualizes the distribution of the data and the regression line with confidence intervals.
+![](images/ml_bidenvotes_graph.png)
 
 
 
