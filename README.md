@@ -15,7 +15,7 @@ To allow for the greatest possible diversity in our data, we drew our data from 
 ## Purpose
 To answer the question is there a correlation between Covid 19 transfer rates and a countie's population's political views, race or ethnicity make up, age, gender or economic status. 
 
-### Project Breakdown
+## Project Breakdown
 The project was broken down into four segments.
  - Segment One: 
    - Flesh out overall project
@@ -30,7 +30,7 @@ The project was broken down into four segments.
     - Refine our database
     - Train our model
     - Role Breakdown:
-      - Stephen Anayas-Hilliard:  Responsible for respository,  back end clean up of data,  mock up Dashboard and Google Slides and breakdown of tools that will be used in our dashboard.
+      - Stephen Anayas-Hilliard:  Responsible for respository,  back end clean up of data,  mock up Dashboard and Google Slides and breakdown of tools that will be used in our   dashboard.
       - John Phillips: Machine Learning Model
       - Isaac D. Tucker-Rasbury:  Took care of Database interface,  the table and joined all 4 of our original tables.
       - Melyssa Sibal: Continued with analysis and sample visuals.
@@ -38,21 +38,15 @@ The project was broken down into four segments.
     - Connect final database to our model.
     - Continue to train our model
     - Create dashboard and presentation
+    - Role Breakdown
+      - Stephen Anayas-Hilliard: Creation of interactive dashboard.
+      - John Phillips: Machine Learning Model
+      - Isaac D. Tucker-Rasbury: Analysis on Economics vs Cases/Deaths.
+      - Melyssa Sibal: Analysis on Races vs Cases/Deaths.
   - Segment Four:
     - Final touches on model, database and dashboard
   
-### Communication Protocols
- - ##### Information Updates
- Regular updates on progress should be given through the team's Slack channel.
- - ##### Team Meetings
- The team will meet regularly on Tuesdays and Thursdays at 6:30 pm.  Tuesday's meetings will be used to clarify and assign duties for that week.  Thursday's meets will cover updates on assignments as well as any other team questions and/or issues.
- - ##### Emergencies
- Team members are encouraged to call or text team members in case of an Emergency.
- - ##### Deliverables
-  - Rough drafts of individual deliverables are due by Thursday of each week and must be pushed to Github   
-  - Final draft of deliverables are due by Saturday of each week and must be pushed to Github. 
-
-### Resources
+## Resources
  - Data Source: 
    - [county Statistics](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/county_statistics.csv)
    - [U.S Religion Census Religious Congregations and Membership](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/U.S.%20Religion%20Census%20Religious%20Congregations%20and%20Membership%20Study%2C%202010%20(County%20File).csv)
@@ -71,19 +65,25 @@ The project was broken down into four segments.
   - www.quickdatabaseddiagrams.com:  Used to flesh out our fabricated database
 - Algorithms
 
-### Database
+## Database
 
-In order to create the database, I needed to join the datasets detailing the following: a) covid cases and deaths, b) two tables with demographic data, and c) religion. Each table had county and state details as well that I leveraged to join the tables. Once the tables were joined, I uploaded the database to an AWS S3 bucket to allow my colleagues to access the database  by using Pyspark and the object URL. The breakdown of the steps are as follows.
+In order to create the database, We needed to join the datasets detailing the following: a) covid cases and deaths, b) two tables with demographic data, and c) religion. Each table had county and state details as well that were leveraged to join the tables. Once the tables were joined, they were uploaded from the database to an AWS S3 bucket to allow  access the database  by using Pyspark and the object URL. 
 
-1. _Creating the Join Key_: To perform a join, there needs to be a field to join on. Unfortunately, we did not have one native to the data so we created one. I created a column to hold the key and then set the value equal to the result of county and state column data combined in each row. I then used our county data as the primary table because it had the most results.
-2. _Joining in Parts_: To execute the join, I joined two tables into an interim table, table_one, and joined the third table to it creating a table_two. I repeated this again to get the fourth table into the final database.
-3. _Troubleshooting Issues_: The fields that were null after the joins from part two needed to be filled in in order to not obstruct the upcoming machine learning model. I turned the null values into zeros and then kept the result.
+- ### Process
+ - #### Part 1
+From the intitial research four csv files were retrieved. Using Pandas, the four csv files were converted to dataframes then organized, data was converted to usuable numbers where needed and null values were converted to zeros.
+ - #### Part 2
+ 
 
-### Machine Learning
+1. _Creating the Join Key_: To perform a join, there needs to be a field to join on. Unfortunately, we did not have one native to the data so one was created. A column was created to hold the key and then set the value equal to the result of county and state column data combined in each row. County data was then used as the primary table because it had the most results.
+2. _Joining in Parts_: To execute the join, the two tables were joined into an interim table, table_one, and then a third table was joined, creating a table_two. This process was repeated again to join the  fourth table into the final database.
+3. _Troubleshooting Issues_: The fields that were null after the joins from part two needed to be filled in in order to not obstruct the upcoming machine learning model. The null values  were converted into zeros and the result saved.
+
+## Machine Learning
    The goal of the machine learning aspect of this project is to predict if a county’s voting patterns in the 2020 election are correlated to covid transmission. Specifically, looking at the percentage of votes for Donald Trump and the percentage of votes for Joe Biden and the number of covid cases per county were used to make predictions. 
-- #### Models Used
+- ### Models Used
      - An Ordinary Least Squares (OLS) Model was used to analyze one independent variable at a time and its relation to the dependent variable- covid cases. A Random Forest Regressor (RFR) model was used to analyze multiple independent variables in relation to the dependent variable- covid cases. The OLS model was chosen for its ability to produce descriptive summary statistics and for its ability to be graphed using statsmodels packages. The RFR model was used for its ability to rank feature importances and for its compatibility with other sklearn packages such as RobustScaler, Principal Component Analysis (PCA), and Train, Test, Split.
-- #### Scaling and Data Preprocessing
+- ### Scaling and Data Preprocessing
    - For the OLS model, a new column was created titled “normalized_cases” which was created by dividing the number of covid cases per county by the population of that county. This created a more usable variable because it more closely resembled the format of the percentage of votes for Trump and Biden columns. Because both of these columns contained numbers between 0 and 1, it behaved better in the OLS model.
 
    - For the RFR model, the Robust Scaler was used because of its ability to handle outliers by using the interquartile range to scale the data. The “normalized_cases” column was not used in the RFR model to preserve the original data format for the correlation matrix and for the ranking of feature importance. For both models, the data was preprocessed by another team member to include religion and age metrics by county from other datasets. This was helpful for the correlation matrix and for the ranking of feature importance. 
@@ -91,7 +91,7 @@ In order to create the database, I needed to join the datasets detailing the fol
    - For both models, the target was covid cases. The only difference is that the OLS model used the “normalized_cases” calculation and the RFR model used the raw covid cases per county data. The features for the OLS model were the percentage of votes for Donald Trump per county, percentage of votes for Joe Biden per county, and the total votes per county columns. 
 
    - For the RFR model, the feature columns were divided into three categories: economic data, ethnicity data, and political data. PCA was used to reduce the dimensions of the grouped datasets to two dimensions before training, testing, and splitting the data for the model. Using PCA for the multivariate RFR model made graphing the findings easier and was useful for grouping multiple columns into two components based on the distribution and variance of the data.
-- #### Limitations
+- ### Limitations
   - The main limitation of the machine learning portion of this project is from the dataset. Because the dataset is based on a single moment in time, the linear model can not extrapolate the predictions into the future. If the dataset was organized in a time-series format that tracked the amount of covid cases over time, then this model could predict the amount of covid cases based on the time-series data. 
 
 ### Dashboard
