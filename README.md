@@ -93,7 +93,7 @@ From the intitial research, four csv files containing a total of 53 data points 
 
 ## Dashboard
 - ### Process
-It was determined from the onset of the project that the dashboard for the project needed to be fully interactive and contain both information about processes for the individual deliverables, as well as a written report about the analysis. For illustrative purposes, the dashboard allows the user to choose a county from a drop down menu.  From that choice, the following graphs were depicted:
+- It was determined from the onset of the project that the dashboard for the project needed to be fully interactive and contain both information about processes for the individual deliverables, as well as a written report about the analysis. For illustrative purposes, the dashboard allows the user to choose a county from a drop down menu.  From that choice, the following graphs were depicted:
   - How the County Voted
   - Racial Demographics for the County
   - Unemployment Rates for the County
@@ -101,11 +101,11 @@ It was determined from the onset of the project that the dashboard for the proje
   - Age Demogrphics for the County
 
 - #### Storyboard
-A storyboard was created to aid in the programming process.
+- A storyboard was created to aid in the programming process.
   - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
 
   - #### Dashboard Tools
-  The following tools were used to create the dashboard:
+  - The following tools were used to create the dashboard:
      - Bootstrap:  Used to create our responsive, front end.
      - D3.json:  Data format for sorting and presenting data
      - Potly:  Used to create dynamic charts to illustrated our findings.
