@@ -238,7 +238,13 @@ The chart below shows the OLS summary statistcs for this analysis. Notably, the 
 The graph below visualizes the distribution of the data and the regression line with confidence intervals.
 ![](images/ml_bidenvotes_graph.png)
 
+**Total Votes and Covid Cases (per county)**
 
+The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 65% and the p-value is 0. This means that 65% of the covid cases are explained by a county's total votes, and that we can reject the null hypothesis that this relationship is due to random chance.
+![](images/ml_totalvotes_OLS.png)
+
+The graph below visualizes the distribution of the data and the regression line with confidence intervals.
+![](images/ml_totalvotes_graph.png)
 
 ### Summary
 To be filled in future deliverables
