@@ -15,7 +15,7 @@ To allow for the greatest possible diversity in our data, we drew our data from 
 ## Purpose
 To answer the question is there a correlation between Covid 19 transfer rates and a countie's population's political views, race or ethnicity make up, age, gender or economic status. 
 
-### Project Breakdown
+## Project Breakdown
 The project was broken down into four segments.
  - Segment One: 
    - Flesh out overall project
@@ -30,7 +30,7 @@ The project was broken down into four segments.
     - Refine our database
     - Train our model
     - Role Breakdown:
-      - Stephen Anayas-Hilliard:  Responsible for respository,  back end clean up of data,  mock up Dashboard and Google Slides and breakdown of tools that will be used in our dashboard.
+      - Stephen Anayas-Hilliard:  Responsible for respository,  back end clean up of data,  mock up Dashboard and Google Slides and breakdown of tools that will be used in our   dashboard.
       - John Phillips: Machine Learning Model
       - Isaac D. Tucker-Rasbury:  Took care of Database interface,  the table and joined all 4 of our original tables.
       - Melyssa Sibal: Continued with analysis and sample visuals.
@@ -38,21 +38,15 @@ The project was broken down into four segments.
     - Connect final database to our model.
     - Continue to train our model
     - Create dashboard and presentation
+    - Role Breakdown
+      - Stephen Anayas-Hilliard: Creation of interactive dashboard.
+      - John Phillips: Machine Learning Model
+      - Isaac D. Tucker-Rasbury: Analysis on Economics vs Cases/Deaths.
+      - Melyssa Sibal: Analysis on Races vs Cases/Deaths.
   - Segment Four:
     - Final touches on model, database and dashboard
   
-### Communication Protocols
- - ##### Information Updates
- Regular updates on progress should be given through the team's Slack channel.
- - ##### Team Meetings
- The team will meet regularly on Tuesdays and Thursdays at 6:30 pm.  Tuesday's meetings will be used to clarify and assign duties for that week.  Thursday's meets will cover updates on assignments as well as any other team questions and/or issues.
- - ##### Emergencies
- Team members are encouraged to call or text team members in case of an Emergency.
- - ##### Deliverables
-  - Rough drafts of individual deliverables are due by Thursday of each week and must be pushed to Github   
-  - Final draft of deliverables are due by Saturday of each week and must be pushed to Github. 
-
-### Resources
+## Resources
  - Data Source: 
    - [county Statistics](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/county_statistics.csv)
    - [U.S Religion Census Religious Congregations and Membership](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/U.S.%20Religion%20Census%20Religious%20Congregations%20and%20Membership%20Study%2C%202010%20(County%20File).csv)
@@ -71,50 +65,58 @@ The project was broken down into four segments.
   - www.quickdatabaseddiagrams.com:  Used to flesh out our fabricated database
 - Algorithms
 
-### Database
+## Database
 
-In order to create the database, I needed to join the datasets detailing the following: a) covid cases and deaths, b) two tables with demographic data, and c) religion. Each table had county and state details as well that I leveraged to join the tables. Once the tables were joined, I uploaded the database to an AWS S3 bucket to allow my colleagues to access the database  by using Pyspark and the object URL. The breakdown of the steps are as follows.
+In order to create the database, We needed to join the datasets detailing the following: a) covid cases and deaths, b) two tables with demographic data, and c) religion. Each table had county and state details as well that were leveraged to join the tables. Once the tables were joined, they were uploaded from the database to an AWS S3 bucket to allow  access the database  by using Pyspark and the object URL. 
 
-1. _Creating the Join Key_: To perform a join, there needs to be a field to join on. Unfortunately, we did not have one native to the data so we created one. I created a column to hold the key and then set the value equal to the result of county and state column data combined in each row. I then used our county data as the primary table because it had the most results.
-2. _Joining in Parts_: To execute the join, I joined two tables into an interim table, table_one, and joined the third table to it creating a table_two. I repeated this again to get the fourth table into the final database.
-3. _Troubleshooting Issues_: The fields that were null after the joins from part two needed to be filled in in order to not obstruct the upcoming machine learning model. I turned the null values into zeros and then kept the result.
+- ### Process
+  - #### Part 1
+    From the intitial research, four csv files containing a total of 53 data points for 3049 counties was retrieved. Using Pandas, the four csv files were converted to dataframes then organized, data was converted to usuable numbers where needed and null values were converted to zeros.
+  - #### Part 2
+      - _Creating the Join Key_: To perform a join, there needs to be a field to join on. Unfortunately, we did not have one native to the data so one was created. A column was created to hold the key and then set the value equal to the result of county and state column data combined in each row. County data was then used as the primary table because it had the most results.
+      - _Joining in Parts_: To execute the join, the two tables were joined into an interim table, table_one, and then a third table was joined, creating a table_two. This process was repeated again to join the  fourth table into the final database.
+      - _Troubleshooting Issues_: The fields that were null after the joins from part two needed to be filled in in order to not obstruct the upcoming machine learning model. The null values  were converted into zeros and the result saved.
 
-### Machine Learning
-   The goal of the model was to predict whether certain variables such as economic status, political behavior and population demographics would have a positive or negative linear relationship with Covid 19 spread.
-   - #### Model Used
-     - Random Forest Regressor: The random forest regressor model was chosen for two main reasons- it has the ability to rank the importance of features and showed a better R Squared value and model score than the standard linear regression model. The ranking of features can provide insight into which features have the greatest effect on the target- covid cases. This aligns with the goal of the project which is to understand if economic, political, or demographic data is most related to the transmission of covid-19. 
-   - #### Scaler
-     - Robust Scaler is used because of its sensitivity to outliers via its use of the interquartile range to scale data.
-   - #### Data Preprocessing
-     The target of covid cases per county were selected from the central dataframe. This dataframe also included data on voting behavior in the 2020 election, economic indicators such as employment, types of employment, and income, and demographic data such as gender and ethnicity. The columns containing these types of data were selected and put into unique dataframes that were segemented based on economics, voting, and demographics. These dimensions of these individual dataframes were reduced using the principal component analysis package in scikit learn in order to improve the model's ability to perform accurately and to make the findings more graphable. Below is a further breakdown of the features and targets of the three dataframes:
-     - Features and Target:
-       - Feature Set 1: Related to politics and voting in the 2020 election
-         - Target: Covid Cases
-         - Predictions: output into a dataframe to compare actual values with predicted values
-       - Feature Set 2: Related to Economic Indicators
-         - Target: Covid Cases
-         - Predictions: output into a dataframe to compare actual values with predicted values
-       - Feature Set 3:  Related to Population Demographics
-         - Target: Covid Cases
-         - Predictions: output into a dataframe to compare actual values with predicted values  
-- #### Limitations
-  - The main limitation of the machine learning portion of this project is from the dataset. Because the dataset is based on a single moment in time, the linear model can not extrapolate the predictions into the future. If the dataset was organized in a time-series format that tracked the amount of covid cases over time, then this model could predict the amount of covid cases based on the time-series data.
+## Machine Learning
+   The goal of the machine learning aspect of this project is to predict if a county’s voting patterns in the 2020 election are correlated to covid transmission. Specifically, looking at the percentage of votes for Donald Trump and the percentage of votes for Joe Biden and the number of covid cases per county were used to make predictions. 
+- ### Models Used
+     - An Ordinary Least Squares (OLS) Model was used to analyze one independent variable at a time and its relation to the dependent variable- covid cases. A Random Forest Regressor (RFR) model was used to analyze multiple independent variables in relation to the dependent variable- covid cases. The OLS model was chosen for its ability to produce descriptive summary statistics and for its ability to be graphed using statsmodels packages. The RFR model was used for its ability to rank feature importances and for its compatibility with other sklearn packages such as RobustScaler, Principal Component Analysis (PCA), and Train, Test, Split.
+- ### Scaling and Data Preprocessing
+   - For the OLS model, a new column was created titled “normalized_cases” which was created by dividing the number of covid cases per county by the population of that county. This created a more usable variable because it more closely resembled the format of the percentage of votes for Trump and Biden columns. Because both of these columns contained numbers between 0 and 1, it behaved better in the OLS model.
 
-### Dashboard
- - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
- - Dashboard Tools
-   - Bootstrap:  Used to create our responsive, front end.
-   - D3.json:  Data format for sorting and presenting data
-   - Potly:  Used to create dynamic charts to illustrated our findings.
-   - Leaflet.js: Javascript Library used to build the heatmap portion of the Dashboard
-   - GeoJSON: Used to create feature points for heatmap portion
-   - Mapbox API: Used to pull our Maps for our heatmap portion.
+   - For the RFR model, the Robust Scaler was used because of its ability to handle outliers by using the interquartile range to scale the data. The “normalized_cases” column was not used in the RFR model to preserve the original data format for the correlation matrix and for the ranking of feature importance. For both models, the data was preprocessed by another team member to include religion and age metrics by county from other datasets. This was helpful for the correlation matrix and for the ranking of feature importance. 
+- #### Targets and Features
+   - For both models, the target was covid cases. The only difference is that the OLS model used the “normalized_cases” calculation and the RFR model used the raw covid cases per county data. The features for the OLS model were the percentage of votes for Donald Trump per county, percentage of votes for Joe Biden per county, and the total votes per county columns. 
+   - For the RFR model, the feature columns were divided into three categories: economic data, ethnicity data, and political data. PCA was used to reduce the dimensions of the grouped datasets to two dimensions before training, testing, and splitting the data for the model. Using PCA for the multivariate RFR model made graphing the findings easier and was useful for grouping multiple columns into two components based on the distribution and variance of the data.
+- ### Limitations
+  - The main limitation of the machine learning portion of this project is from the dataset. Because the dataset is based on a single moment in time, the linear model can not extrapolate the predictions into the future. If the dataset was organized in a time-series format that tracked the amount of covid cases over time, then this model could predict the amount of covid cases based on the time-series data. 
+
+## Dashboard
+ - ### Process
+   It was determined from the onset of the project that the dashboard for the project needed to be fully interactive and contain both information about processes for the    individual deliverables, as well as a written report about the analysis. For illustrative purposes, the dashboard allows the user to choose a county from a drop down menu.  From that choice illustrated graphs are created and depicted.
+   - Depicted Graphs:
+       - How the County Voted
+       - Racial Demographics for the County
+       - Unemployment Rates for the County
+       - Occupation Demographics for the County
+       - Age Demogrphics for the County
+
+   - Storyboard: A storyboard was created to aid in the programming process.
+     - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
+
+   - Dashboard Tools: The following tools were used to create the dashboard:
+     - Bootstrap:  Used to create our responsive, front end.
+     - D3.json:  Data format for sorting and presenting data
+     - Potly:  Used to create dynamic charts to illustrated our findings.
+     - Leaflet.js: Javascript Library used to build the heatmap portion of the Dashboard
+     - GeoJSON: Used to create feature points for heatmap portion
+     - Mapbox API: Used to pull our Maps for our heatmap portion.
    
 
-### Analysis
+## Analysis
 To be filled in future deliverables 
 
- - ## Results of Melyssa's Analysis
+ - ### Results of Melyssa's Analysis
 This section of the project explores the data through Tableau, which will provide some framework for further statistical analysis. 
 
 **Total Cases by State** 
@@ -177,14 +179,84 @@ Latitude and longitudes for each county is plotted with the color of each point 
 
 This factor was not included in the machine learning portion, but data on religion is available for the counties included in this project. Religion was grouped into six categories and is plotted as the population percentage of the county against the number of COVID reported cases. Again, further analysis could be conducted to provide further insight. 
 
-- ## Results of Isaac's Analysis
+- ## Economics vs Cases/Deaths
 For future deliverables
 
-- ## Results of Stephen's Analysis
-For future deliverables
+- ## Race vs Cases/Deaths
+This analysis examines the relationship of race and COVID-19 reported cases and death using RStudio to conduct statistical testing. The data explored comes from two separate sources. COVID reported cases and deaths are from this source from this time point, while racial demographics for each country are from this source from this timepoint. Insert methodology on how data was collected. Information on race for each county is provided in percentage of population. Race was defined into six categories: Asian, Black, Hispanic, Native, Pacific, and White. 
 
- - ## Recomendations for future analysis
-To be filled in future deliverables
+**Limitations**
+- Timepoints of data collection
+- Incomplete data or missing data due to US Census methodology
+- Incomplete data or missing data due to inaccuracy of COVID reporting
+- Racial categories are not broken out for further investigation
+
+**Distribution of Racial Demographics within Counties**
+
+![density_asian](/images/race_analysis/AsianPopulationDistribution.png)
+
+![density_black](/images/race_analysis/BlackPopulationDistribution.png)
+
+![density_hispanic](/images/race_analysis/HispanicPopulationDistribution.png)
+
+![density_native](/images/race_analysis/NativePopulationDistribution.png)
+
+![density_pacific](/images/race_analysis/PacificPopulationDistribution.png)
+
+![density_white](/images/race_analysis/WhitePopulationDistribution.png)
+
+Density plots for each racial category illustrate that populations are not normally distributed across the selected counties. Further, that racial groups are not equally represented within each county and within the entire dataset. For Asian, Black, Hispanic, Native, and Pacific populations, the data is right skewed. In contrast, white populations are left skewed. This shows that there is more data on counties with larger white populations. 
+
+![shapiro](/images/race_analysis/shapiro_tests.png)
+
+Shapiro tests for each racial category continue to support, in addition to visual assessments of the density plots, that the data is skewed. Because the calculated p-values are less than a significance level of 0.05, there is quantitative data to substainate that the data is not normally distributed. 
+
+![t_tests](/images/race_analysis/t-test_countyvscountry.png)
+
+One-sample t-tests were conducted to commpare the distributions of race across counties was representative of the national demographics. The national demographics were taken from the US Census from 2020 (https://www.census.gov/quickfacts/fact/table/US/RHI725219#RHI725219). While it could be assumed that the categories by the US Census align with the census county data, it should be noted that the methodologies of reporting vary. It may be possible that people may have been recorded differently and therefore, the comparison in its totality may not be accurate. Specifically, the US Census included categories "Two or more races", "White alone, not Hispanic or Latino", while the other data does not include those categories. 
+
+In the assumption that the categories are aligned, p-values from the one-sample t-tests are calculated under the 0.05 significance level. Therefore, county populations cannnot be generalized to the national level. 
+
+White and Native populations come close to a p-value of 0.05.
+
+- ### Results of John's Machine Learning Analysis
+This analysis is based on the OLS regression model described earlier in the readme under the "Machine Learning" section. The three factors used and their relation to covid were a county's percentage of votes for Trump in the 2020 election, a county's percentage of votes for Biden in the 2020 election, and a county's total votes in the 2020 election.
+
+**Percentage of Trump Votes and Covid Cases (per county)**
+
+The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 68% and the p-value is 0. This means that 68% of the covid cases are explained by a county's votes for Donald Trump, and that we can reject the null hypothesis that this relationship is due to random chance.
+![](images/ml_trumpvotes_OLS.png)
+
+The graph below visualizes the distribution of the data and the regression line with confidence intervals.
+![](images/ml_trumpvotes_graph.png)
+
+**Percentage of Biden Votes and Covid Cases (per county)**
+
+The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 60% and the p-value is 0. This means that 60% of the covid cases are explained by a county's votes for Joe Biden, and that we can reject the null hypothesis that this relationship is due to random chance.
+![](images/ml_bidenvotes_OLS.png)
+
+The graph below visualizes the distribution of the data and the regression line with confidence intervals.
+![](images/ml_bidenvotes_graph.png)
+
+**Total Votes and Covid Cases (per county)**
+
+The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 65% and the p-value is 0. This means that 65% of the covid cases are explained by a county's total votes, and that we can reject the null hypothesis that this relationship is due to random chance.
+![](images/ml_total_votes_OLS.png)
+
+The graph below visualizes the distribution of the data and the regression line with confidence intervals.
+![](images/ml_totalvotes_graph.png)
+
+**OLS Real Values vs Predictions and Mean Difference**
+
+Another method for analyzing the regression results apart from the summary statistics is to compare the real values and the predicted values. This was done by creating a dataframe with the real values, predicted values, and the the difference between these values (by subtracting the real values from the predicted values). Next, the mean of these differences was calculated for each model and put into the dataframe below:
+
+![](images/ml_comparison.png)
+
+From this dataframe, we can conclude that the OLS model was able to best predict the amount of covid cases based on a county's percentage of votes for Donald Trump. However, there does appear to be a relationship between the R-squared value and the mean of the differences for each model's independent variable: the higher the R-squared, the lower the mean of differences is between the real values and the predicted values for each model's independent variable. From this, we can conclude that the ability of a linear regression model to explain the relationship between a dependent and an independent variable directly affects the ability of that model to make predictions. 
+
+**Analysis of Results**
+
+Based on the above above information, there are several conclusions that can be made. First, the R-squared values are all within 60% to 68%, which tells us that this model only explains the relationship between covid cases and voting behavior to a certain extent. The p-values of 0 are a strong indicator that the relationship of this data is not due to random chance, and that there is a statistically significant relationship between voting behavior and covid cases.
 
 ### Summary
 To be filled in future deliverables
