@@ -71,7 +71,7 @@ In order to create the database, We needed to join the datasets detailing the fo
 
 - ### Process
   - #### Part 1
-   - From the intitial research, four csv files containing a total of 53 data points for 3049 counties was retrieved. Using Pandas, the four csv files were converted to dataframes then organized, data was converted to usuable numbers where needed and null values were converted to zeros.
+From the intitial research, four csv files containing a total of 53 data points for 3049 counties was retrieved. Using Pandas, the four csv files were converted to dataframes then organized, data was converted to usuable numbers where needed and null values were converted to zeros.
    - #### Part 2
       - _Creating the Join Key_: To perform a join, there needs to be a field to join on. Unfortunately, we did not have one native to the data so one was created. A column was created to hold the key and then set the value equal to the result of county and state column data combined in each row. County data was then used as the primary table because it had the most results.
       - _Joining in Parts_: To execute the join, the two tables were joined into an interim table, table_one, and then a third table was joined, creating a table_two. This process was repeated again to join the  fourth table into the final database.
@@ -93,7 +93,7 @@ In order to create the database, We needed to join the datasets detailing the fo
 
 ## Dashboard
 - ### Process
-  - It was determined from the onset of the project that the dashboard for the project needed to be fully interactive and contain both information about processes for the individual deliverables, as well as a written report about the analysis. For illustrative purposes, the dashboard allows the user to choose a county from a drop down menu.  From that choice, the following graphs were depicted:
+It was determined from the onset of the project that the dashboard for the project needed to be fully interactive and contain both information about processes for the individual deliverables, as well as a written report about the analysis. For illustrative purposes, the dashboard allows the user to choose a county from a drop down menu.  From that choice, the following graphs were depicted:
     - How the County Voted
     - Racial Demographics for the County
     - Unemployment Rates for the County
@@ -101,11 +101,11 @@ In order to create the database, We needed to join the datasets detailing the fo
     - Age Demogrphics for the County
 
 - #### Storyboard
-  - A storyboard was created to aid in the programming process.
+A storyboard was created to aid in the programming process.
     - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
 
   - #### Dashboard Tools
-    - The following tools were used to create the dashboard:
+  The following tools were used to create the dashboard:
       - Bootstrap:  Used to create our responsive, front end.
       - D3.json:  Data format for sorting and presenting data
       - Potly:  Used to create dynamic charts to illustrated our findings.
