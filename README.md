@@ -217,7 +217,14 @@ One-sample t-tests were conducted to commpare the distributions of race across c
 
 In the assumption that the categories are aligned, p-values from the one-sample t-tests are calculated under the 0.05 significance level. Therefore, county populations cannnot be generalized to the national level. 
 
-White and Native populations come close to a p-value of 0.05. 
+White and Native populations come close to a p-value of 0.05.
+
+- ### Results of John's Machine Learning Analysis
+This analysis is based on the OLS regression model described earlier in the readme under the "Machine Learning" section. The three factors used and their relation to covid were a county's percentage of votes for Trump in the 2020 election, a county's percentage of votes for Biden in the 2020 election, and a county's total votes in the 2020 election.
+
+
+
+
 
 ### Summary
 To be filled in future deliverables
