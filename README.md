@@ -93,7 +93,7 @@ In order to create the database, We needed to join the datasets detailing the fo
 
 ## Dashboard
  - ### Process
-   It was determined from the onset of the project that the dashboard for the project needed to be fully interactive and contain both information about processes for the    individual deliverables, as well as a written report about the analysis. For illustrative purposes, the dashboard allows the user to choose a county from a drop down menu.  From that choice. 
+   It was determined from the onset of the project that the dashboard for the project needed to be fully interactive and contain both information about processes for the    individual deliverables, as well as a written report about the analysis. For illustrative purposes, the dashboard allows the user to choose a county from a drop down menu.  From that choice illustrated graphs are created and depicted.
    - Depicted Graphs:
        - How the County Voted
        - Racial Demographics for the County
