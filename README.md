@@ -53,14 +53,19 @@ The project was broken down into four segments.
    - [covid19_us_county.csv](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/covid19_us_county.csv)
    - [us_county_demographics.csv](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/us_county_demographics.csv)
    - [us-county_pop_and_shps.csv](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/Data/us_county_pop_and_shps.csv)
-- Software:
+- Software
+  - Tableau for initial data exploration
+  - R and RStudio
 - Technologies
+  - PostgresSQL 
+  - AWS 
+  - Jupyter Notebook
 - Requirements List
   - PythonData 
 - Languages
   - Python
     - Pandas: Used to create and clean DataFrames.
-    - Numpy 
+    - Numpy
 - Tools
   - www.quickdatabaseddiagrams.com:  Used to flesh out our fabricated database
 - Algorithms
@@ -112,72 +117,11 @@ In order to create the database, We needed to join the datasets detailing the fo
      - GeoJSON: Used to create feature points for heatmap portion
      - Mapbox API: Used to pull our Maps for our heatmap portion.
    
-
 ## Analysis
-To be filled in future deliverables 
+ - ## Process 
+Data was first explored through Tableau, which provided framework for further statistical analysis. This exploration looked at the number of cases in each county against 2020 presidential votes, age groups, racial groups, gender and income. 
 
- - ### Results of Melyssa's Analysis
-This section of the project explores the data through Tableau, which will provide some framework for further statistical analysis. 
-
-**Total Cases by State** 
-
-![totalcases](/images/TotalCasesByState.png)
-
-The above bar graph shows the total number of cases per state. While this image gives some information on the number of cases reported within each state, further analysis could provide insight into how the number of cases fits within the total population. This comparison of states does not consider population size. An additional comparison of population per square mile would also be interesting to examine. 
-
-**Cases vs. Voting Count/Percentage**
-
-![casesvsvotingcount](/images/CasesvsVotingCount.png)
-
-The scatter plot illustrates the number of votes for Joe Biden or Donald Trump during the 2020 Presidental Election against the number of cases by county. While this provides a comparison between votes, it does not provide information within the context of total votes.   
-
-![casesvsvotingpercentage](/images/CasesvsVotingPercentage.png)
-
-The scatter plot shows the percentage of total votes for each presidential candidate against the number of cases by county. 
-
-While both plots explore a connection between presidental votes and reported COVID-19 cases, it is difficult to understand if there is a correlation given the clustering effect that can be seen. Further analysis may be conducted to provide insight into a relationship, if any.  
-
-**Cases vs. Age Groups** 
-
-![casesvsallagegroups](/images/CasesvsAllAgeGroups.png)
-
-The graph plots the population percent within given age brackets against number of cases per county. 
-
-![casesvsagegroups](/images/CasesvsAgeGroups.png)
-
-Due to the low percentages of age groups on opposite sides of the age range, the above graph combines age groups, which may be reconsidered for additional analysis. 
-
-Again, the effect of age on reported cases may be explored further. 
-
-**Cases vs. Racial Groups** 
-
-![casesvsrace](/images/casesvsrace.png)
-
-The scatter plot disaggregates the country population by race against the number of reported COVID cases. Race in this graph is reported by the population percentage. Again, from this initial analysis, it is difficult to interpret what effect race has on COVID infection, if any. 
-
-**Cases vs. Median Income**
-
-![casesvsincome](/images/casesvsincome.png)
-
-Median income for counties is plotted against number of cases. Further analysis could examine the difference between median income and income per capita and if either influence reported COVID cases. 
-
-**Cases vs. Gender Percentage**
-
-![casesvsgenderpercentage](/images/CasesvsGenderPercentage.png)
-
-Population by gender is shown in relation to the number of COVID cases. Gender is reported in percentage of the county population. Similarly to the other graphs, it is difficult to see a clear correlation. 
-
-**Cases Heat Map**
-
-![Cases Heat Map](/images/CasesHeatMap.png)
-
-Latitude and longitudes for each county is plotted with the color of each point relating to the number of reported COVID cases. Darker points have relatively more COVID cases, which is defined in the legend. It would be interesting to explore in further depth where the hot spots are and if there are any similarities between the counties in terms of the factors previously mentioned.  
-
-**Cases vs. Religion**
-
-![casesvsreligion](/images/CasesvsReligion.png)
-
-This factor was not included in the machine learning portion, but data on religion is available for the counties included in this project. Religion was grouped into six categories and is plotted as the population percentage of the county against the number of COVID reported cases. Again, further analysis could be conducted to provide further insight. 
+It was later decided that R would be used to conduct statistical analysis on economic and racial demographics and its relationship to COVID cases and deaths. Machine learning was utilized to examine political voting behavior and COVID impacts. 
 
 - ## Economics vs Cases/Deaths
 This component of the overall analysis examines the relevance of the economic demographic variables to the strength of the overall Covid19 cases and deaths predicting model that we have endeavor to build here. While this analysis confirms the relevance of economic demographic variables with linear regression models, it leaves quantifying that relevance to the broader analysis in the machine learning section. To substantiate the relevance of the aforementioned variables, see the below for the p-values of the multi-variable linear regressions below with income, poverty rate, and unemployment rate as independent variables and Covid19 deaths and cases as dependent variables.
@@ -201,9 +145,8 @@ The unemployment rates in the database are predominantly distributed around 6-7%
 
 ![](/images/ITR/Distribution_of_UnemploymentRates.png)
 
-
 - ## Race vs Cases/Deaths
-This analysis examines the relationship of race and COVID-19 reported cases and death using RStudio to conduct statistical testing. The data explored comes from two separate sources. COVID reported cases and deaths are from this source from this time point, while racial demographics for each country are from this source from this timepoint. Insert methodology on how data was collected. Information on race for each county is provided in percentage of population. Race was defined into six categories: Asian, Black, Hispanic, Native, Pacific, and White. 
+This analysis examines the relationship of race and COVID-19 reported cases and deaths using RStudio to conduct statistical testing. The data explored comes from two separate sources. COVID reported cases and deaths are from this source from this time point, while racial demographics for each county are from this source from this timepoint. Insert methodology on how data was collected. Information on race for each county is presented in percentage of county population. As provided by the data source, race is defined into six categories: Asian, Black, Hispanic, Native, Pacific, and White.  
 
 **Limitations**
 - Timepoints of data collection
@@ -233,11 +176,23 @@ Shapiro tests for each racial category continue to support, in addition to visua
 
 ![t_tests](/images/race_analysis/t-test_countyvscountry.png)
 
-One-sample t-tests were conducted to commpare the distributions of race across counties was representative of the national demographics. The national demographics were taken from the US Census from 2020 (https://www.census.gov/quickfacts/fact/table/US/RHI725219#RHI725219). While it could be assumed that the categories by the US Census align with the census county data, it should be noted that the methodologies of reporting vary. It may be possible that people may have been recorded differently and therefore, the comparison in its totality may not be accurate. Specifically, the US Census included categories "Two or more races", "White alone, not Hispanic or Latino", while the other data does not include those categories. 
+One-sample t-tests were conducted to compare if the distributions of race across sample counties were representative of national demographics. The national demographics were taken from the US Census from 2020 (https://www.census.gov/quickfacts/fact/table/US/RHI725219#RHI725219). While it could be assumed that the categories by the US Census align with the census county data, it should be noted that the methodologies of reporting race vary. It may be possible that people may have been recorded differently between the two points of data collection, and therefore, this comparison may not be accurate. Specifically, the US Census included categories "Two or more races", "White alone, not Hispanic or Latino", while the other dataset does not include those categories. 
 
-In the assumption that the categories are aligned, p-values from the one-sample t-tests are calculated under the 0.05 significance level. Therefore, county populations cannnot be generalized to the national level. 
+With the assumption that the categories are, in fact, aligned, all p-values for each racial category from the one-sample t-tests are calculated under the 0.05 significance level. Therefore, there is sufficient evidence to reject the null hypothesis. There is a statistical difference between the means of each racial category and its national percentage, showing that racial representation differ at the county level. 
 
-White and Native populations come close to a p-value of 0.05.
+**Correlations Between Race and COVID Cases and Deaths**
+
+Pearson correlation coefficients were calculated for each racial category against the number of COVID cases and deaths. Subsets of the data were filtered to remove counties that reported 0% populations of specific ethinicities. Calculating correlation coefficients with these subsets showed that correlations were generally weaker (albeit not by much) when counties that did not report citizens of specific racial categories were removed. It should be noted that there were no counties that reported 0% white. 
+
+![r_deaths](/images/race_analysis/pearsoncoefficients_deaths.png)
+
+Racial categories against the number of deaths show relatively weak correlations than expected. Asian populations and number of deaths show the strongest correlation at 0.3866916 and 0.3816597 when populations with 0% Asian American citizens were removed. 
+
+![r_cases](/images/race_analysis/pearsoncoefficients_cases.png)
+
+Racial categories against the number of COVID related deaths performed similarly for Pearson correlation coefficients. 
+
+These coefficients for both the number of cases and deaths offer opposing ideas to other studies and reports. Specifically, from this data, the coefficient shows a negative correlation between COVID cases and Native populations. In contrast, the CDC has reported that cases in American Indian/Native Americans are 3.5 times that of non-Hispanic whites (https://www.cdc.gov/media/releases/2020/p0819-covid-19-impact-american-indian-alaska-native.html). Additionally, there are several reports that minority communities have been disproportionately impacted by COVID-19, however, these correlation coefficients do not substantiate those claims. 
 
 - ### Results of John's Machine Learning Analysis
 This analysis is based on the OLS regression model described earlier in the readme under the "Machine Learning" section. The three factors used and their relation to covid were a county's percentage of votes for Trump in the 2020 election, a county's percentage of votes for Biden in the 2020 election, and a county's total votes in the 2020 election.
