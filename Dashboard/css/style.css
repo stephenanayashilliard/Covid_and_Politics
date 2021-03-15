@@ -97,6 +97,16 @@ body,
   margin-top: 20px
 }
 
+/*Stying for link*/
+a:link, a:visited {
+  background-color: #060879;
+  color: white;
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
 
 
 

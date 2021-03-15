@@ -138,7 +138,8 @@ console.log("This is value index: " + valueIndex);
             mode: 'markers',
             marker: {
             size:[sampleBaby, sampleToddler, sampleTeen, sampleYoung, sampleThirty, sampleForty, sampleFifty, sampleSixty, sampleSevenity, sampleSenior].map(x=> x/100),
-            colors: ['rgb(166,206,227)', 'rgb(31,120,180)','rgb(178,223,138)', 'rgb(51,160,44)', 'rgb(251, 154, 153)', 'rgb(227,26,28)']
+            colors: ['rgb(166,206,227)', 'rgb(31,120,180)','rgb(178,223,138)', 'rgb(51,160,44)', 'rgb(251, 154, 153)','rgb(227,26,28)','rgb(255, 99, 71)', 'rgb(255, 157,31)','rgb(255, 184, 0)']
+         
           }
         }
       ];   
@@ -199,7 +200,7 @@ console.log("This is value index: " + valueIndex);
           orientation: 'h',
           type: 'bar',
           marker: {
-            color: ['rgb(166,206,227)', 'rgb(31,120,180)','rgb(178,223,138)', 'rgb(51,160,44)', 'rgb(251, 154, 153)', 'rgb(227,26,28)'],
+            color: ['rgb(166,206,227)', 'rgb(31,120,180)','rgb(178,223,138)', 'rgb(51,160,44)', 'rgb(251, 154, 153)', 'rgb(227,26,28)','rgb(255, 99, 71)', 'rgb(255, 157,31)','rgb(255, 184, 0)'],
           }
         }];
 
