@@ -50,6 +50,7 @@ body {
     padding: 6px 12px;
     border: 1px solid #9fb6c7;
     border-top: none;
+    font-weight: bold;
 }
 /* Style for pull down menu */
 .dropdown {
