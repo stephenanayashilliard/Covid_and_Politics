@@ -54,128 +54,83 @@ t.test(covid_and_politics_db$white,mu=76.3)
 # Plotting race against deaths 
 # Is there a correlation to the population percentage and number of deaths for each race
 # plot geom_point()
-plt <- ggplot(covid_and_politics_db,aes(x=asian,y=deaths))
-plt + geom_point()
 cor(covid_and_politics_db$asian,covid_and_politics_db$deaths)
 # cor = 0.3866916
 
 asiansubset <- filter(covid_and_politics_db, asian > 0)
-plt <- ggplot(asiansubset,aes(x=asian,y=deaths))
-plt + geom_point()
 cor(asiansubset$asian,asiansubset$deaths)
 # cor = 0.3816597
 
-plt <- ggplot(covid_and_politics_db,aes(x=black,y=deaths))
-plt + geom_point()
 cor(covid_and_politics_db$black,covid_and_politics_db$deaths)
 # cor = 0.1000879
 
 blacksubset <- filter(covid_and_politics_db, black > 0)
-plt <- ggplot(blacksubset,aes(x=black,y=deaths))
-plt + geom_point()
 cor(blacksubset$black,blacksubset$deaths)
 # cor = 0.09532199
 
-plt <- ggplot(covid_and_politics_db,aes(x=hispanic,y=deaths))
-plt + geom_point()
 cor(covid_and_politics_db$hispanic,covid_and_politics_db$deaths)
 # cor = 0.1855989
 
 hispanicsubset <- filter(covid_and_politics_db, hispanic > 0)
-plt <- ggplot(hispanicsubset,aes(x=hispanic,y=deaths))
-plt + geom_point()
 cor(hispanicsubset$hispanic,hispanicsubset$deaths)
 # cor = 0.1852145
 
-plt <- ggplot(covid_and_politics_db,aes(x=native,y=deaths))
-plt + geom_point()
 cor(covid_and_politics_db$native,covid_and_politics_db$deaths)
 # cor = -0.2833973
 
 nativesubset <- filter(covid_and_politics_db, native > 0)
-plt <- ggplot(nativesubset,aes(x=native,y=deaths))
-plt + geom_point()
 cor(nativesubset$native,nativesubset$deaths)
 # cor = -0.03394758
 
-plt <- ggplot(covid_and_politics_db,aes(x=pacific,y=deaths))
-plt + geom_point()
 cor(covid_and_politics_db$pacific,covid_and_politics_db$deaths)
 # cor = 0.002149216
 
 pacificsubset <- filter(covid_and_politics_db, pacific > 0)
-plt <- ggplot(pacificsubset,aes(x=pacific,y=deaths))
-plt + geom_point()
 cor(pacificsubset$pacific,pacificsubset$deaths)
 # cor = -0.004109643
 
-plt <- ggplot(covid_and_politics_db,aes(x=white,y=deaths))
-plt + geom_point()
 cor(covid_and_politics_db$white,covid_and_politics_db$deaths)
 # cor = -0.2461909
 
 whitesubset <- filter(covid_and_politics_db, white > 0)
 # no rows were dropped
-plt <- ggplot(whitesubset,aes(x=white,y=deaths))
-plt + geom_point()
 cor(whitesubset$white,whitesubset$deaths)
 #cor = -0.2461909
 
 # Plotting race against cases 
 # Is there a correlation to the population percentage and number of cases for each race
 # plot geom_point()
-plt <- ggplot(covid_and_politics_db,aes(x=asian,y=cases))
-plt + geom_point()
+
 cor(covid_and_politics_db$asian,covid_and_politics_db$cases)
 # cor = 0.3789749
 
-plt <- ggplot(asiansubset,aes(x=asian,y=cases))
-plt + geom_point()
 cor(asiansubset$asian,asiansubset$cases)
 # cor = 0.3713666
 
-plt <- ggplot(covid_and_politics_db,aes(x=black,y=cases))
-plt + geom_point()
 cor(covid_and_politics_db$black,covid_and_politics_db$cases)
 # cor = 0.09172789
 
-plt <- ggplot(blacksubset,aes(x=black,y=cases))
-plt + geom_point()
 cor(blacksubset$black,blacksubset$cases)
 # cor = 0.08546051
 
-plt <- ggplot(covid_and_politics_db,aes(x=hispanic,y=cases))
-plt + geom_point()
 cor(covid_and_politics_db$hispanic,covid_and_politics_db$cases)
 # cor = 0.21881
 
-plt <- ggplot(hispanicsubset,aes(x=hispanic,y=cases))
-plt + geom_point()
 cor(hispanicsubset$hispanic,hispanicsubset$cases)
 # cor = 0.2183284
 
-plt <- ggplot(covid_and_politics_db,aes(x=native,y=cases))
-plt + geom_point()
 cor(covid_and_politics_db$native,covid_and_politics_db$cases)
 # cor = -0.03332523
 
-plt <- ggplot(nativesubset,aes(x=native,y=cases))
-plt + geom_point()
 cor(nativesubset$native,nativesubset$cases)
 # cor = -0.04104694
 
-plt <- ggplot(covid_and_politics_db,aes(x=pacific,y=cases))
-plt + geom_point()
 cor(covid_and_politics_db$pacific,covid_and_politics_db$cases)
 # cor = 0.02951223
 
-plt <- ggplot(pacificsubset,aes(x=pacific,y=cases))
-plt + geom_point()
 cor(pacificsubset$pacific,pacificsubset$cases)
 # cor = 0.005940469
 
-plt <- ggplot(covid_and_politics_db,aes(x=white,y=cases))
-plt + geom_point()
 cor(covid_and_politics_db$white,covid_and_politics_db$cases)
 # cor = -0.2830009
 
