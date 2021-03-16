@@ -1,6 +1,7 @@
 # adding files for the ml segment
 requirements.txt
 .DS_Store
+linear_model_seg1.ipynb
 ml_seg2/classification_experiment.ipynb
 ml_seg2/clustering_exploration.ipynb
 ml_seg2/sv_regression.ipynb
