@@ -150,26 +150,32 @@
                         this relationship is due to random chance.</p>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_trumpvotes_OLS.png?raw=true" 
                     width='auto'  height ='auto' alt='trumpvotes'>
+                    <br><br>
                     <p>The graph below visualizes the distribution of the data and the regression line with confidence intervals.</p>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_trumpvotes_graph.png?raw=true" 
                     width='auto'  height ='auto' alt='trumpvotes'>
+                    <br><br>
                     <h3>Percentage of Biden Votes and Covid Cases (Per County)</h3>
                     <p>The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 60% and the p-value is 0. 
                         This means that 60% of the covid cases are explained by a county's votes for Joe Biden, and that we can reject the null 
                         hypothesis that this relationship is due to random chance.</p>
-                    <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_bidenvotes_OLS.pn?raw=true" 
+                    <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_bidenvotes_OLS.png?raw=true" 
                     width='auto'  height ='auto' alt='bidenvotes'>
+                    <br><br>
                     <p>The graph below visualizes the distribution of the data and the regression line with confidence intervals.</p>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_bidenvotes_graph.png?raw=true" 
                     width='auto'  height ='auto' alt='bidenvotes'>
+                    <br><br>
                     <h3>Total Votes and Covid Cases (Per County)</h3>
                     <p>The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 65% and the p-value is 0. This means that 65% of the covid cases are explained by a county's total votes,
                      and that we can reject the null hypothesis that this relationship is due to random chance.</p>
-                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_total_votes_OLS.png?raw=true" 
+                    <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_total_votes_OLS.png?raw=true" 
                     width='auto'  height ='auto' alt='total votes'>
+                    <br><br>
                     <p>The graph below visualizes the distribution of the data and the regression line with confidence intervals.</p>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_totalvotes_graph.png?raw=true" 
                     width='auto'  height ='auto' alt='total votes graph'>
+                    <br><br>
                     <h3>OLS Real Values vs Predictions and Mean Difference</h3>
                     <p>Another method for analyzing the regression results apart from the summary statistics is to compare the real values and the predicted values. 
                         This was done by creating a dataframe with the real values, predicted values, and the the difference between these values 
@@ -177,6 +183,7 @@
                         into the dataframe below:</p>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_comparison.png?raw=true" 
                     width='auto'  height ='auto' alt='ml comparison'>
+                    <br><br>
                     <p>From this dataframe, we can conclude that the OLS model was able to best predict the amount of covid cases based on a county's percentage of
                          votes for Donald Trump. However, there does appear to be a relationship between the R-squared value and the mean of the differences 
                          for each model's independent variable: the higher the R-squared, the lower the mean of differences is between the real values and 
@@ -188,12 +195,14 @@
                         most importantly between covid cases per county and everything else.</p>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/correlation_matrix.png?raw=true" 
                         width='auto'  height ='auto' alt='matrix'>
+                        <br><br>    
                     <h3>RFR Ranking of Feature Importance</h3>
                     <p>One of the main benefits of the RFR model is its ability to rank the importance of features based on the target of covid cases per county. 
                         The graph below ranks the top 11 most important features used in the RFR model. This provides further insight into what characteristics have
                          the greatest effect on covid cases per county.</p>
                      <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/feature_importances.png?raw=true" 
                          width='auto'  height ='auto' alt='features'>
+                    <br><br>
                     <h3>Analysis of Results</h3>
                     <p>Based on the above above information, there are several conclusions that can be made. First, the R-squared values are all within 60% to 68%, 
                         which tells us that this model only explains the relationship between covid cases and voting behavior to a certain extent. 
@@ -203,10 +212,6 @@
                         votes for Donald Trump seem to be most correlated to covid cases per county. This is confirmed by the OLS model's R-squared and 
                         difference of means of predictions vs. real values for the percentage of votes for Donald Trump.</p>
                     
-
-
-
-
                 </div>
 
                 <!--Race vs Cases/Deaths-->
@@ -224,19 +229,26 @@
                     <p>Incomplete data or missing data due to US Census methodology.</p>
                     <p>Incomplete data or missing data due to inaccuracy of COVID reporting.</p>
                     <p>Racial categories are not broken out for further investigation.
-                    <h3>Distribution of Racial Demographics within Counties</h3>>
+                    <h3>Distribution of Racial Demographics within Counties</h3>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/AsianPopulationDistribution.png?raw=true" 
                     width='auto'  height ='auto' alt='Asian'>
+                    <br><br>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/BlackPopulationDistribution.png?raw=true" 
                     width='auto'  height ='auto' alt='Black'>
+                    <br><br>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/HispanicPopulationDistribution.png?raw=true" 
                     width='auto'  height ='auto' alt='Hispanic'>
+                    <br><br>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/NativePopulationDistribution.png?raw=true" 
                     width='auto'  height ='auto' alt='Native'>
+                    <br><br>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/PacificPopulationDistribution.png?raw=true" 
                     width='auto'  height ='auto' alt='Pacific'>
+                    <br><br>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/WhitePopulationDistribution.png?raw=true" 
                     width='auto'  height ='auto' alt='White'>
+                    <br><br>
+               
                     <p>Density plots for each racial category illustrate that populations are not normally distributed across the selected counties. Further, 
                         that racial groups are not equally represented within each county and within the entire dataset. For Asian, Black, Hispanic, Native, 
                         and Pacific populations, the data is right skewed. In contrast, white populations are left skewed. This shows that there is more data on 
@@ -244,12 +256,14 @@
                     <h3>Shapiro Tests</h3>>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/shapiro_tests.png?raw=true" 
                     width='auto'  height ='auto' alt='Shapiro'>
+                    <br><br>
                     <p>Shapiro tests for each racial category continue to support, in addition to visual assessments of the density plots, that the data is skewed. 
                         Because the calculated p-values are less than a significance level of 0.05, there is quantitative data to substainate that the data is not 
-                        normally distributed. </p>
+                        normally distributed.</p>
                     <h3>T-Tests</h3>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/t-test_countyvscountry.png?raw=true" 
                     width='auto'  height ='auto' alt='t_test'>
+                    <br><br>
                     <p>One-sample t-tests were conducted to compare if the distributions of race across sample counties were representative of national demographics. 
                         The national demographics were taken from the US Census from 2020 (https://www.census.gov/quickfacts/fact/table/US/RHI725219#RHI725219). 
                         While it could be assumed that the categories by the US Census align with the census county data, it should be noted that the methodologies of reporting race vary. 
@@ -257,8 +271,7 @@
                         Specifically, the US Census included categories "Two or more races", "White alone, not Hispanic or Latino", while the other dataset does not include those categories.  </p>
                     <p>With the assumption that the categories are, in fact, aligned, all p-values for each racial category from the one-sample t-tests are calculated under 
                         the 0.05 significance level. Therefore, there is sufficient evidence to reject the null hypothesis. There is a statistical difference between the 
-                        means of each racial category and its national percentage, showing that racial representation differ at the county level. 
-                        . </p>
+                        means of each racial category and its national percentage, showing that racial representation differ at the county level.</p>
                     <h3>Correlations Between Race and Covid Cases and Deaths</h3>
                     <p>Pearson correlation coefficients were calculated for each racial category against the number of COVID cases and deaths. Subsets of the data were filtered 
                         to remove counties that reported 0% populations of specific ethinicities. Calculating correlation coefficients with these subsets showed that correlations 
@@ -266,10 +279,12 @@
                         there were no counties that reported 0% white.</p>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/pearsoncoefficients_deaths.png?raw=true" 
                     width='auto'  height ='auto' alt='pearson death'>
+                    <br><br>
                     <p>Racial categories against the number of deaths show relatively weak correlations than expected. Asian populations and number of deaths show the strongest correlation
                          at 0.3866916 and 0.3816597 when populations with 0% Asian American citizens were removed.</p>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/race_analysis/pearsoncoefficients_cases.png?raw=true" 
                     width='auto'  height ='auto' alt='pearson case'>
+                    <br><br>
                     <p>Racial categories against the number of COVID related deaths performed similarly for Pearson correlation coefficients.</p>
                     <p>These coefficients for both the number of cases and deaths offer opposing ideas to other studies and reports. Specifically, from this data, the coefficient shows a negative correlation 
                         between COVID cases and Native populations. In contrast, the CDC has reported that cases in American Indian/Native Americans are 3.5 times that of non-Hispanic whites 
@@ -287,8 +302,10 @@
                         income, poverty rate, and unemployment rate as independent variables and Covid19 deaths and cases as dependent variables.</p>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ITR/Economics_LinearRegression_on_Deaths.png?raw=true" 
                     width='auto'  height ='auto' alt='deaths'>
+                    <br><br>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ITR/Economics_LinearRegression_on_Cases.png?raw=true" 
                     width='auto'  height ='auto' alt='cases'>
+                    <br><br>
                     <p>Here, the p-values establish the statistical significance of each variable. However, the R-squared values of both linear regressions can be
                          interpreted as saying that these variables are very limited in their ability to alone predict Covid cases and deaths. Which brings us to a 
                          point where we should explore each of these variables.</p>
