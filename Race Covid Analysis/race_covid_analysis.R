@@ -53,7 +53,6 @@ t.test(covid_and_politics_db$white,mu=76.3)
 
 # Plotting race against deaths 
 # Is there a correlation to the population percentage and number of deaths for each race
-# plot geom_point()
 cor(covid_and_politics_db$asian,covid_and_politics_db$deaths)
 # cor = 0.3866916
 
