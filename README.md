@@ -246,4 +246,11 @@ Based on the above above information, there are several conclusions that can be 
 The RFR model's ranking of feature importance and the correlation matrix both demonstrate that for voting behaviors, votes for Donald Trump seem to be most correlated to covid cases per county. This is confirmed by the OLS model's R-squared and difference of means of predictions vs. real values for the percentage of votes for Donald Trump.
 
 ### Summary
-To be filled in future deliverables
+
+**Politics and Covid**
+
+As mentioned above, the machine learning analyses suggests that out of the three per-county features used- percentage of votes for Donald Trump, percentage of Votes for Joe Biden, and total votes per county, it appears that covid cases were most correlated to votes for Donald Trump. This is evinced by the ranking of feature importance by the RFR model and the R squared in the OLS model. This finding does help to answer the question we initially set out to answer by providing some evidence that votes for Donald Trump has the most effect on the amount of covid cases per county.
+
+### Recommendations for Future Analysis
+
+An addition to this analysis that would prove incredibly beneficial would be to add a dataset that included time series data both before and after the 2020 election. Ideally, this time series data would provide the number of covid cases per county on a weekly or biweekly basis. This would improve the the machine learning model and other analyses by inputing data that is more suited for a regression analysis. Further, this time series data could predict the increase or decrease of covid cases per county using the preexisting demographic, economic, or voting data. This time series data set could be merged into our main table with covid cases per county, and could have dates as the columns with the number of covid cases per county as the row values. 
