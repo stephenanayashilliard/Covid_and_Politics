@@ -41,6 +41,7 @@
                     <h1>The<br>Politics<br>of<br>Covid</h1>
                 </p>
             </div>
+      
 
            <!--Tab Buttons-->
             
@@ -58,16 +59,27 @@
                 <!--Add contents to Tabs-->
                 <div class= "tabcontent" id="About Our Project">
                     <h2>About Our Project</h2>
-                    <p>Using data acquired from multiple sources, we set out to discover if there are correlations 
-                    with Covid 19 rates of infection and a countie's political views,  the race makeup or ethnicity, age, gender or economic status of it's population. </p>
+                    <p>The Covid 19 pandemic has devastated and disrupted the lives of billions of people as well as forcing many of the world’s economies to come to a
+                        screeching halt.  As of March 18, 2021, the United States has over 29,493,436 confirmed cases of Covid 19 infection and 535,841 confirmed deaths.  
+                        The U.S has the highest infection rate and death rate in the world per capita and yet the need to keep the pandemic under control has been very divisive, 
+                        ultimately splitting into two camps; those who view school closures, stay at home orders and mask wearing as affronts to personal freedoms and those who 
+                        see them as important steps to curb the pandemic. The two camps politically divide along party lines with much of those leaning Republican falling 
+                        in the first camp and those leaning Democratic in the second </p>
+                    <p>Anecdotal evidence would suggest that, since mask wearing and social distancing as well as mass testing have proven effected in other countries to curb 
+                        the spread of covid, then in states or counties with most of their population identifying as Republican should see larger infections rates.   
+                        The goal of this project was to find out if there was statistical evidence to back up that perception.</p>
+                    <p>Using data acquired from multiple sources, we set out to discover if there are correlations with Covid 19 rates of infection and a group's political 
+                        views, race or ethnicity, age, gender or economic status.  </p>
                 </div>   
                 
                 <!--Database-->
                 <div class= "tabcontent" id="Database">
                     <h2>Database</h2>
-                    <p>To allow for the greatest possible diversity, or data was drawn from over 3000 counties in the
-                        United States.  Our data was obtained from the United States Census Bureau, the Association of Statisticians
-                        of American Religious Bodies (ASARB) as well as Covid 19 rates of infection and death rates from Kaggle. </p>
+                    <p>
+                        To allow for the greatest possible diversity in our data, we drew our data from over 3000 counties in the United States. We retrieved our data on race, 
+                        ethnicity, age, gender and economic status from the United States Census Bureau.  the Association of Statisticians of American Religious Bodies (ASARB) 
+                        provided our data for the religious affiliations of a counties population.  We used statistics from kaggle for details on individual countie's 
+                        Covid 19 rates of infections and death rates.  </p>
                     <h3>Process</h3>
                     <h4>Part One</h4>
                     <p>From the intitial research, four csv files containing a total of 53 data points for 3049 counties was retrieved. Using Pandas, 
@@ -77,11 +89,23 @@
                     <p>Creating the Join Key: To perform a join, there needs to be a field to join on. A common field native to the data was available so one 
                         was created. A column was created to hold the key and then set the value equal to the result of county and state column data combined in each row. 
                         County data was then used as the primary table because it had the most results.</p>
+                        <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/Data_images/Creating_column_state_key.png?raw=true" 
+                        width='auto'  height ='auto' alt='column state'>
+                        <br><br
+                    <h4>Part Three</h4>    
                     <p>Joining in Parts: To execute the join, the two tables were joined into an interim table, table_one, and then a third table was joined, creating a table_two. 
                         This process was repeated again to join the fourth table into the final database.</p>
+                        <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/Data_images/Database_Joins.png?raw=true" 
+                        width='auto'  height ='auto' alt='database joins'>
+                        <br><br>
+                    <h4>Part Four</h4>  
                     <p>Troubleshooting Issues: The fields that were null after the joins from part two needed to be filled in in order to not obstruct the upcoming machine learning model. 
                         The null values were converted into zeros and the result saved.</p>
-                    
+                    <h4>Part Five</h4>
+                    <p>Upload: Once the tables were joined, they were uploaded from the local server to an AWS S3 bucket to allow the team to access the database by using Pyspark and the object URL.</p>
+                    <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/Data_images/Amazon_S3_bucket.png?raw=true" 
+                        width='auto'  height ='auto' alt='Amazon'>
+                        <br><br>
                 </div> 
 
                 <!--Machine Learning-->
