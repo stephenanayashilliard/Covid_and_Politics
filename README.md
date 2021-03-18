@@ -253,5 +253,6 @@ As mentioned above, the machine learning analyses suggests that out of the three
 
 ### Recommendations for Future Analysis
 
--### Machine Learning
+- ### Machine Learning
+
 An addition to this analysis that would prove incredibly beneficial would be to add a dataset that included time series data both before and after the 2020 election. Ideally, this time series data would provide the number of covid cases per county on a weekly or biweekly basis. This would improve the the machine learning model and other analyses by inputing data that is more suited for a regression analysis. Further, this time series data could predict the increase or decrease of covid cases per county using the preexisting demographic, economic, or voting data. This time series data set could be merged into our main table with covid cases per county, and could have dates as the columns with the number of covid cases per county as the row values. Another interesting study would be to find out why the RFR model ranked the votes for Donald Trump as the most important political feature. Further analysis could prove that Trump votes are more highly correlated to increases in covid transmission if the population density of the county was accounted for. 
