@@ -135,12 +135,12 @@ The main limitation of the machine learning portion of this project is from the 
        - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
 
      - Dashboard Tools: The following tools were used to create the dashboard:
-     - Bootstrap:  Used to create our responsive, front end.
-     - D3.json:  Data format for sorting and presenting data
-     - Potly:  Used to create dynamic charts to illustrated our findings.
-     - Leaflet.js: Javascript Library used to build the heatmap portion of the Dashboard
-     - GeoJSON: Used to create feature points for heatmap portion
-     - Mapbox API: Used to pull our Maps for our heatmap portion.
+       - Bootstrap:  Used to create our responsive, front end.
+       - D3.json:  Data format for sorting and presenting data
+       - Potly:  Used to create dynamic charts to illustrated our findings.
+       - Leaflet.js: Javascript Library used to build the heatmap portion of the Dashboard
+       - GeoJSON: Used to create feature points for heatmap portion
+       - Mapbox API: Used to pull our Maps for our heatmap portion.
    
 ## Analysis
  - ### Process 
@@ -155,18 +155,18 @@ This component of the overall analysis examines the relevance of the economic de
 
  - ![](/images/ITR/Economics_LinearRegression_on_Cases.png)
 
-Here, the p-values establish the statistical significance of each variable. However, the R-squared values of both linear regressions can be interpreted as saying that these variables are very limited in their ability to alone predict Covid cases and deaths. Which brings us to a point where we should explore each of these variables.
+ - Here, the p-values establish the statistical significance of each variable. However, the R-squared values of both linear regressions can be interpreted as saying that these variables are very limited in their ability to alone predict Covid cases and deaths. Which brings us to a point where we should explore each of these variables.
 
-    - #### Income
-     The average incomes per county represented in the databased are distributed around approximately $49k.
+   - #### Income
+   - The average incomes per county represented in the databased are distributed around approximately $49k.
 
    - #### Poverty Rates 
-     The poverty rates in the database are predominantly distributed around 15% per county.
+   - The poverty rates in the database are predominantly distributed around 15% per county.
 
    - ![](/images/ITR/Distribution_of_PovertyRates.png)
 
    - #### Unemployment Rates
-    The unemployment rates in the database are predominantly distributed around 6-7% per county.
+   - The unemployment rates in the database are predominantly distributed around 6-7% per county.
 
    - ![](/images/ITR/Distribution_of_UnemploymentRates.png)
 
