@@ -20,7 +20,9 @@ Race Covid Analysis/
 Communication Protocols.txt
 
 # adding Isaac's files
-
+Database_Model/
+covid_and_politics_db.pdf
+covid_and_politics_db 2.sqlite
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
