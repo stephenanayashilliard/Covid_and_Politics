@@ -164,13 +164,7 @@ The unemployment rates in the database are predominantly distributed around 6-7%
 ![](/images/ITR/Distribution_of_UnemploymentRates.png)
 
 - ## Race vs Cases/Deaths
-This analysis examines the relationship of race and COVID-19 reported cases and deaths using RStudio to conduct statistical testing. The data explored comes from two separate sources. COVID reported cases and deaths are from this source from this time point, while racial demographics for each county are from this source from this timepoint. Insert methodology on how data was collected. Information on race for each county is presented in percentage of county population. As provided by the data source, race is defined into six categories: Asian, Black, Hispanic, Native, Pacific, and White.  
-
-**Limitations**
-- Timepoints of data collection
-- Incomplete data or missing data due to US Census methodology
-- Incomplete data or missing data due to inaccuracy of COVID reporting
-- Racial categories are not broken out for further investigation
+This analysis examines the relationship between race and COVID-19 reported cases and deaths using RStudio to conduct statistical testing. The data explored comes from two separate sources. Racial demographics disaggregated by county were extracted from the US Census and presented as population percentages of six racial categories: Asian, Black, Hispanic, Native, Pacific, and White. COVID report cases and deaths were extracted from The New York Times, which has been tracking cases and deaths since January 2021.  
 
 **Distribution of Racial Demographics within Counties**
 
@@ -186,21 +180,23 @@ This analysis examines the relationship of race and COVID-19 reported cases and 
 
 ![density_white](/images/race_analysis/WhitePopulationDistribution.png)
 
-Density plots for each racial category illustrate that populations are not normally distributed across the selected counties. Further, that racial groups are not equally represented within each county and within the entire dataset. For Asian, Black, Hispanic, Native, and Pacific populations, the data is right skewed. In contrast, white populations are left skewed. This shows that there is more data on counties with larger white populations. 
+![histogram](/images/race_analysis/histograms_all.png)
+
+Density plots and histograms for each racial category illustrate that populations do not have normal distribution across the selected counties. Further, that racial groups are not equally represented within each county and within the entire dataset. For Asian, Black, Hispanic, Native, and Pacific populations, the data is right skewed. In contrast, white populations are left skewed. This shows that there is more data on counties with larger white populations. 
 
 ![shapiro](/images/race_analysis/shapiro_tests.png)
 
-Shapiro tests for each racial category continue to support, in addition to visual assessments of the density plots, that the data is skewed. Because the calculated p-values are less than a significance level of 0.05, there is quantitative data to substainate that the data is not normally distributed. 
+Shapiro tests for each racial category continue to support, in addition to visual assessments of the density plots, that the data is skewed. Because the calculated p-values are less than a significance level of 0.05, there is quantitative data to substantiate that the data does not have normal distribution. 
 
 ![t_tests](/images/race_analysis/t-test_countyvscountry.png)
 
-One-sample t-tests were conducted to compare if the distributions of race across sample counties were representative of national demographics. The national demographics were taken from the US Census from 2020 (https://www.census.gov/quickfacts/fact/table/US/RHI725219#RHI725219). While it could be assumed that the categories by the US Census align with the census county data, it should be noted that the methodologies of reporting race vary. It may be possible that people may have been recorded differently between the two points of data collection, and therefore, this comparison may not be accurate. Specifically, the US Census included categories "Two or more races", "White alone, not Hispanic or Latino", while the other dataset does not include those categories. 
+One-sample t-tests were conducted to compare if the distributions of race across sample counties were representative of national demographics. The national demographics were taken from the US Census from 2020 (https://www.census.gov/quickfacts/fact/table/US/RHI725219#RHI725219). 
 
-With the assumption that the categories are, in fact, aligned, all p-values for each racial category from the one-sample t-tests are calculated under the 0.05 significance level. Therefore, there is sufficient evidence to reject the null hypothesis. There is a statistical difference between the means of each racial category and its national percentage, showing that racial representation differ at the county level. 
+P-values for each racial category from the one-sample t-tests are calculated under the 0.05 significance level. Therefore, there is sufficient evidence to reject the null hypothesis. There is a statistical difference between the means of each racial category and its national percentage, showing that racial representation differ at the county level. 
 
 **Correlations Between Race and COVID Cases and Deaths**
 
-Pearson correlation coefficients were calculated for each racial category against the number of COVID cases and deaths. Subsets of the data were filtered to remove counties that reported 0% populations of specific ethinicities. Calculating correlation coefficients with these subsets showed that correlations were generally weaker (albeit not by much) when counties that did not report citizens of specific racial categories were removed. It should be noted that there were no counties that reported 0% white. 
+Pearson correlation coefficients were calculated for each racial category against the number of COVID cases and deaths. Subsets of the data were filtered to remove counties that reported 0% populations of specific ethnicities. Calculating correlation coefficients with these subsets showed that correlations were generally weaker. It should be noted that there were no counties that reported 0% white. 
 
 ![r_deaths](/images/race_analysis/pearsoncoefficients_deaths.png)
 
@@ -210,7 +206,37 @@ Racial categories against the number of deaths show relatively weak correlations
 
 Racial categories against the number of COVID related deaths performed similarly for Pearson correlation coefficients. 
 
-These coefficients for both the number of cases and deaths offer opposing ideas to other studies and reports. Specifically, from this data, the coefficient shows a negative correlation between COVID cases and Native populations. In contrast, the CDC has reported that cases in American Indian/Native Americans are 3.5 times that of non-Hispanic whites (https://www.cdc.gov/media/releases/2020/p0819-covid-19-impact-american-indian-alaska-native.html). Additionally, there are several reports that minority communities have been disproportionately impacted by COVID-19, however, these correlation coefficients do not substantiate those claims. 
+These coefficients for both the number of cases and deaths offer opposing ideas to other public studies and reports. One specific instance of this is the correlation coefficients for Native populations. From this data, the coefficient shows a negative correlation between COVID cases and Native populations. In contrast, the CDC has reported that cases in American Indian/Native Americans are 3.5 times that of non-Hispanic whites (https://www.cdc.gov/media/releases/2020/p0819-covid-19-impact-american-indian-alaska-native.html). Additionally, there are several reports that minority communities have been disproportionately impacted by COVID-19, however, these correlation coefficients do not substantiate those claims. 
+
+**Linear Regression Models** 
+
+Linear regressions were performed between individual racial categories and the number of COVID-related deaths to examine further if race is a predictor. 
+
+![1linear](/images/race_analysis/1linear.png)
+
+![2linear](/images/race_analysis/2linear.png)
+
+![3linear](/images/race_analysis/3linear.png)
+
+From the linear regression models, all R-squared values are small, and therefore, the models would be poor predictors of deaths. While p-values for Asian, Black, Hispanic, and white populations are below the significance level, p-values for Native and Pacific populations are above the significance level. Therefore, the slope of the linear model is 0, which is illustrated when the graphs are plotted. This could be interpretted that deaths in Native and Pacific populations could be due to randm chance and error. 
+
+**Multiple Linear Regression Models** 
+
+Multiple linear regressions were performed utilizing all racial categories and the number of COVID deaths and cases. 
+
+![ml_cases](/images/race_analysis/ml_cases.png)
+
+![ml_deaths](/images/race_analysis/ml_deaths.png)
+
+Similarly to the linear regressions, the multiple linear regression models returned low R-squared values. Again this shows that these models would be poor predictors of COVID cases and deaths. Asian and Pacific communities were found to be statistically significant in these models. 
+
+**Limitations** 
+
+While this analysis shows weak correlations between race and COVID impacts, there are various public reports and studies that provide opposing conclusions, specifically stating that Black and brown communities have been disproportionately impacted. This disconnect may be happening for the following reasons: 
+
+* Inaccurate or missing data: While the data has been sourced from the New York Times and the US Census, two reputable sources, these data may be inaccurate. The New York Times disclaims that their "patchwork reporting methods" led to "difficult interpretations about how to count and record cases". Additionally, COVID cases were reported from counties where patients were being treated and not necessarily where they lived. In regards to census data, these data may be inaccurate due to the political debates around who is counted, as well as results of the Trump administration.
+
+* Missing perspective: Racial demographics of people who contracted COVID or who had died of COVID would have been a key perspective to this analysis. This could have provided insight into which populations are getting COVID or dying from COVID and are those proportions similar to the county racial demographics. 
 
 - ### Machine Learning Analysis
 This analysis is based on the OLS regression model described earlier in the readme under the "Machine Learning" section. The three factors used and their relation to covid were a county's percentage of votes for Trump in the 2020 election, a county's percentage of votes for Biden in the 2020 election, and a county's total votes in the 2020 election.
@@ -265,11 +291,29 @@ The RFR model's ranking of feature importance and the correlation matrix both de
 
 ### Summary
 
+**Race and COVID** 
+
+The analysis conducted provided weak correlations between racial demographics and COVID cases and deaths. Additionally, the linear regressions also showed race to be poor predictors. While this is contrary to a multitude of reports and research, this does illustrate that there are additional factors that contribute to COVID cases and deaths. 
+
 **Politics and Covid**
 
 As mentioned above, the machine learning analyses suggests that out of the three per county features used - percentage of votes for Donald Trump, percentage of Votes for Joe Biden, and total votes per county, it appears that increases in covid cases were most correlated to votes for Joe Biden. This is contradicted by the ranking of feature importance by the RFR model. However, the RFR model's ranking of feature importance is based on the amount of votes per county rather than the percentage, which provides different insights into this analysis. This finding does help to answer the question we initially set out to answer by providing some evidence that the percentage of votes for Joe Biden is correlated with higher covid transmission, while the number of votes for Donald Trump is correlated higher with covid transmission. Further analysis would be needed to make a more conclusive decision.
 
 ### Recommendations for Future Analysis
+
+- ### Race and COVID 
+
+As stated in the analysis section, additional data would provide a clearer picture of why a disproportionate number of people of color are being impacted by COVID. This data would include racial demographics on people who are sick or who have died, and more accurate data for US populations and COVID records. 
+
+Further disaggregations of the data may also be helpful - grouping county data by state, grouping county data by income brackets, grouping data population density (population per square mile), and grouping by similar racial demographics. 
+
+Additional questions which could be explored: 
+
+* Are people are being treated in the same counties in which they live? This could provide insight into access to medical care. Are medical facilities equitable accessible across the nation?
+
+* Are people who are getting sick able to get treated or seeking treatment?
+
+While these questions have logistical challenges in getting data to answer them, they could offer deeper insight into the racial disparities of COVID impacts, and more broadly, how these racial disparities are reflected in the US medical system. 
 
 - ### Machine Learning
 
