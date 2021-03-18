@@ -122,25 +122,25 @@ For the RFR model, the data was scaled using the Robust Scaler for its use of th
 The main limitation of the machine learning portion of this project is from the dataset. Because the dataset is based on a single moment in time, the linear model can not extrapolate the predictions into the future. If the dataset was organized in a time-series format that tracked the amount of covid cases over time, then this model could predict the amount of covid cases based on the time-series data. Further, the main drawback of the RFR model was its weakness in creating actionable insights. With no ability to create regression result statistics like the OLS model, the only insight into our question that could be gained from the RFR model was from the ranking of feature importance. 
 
  - ### Dashboard
-   - #### Process
+  - #### Process
 It was determined from the onset of the project that the dashboard for the project needed to be fully interactive and contain both information about processes for the    individual deliverables, as well as a written report about the analysis. For illustrative purposes, the dashboard allows the user to choose a county from a drop down menu.  From that choice illustrated graphs are created and depicted.
-       - Depicted Graphs:
-         - How the County Voted
-         - Racial Demographics for the County
-         - Unemployment Rates for the County
-         - Occupation Demographics for the County
-         - Age Demogrphics for the County
+   - Depicted Graphs:
+    - How the County Voted
+    - Racial Demographics for the County
+    - Unemployment Rates for the County
+    - Occupation Demographics for the County
+    - Age Demogrphics for the County
 
-       - Storyboard: A storyboard was created to aid in the programming process.
-         - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
+   - Storyboard: A storyboard was created to aid in the programming process.
+    - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
 
-       - Dashboard Tools: The following tools were used to create the dashboard:
-         - Bootstrap:  Used to create our responsive, front end.
-         - D3.json:  Data format for sorting and presenting data
-         - Potly:  Used to create dynamic charts to illustrated our findings.
-         - Leaflet.js: Javascript Library used to build the heatmap portion of the Dashboard
-         - GeoJSON: Used to create feature points for heatmap portion
-         - Mapbox API: Used to pull our Maps for our heatmap portion.
+   - Dashboard Tools: The following tools were used to create the dashboard:
+   - Bootstrap:  Used to create our responsive, front end.
+   - D3.json:  Data format for sorting and presenting data
+   - Potly:  Used to create dynamic charts to illustrated our findings.
+   - Leaflet.js: Javascript Library used to build the heatmap portion of the Dashboard
+   - GeoJSON: Used to create feature points for heatmap portion
+   - Mapbox API: Used to pull our Maps for our heatmap portion.
    
 ## Analysis
  - ### Process 
@@ -157,7 +157,7 @@ This component of the overall analysis examines the relevance of the economic de
 
 Here, the p-values establish the statistical significance of each variable. However, the R-squared values of both linear regressions can be interpreted as saying that these variables are very limited in their ability to alone predict Covid cases and deaths. Which brings us to a point where we should explore each of these variables.
 
-   - #### Income
+    - #### Income
      The average incomes per county represented in the databased are distributed around approximately $49k.
 
    - #### Poverty Rates 
