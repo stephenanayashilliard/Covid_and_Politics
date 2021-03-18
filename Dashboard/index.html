@@ -53,6 +53,7 @@
                     <button class = "tablinks" onclick= "openCity (event, 'Politics and Covid')">Politics and Covid</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Race and Covid')">Race and Covid</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Economics and Covid')">Economics and Covid</button>
+                    <button class = "tablinks" onclick= "openCity (event, 'Conclusion Summary and Future Analysis')">Conclusion Summary and Future Analysis</button>
                     <button class = "tablinks" onclick= "openCity (event, 'Team Members')">Team Members</button>
                 </div>
 
@@ -193,27 +194,34 @@
                     width='auto'  height ='auto' alt='trumpvotes'>
                     <br><br>
                     <h3>Percentage of Biden Votes and Covid Cases (Per County)</h3>
+                    
                     <p>The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 60% and the p-value is 0. 
                         This means that 60% of the covid cases are explained by a county's votes for Joe Biden, and that we can reject the null 
                         hypothesis that this relationship is due to random chance.</p>
-                    <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_bidenvotes_OLS.png?raw=true" 
+                    
+                        <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_bidenvotes_OLS.png?raw=true" 
                     width='auto'  height ='auto' alt='bidenvotes'>
                     <br><br>
+                    
                     <p>The graph below visualizes the distribution of the data and the regression line with confidence intervals.</p>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_bidenvotes_graph.png?raw=true" 
                     width='auto'  height ='auto' alt='bidenvotes'>
                     <br><br>
+                    
                     <h3>Total Votes and Covid Cases (Per County)</h3>
+                    
                     <p>The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 65% and the p-value is 0. This means that 65% of the covid cases are explained by a county's total votes,
                      and that we can reject the null hypothesis that this relationship is due to random chance.</p>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_total_votes_OLS.png?raw=true" 
                     width='auto'  height ='auto' alt='total votes'>
                     <br><br>
+                    
                     <p>The graph below visualizes the distribution of the data and the regression line with confidence intervals.</p>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_totalvotes_graph.png?raw=true" 
                     width='auto'  height ='auto' alt='total votes graph'>
                     <br><br>
-                    <h3>OLS Real Values vs Predictions and Mean Difference</h3>
+                    
+                    <h3>Model Efficancy: OLS Real Values vs Predictions and Mean Difference</h3>
                     <p>Another method for analyzing the regression results apart from the summary statistics is to compare the real values and the predicted values. 
                         This was done by creating a dataframe with the real values, predicted values, and the the difference between these values 
                         (by subtracting the real values from the predicted values). Next, the mean of these differences was calculated for each model and put 
@@ -221,13 +229,16 @@
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/ml_comparison.png?raw=true" 
                     width='auto'  height ='auto' alt='ml comparison'>
                     <br><br>
+                    
                     <p>From this dataframe, we can conclude that the OLS model was able to best predict the amount of covid cases based on a county's percentage of
                          votes for Donald Trump. However, there does appear to be a relationship between the R-squared value and the mean of the differences 
                          for each model's independent variable: the higher the R-squared, the lower the mean of differences is between the real values and 
                          the predicted values for each model's independent variable. From this, we can conclude that the ability of a linear regression model 
                          to explain the relationship between a dependent and an independent variable directly affects the ability of that model to make predictions.</p>
-                    <h3>RFR Model Insights</h3>
-                    <p>Below is a correlation matrix graph that indicates the correlation between all features in the dataset. This was useful in helping 
+                    
+                         <h3>RFR Model Insights</h3>
+                   
+                         <p>Below is a correlation matrix graph that indicates the correlation between all features in the dataset. This was useful in helping 
                         to determine the levels of correlation between features, 
                         most importantly between covid cases per county and everything else.</p>
                     <img src = "https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/ml_images/correlation_matrix.png?raw=true" 
@@ -245,9 +256,15 @@
                         which tells us that this model only explains the relationship between covid cases and voting behavior to a certain extent. 
                         The p-values of 0 are a strong indicator that the relationship of this data is not due to random chance, and
                          that there is a statistically significant relationship between voting behavior and covid cases.</p>
-                    <p>The RFR model's ranking of feature importance and the correlation matrix both demonstrate that for voting behaviors, 
-                        votes for Donald Trump seem to be most correlated to covid cases per county. This is confirmed by the OLS model's R-squared and 
-                        difference of means of predictions vs. real values for the percentage of votes for Donald Trump.</p>
+                    
+                         <p>The RFR model's ranking of feature importance and the correlation matrix both demonstrate that for voting behaviors, votes for Donald 
+                             Trump seem to be most correlated to covid cases per county. However, the OLS model's coefficient for Trump votes is 0.0411, and the 
+                             OLS model's coeffecient for Biden Votes is 0.0721. From this information, we can conclude that for every percentage increase in votes 
+                             for Trump in a county, the amount of covid cases increases by roughly 4.1%; and for every percentage increase in votes for Biden in a 
+                             county, the amount of covid cases increases roughly 7.2%. This finding can be explained by the fact that densely populated metropolitan 
+                             areas typically vote for democrats while less populated rural areas typically vote for republicans. Covid cases are more easily transmissable 
+                             in densely populated areas, which explains the higher coefficient for Biden votes. In essence, the density of populations is probably a 
+                             stronger indicator of covid transmission than the voting habits of those areas.</p>
                     
                 </div>
 
@@ -392,6 +409,29 @@
                     <br><br>
 
                 </div>
+
+                 <!--Conclusion Summary and Future Analysis-->
+                 <div class= "tabcontent" id="Conclusion Summary and Future Analysis">
+                    <h2>Summary of Results</h2>
+                    <p>Taking anecdotal evidence into account; the daily news reports of large groups of conservatives not using masks or practicing social distancing, 
+                        as well as a multitude of reports showing that the covid pandemic is affecting minority communities s at a much higher rate than predominantly 
+                        white communities.  The hypothesis was that one or both two factors should be a good indicator of future covid spread. </p>
+                    <p>In the case of race, it turned to be a poor predictor which is contrary to current reports and research, however, it does suggest that there are
+                        additional factors in play.  For example, race in combination with social economic status or in combination with the population density of the region.</p>
+                    <p>As for the political leanings of a region, the opposite proved true, in areas where the greater percentage of votes went to the Democratic ticket, there was 
+                        marked increase in higher covid transmission.  However, most large, densely populated urban areas have historically lean Democratic while sparsely populated 
+                        rural areas have typically identified as Republican.</p>
+                    <h2>Recommendations for Future Analysis</h2>
+                    <p>At the time of this study, covid rates were changing rapidly. The study should be approached again once the incoming stream of data stabilizes, and a much clearer 
+                        picture can be assessed.  In addition, data showing more specific information about individuals who have contracted covid allow for better representation and 
+                        breakdown of the data. </p>
+                    <p>The machine learning model could be improved by including data sets that include data both before and after the 2020 election which would allow data 
+                        input much better suited for regression analysis. Another interesting study would be to find out why the RFR model ranked the votes for Donald 
+                        Trump as the most important political feature. Further analysis could prove that Trump votes are more highly correlated to increases in covid 
+                        transmission if the population density of the county were accounted for. This could be accomplished by dividing the number of votes for each candidate 
+                        per county by the square mileage of each county.</p>
+                    <p>Additionally, an analysis of comparable counties may reveal even more insight.  For example, multiple counties with approximately the same total population, 
+                        could prove or disprove if one of the many factors we reviewed could have a significant correlation on Covid spread.</p>
                 
                 <!--Team Members-->
                 <div class= "tabcontent" id="Team Members">
