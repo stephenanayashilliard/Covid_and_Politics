@@ -124,7 +124,7 @@ The main limitation of the machine learning portion of this project is from the 
  - ### Dashboard
    - #### Process
 It was determined from the onset of the project that the dashboard for the project needed to be fully interactive and contain both information about processes for the    individual deliverables, as well as a written report about the analysis. For illustrative purposes, the dashboard allows the user to choose a county from a drop down menu.  From that choice illustrated graphs are created and depicted.
-      - Depicted Graphs:
+     - Depicted Graphs:
         - How the County Voted
         - Racial Demographics for the County
         - Unemployment Rates for the County
