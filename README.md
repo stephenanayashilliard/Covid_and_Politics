@@ -1,13 +1,42 @@
 # Covid_and_Politics
 Final Project for UC Berkeley Extension Bootcamp in Data Analytics (March 2021)
 
-## Team Members in Alphabetical Order
- - Stephen Anayas-Hilliard
- - John Phillips
- - Melyssa Sibal
- - Isaac D. Tucker-Rasbury
+The Covid 19 pandemic has devastated and disrupted the lives of billions of people as well as forcing many of the world’s economies to come to a screeching halt.  As of March 18, 2021, the United States has over 29,493,436 confirmed cases of Covid 19 infection and 535,841 confirmed deaths.  The U.S has the highest infection rate and death rate in the world per capita and yet the need to keep the pandemic under control has been very divisive, ultimately splitting into two camps; those who view school closures, stay at home orders and mask wearing as affronts to personal freedoms and those who see them as important steps to curb the pandemic.      The two camps politically divide along party lines with much of those leaning Republican falling the first camp and those leaning Democratic in the second.  
 
-## Overview
+Anecdotal evidence would suggest that, since mask wearing and social distancing as well as mass testing have proven effected in other countries to curb the spread of covid, then in states or counties with most of their population identifying as Republican should see larger infections rates.   The goal of this project was to find out if there was statistical evidence to back up that perception.
+
+
+## Table of Contents
+ - Overview of the Project
+   - Project Breakdown
+   - Team Members
+   - Resources
+     - Data
+     - Software
+     - Technologies
+     - Languages
+     - Tools
+   - Database
+   - Dashboard
+   - Machine Learning
+ - Analysis
+   - Process
+   - Economics vs Cases/Deaths
+   - Race vs Cases/Deaths
+   - Machine Learning Analysis of Voting Habits vs Cases/Deaths
+ - Summary 
+   - Economics and Covid
+   - Race and Covid
+   - Politics and Covid
+ - Recomendations for Future Analysis
+
+## Team Members in Alphabetical Order
+ - Stephen Anayas-Hilliard [Github Link](https://github.com/stephenanayashilliard)
+ - John Phillips [Github Link](https://github.com/jcp650)
+ - Melyssa Sibal [Github Link](https://github.com/melyssasibal)
+ - Isaac D. Tucker-Rasbury [Github Link(https://github.com/TuckerRasbury)
+
+## Overview of the Project
 Using data acquired from multiple sources, we set out to discover if there are correlations with Covid 19 rates of infection and a group's political views, race or ethnicity, age, gender or economic status.  
 
 To allow for the greatest possible diversity in our data, we drew our data from over 3000 counties in the United States. We retrieved our data on race, ethnicity, age, gender and economic status from the United States Census Bureau.  the Association of Statisticians of American Religious Bodies (ASARB) provided our data for the religious affiliations of a counties population.  We used statistics from kaggle for details on individual countie's Covid 19 rates of infections and death rates. 
