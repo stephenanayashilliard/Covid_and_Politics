@@ -10,6 +10,7 @@ linear_model.ipynb
 county_data_mlseg2.csv
 rf_regressor_model.ipynb
 county_statistics_for_model.csv
+ml_normalized_covid_data.ipynb
 
 # adding Melyssa's files
 Technologies.md
@@ -17,6 +18,9 @@ Race Covid Analysis/
 
 # adding Stephen's file
 Communication Protocols.txt
+
+# adding Isaac's files
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
