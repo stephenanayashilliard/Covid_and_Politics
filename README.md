@@ -274,7 +274,11 @@ The graph below visualizes the distribution of the data and the regression line 
 
  - **Model Efficacy: OLS Real Values vs Predictions and Mean Difference**
 
-Another method for analyzing the regression results apart from the summary statistics is to compare the real values and the predicted values. This was done by creating a dataframe with the real values, predicted values, and the the difference between these values (by subtracting the real values from the predicted values). Next, the mean of these differences was calculated for each model and put into the dataframe below:
+Another method for analyzing the regression results apart from the summary statistics is to compare the real values and the predicted values. This was done by creating a dataframe with the real values, predicted values, and the the difference between these values (by subtracting the real values from the predicted values). The image below demonstrates how this was done:
+
+![](images/ml_images/pred_vs_real_OLS.png)
+
+Next, the mean of these differences was calculated for each model and put into the dataframe below:
 
 ![](images/ml_images/ml_comparison.png)
 
