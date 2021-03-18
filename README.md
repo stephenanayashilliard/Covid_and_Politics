@@ -109,7 +109,7 @@ An Ordinary Least Squares (OLS) Model was used to analyze one independent variab
     - #### Scaling and Data Preprocessing
 For the OLS model, a new column was created titled “normalized_cases” which was created by dividing the number of covid cases per county by the population of that county. This created a more usable variable because it more closely resembled the format of the percentage of votes for Trump and Biden columns. Because both of these columns contained numbers between 0 and 1, it behaved better in the OLS model. Below is an image of the calculation and creation of the normalized_cases column:
 
-    - ![](images/ml_images/normalized_cases.png)
+![](images/ml_images/normalized_cases.png)
 
 For the RFR model, the data was scaled using the Robust Scaler for its use of the interquartile range to handle the outliers in our dataset. It was decided that removing the outliers would negatively impact the analysis, because the outliers represented large cities that were critical for undertanding the relationship between social, economic, and political correlation to covid. For both models, the data was preprocessed by another team member to include religion and age metrics by county from other datasets. This was helpful for the correlation matrix and for the ranking of feature importance.
     - #### Testing and Training
@@ -124,12 +124,12 @@ The main limitation of the machine learning portion of this project is from the 
  - ### Dashboard
    - #### Process
 It was determined from the onset of the project that the dashboard for the project needed to be fully interactive and contain both information about processes for the    individual deliverables, as well as a written report about the analysis. For illustrative purposes, the dashboard allows the user to choose a county from a drop down menu.  From that choice illustrated graphs are created and depicted.
-    - Depicted Graphs:
-     - How the County Voted
-     - Racial Demographics for the County
-     - Unemployment Rates for the County
-     - Occupation Demographics for the County
-     - Age Demogrphics for the County
+     - Depicted Graphs:
+       - How the County Voted
+       - Racial Demographics for the County
+       - Unemployment Rates for the County
+       - Occupation Demographics for the County
+       - Age Demogrphics for the County
 
   - Storyboard: A storyboard was created to aid in the programming process.
      - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
