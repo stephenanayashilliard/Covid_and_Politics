@@ -88,19 +88,19 @@ To allow for the greatest possible diversity in our data, we drew our data from 
      - #### Part 2
        - _Creating the Join Key_: To perform a join, there needs to be a field to join on. Unfortunately, we did not have one native to the data so one was created. A column was created to hold the key and then set the value equal to the result of county and state column data combined in each row. County data was then used as the primary table because it had the most results.
  
-       - ![Creating Column State Key](/images/Creating_column_state_key.png)
+       - ![Creating Column State Key](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/Data_images/Creating_column_state_key.png)
  
      - #### Part 3
        - _Joining in Parts_: To execute the join, the two tables were joined into interim tables, table_one. Then a third table was joined, creating a table_two. This process was repeated again to join the fourth table into the final database.
 
-       - ![Database Joins](/images/Database_Joins.png)
+       - ![Database Joins](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/Data_images/Database_Joins.png)
 
      - #### Part 4
        - _Troubleshooting Issues_: The fields that were null after the joins from part two needed to be filled in in order to not obstruct the upcoming machine learning model. The null values  were converted into zeros and the result saved.
 
      - #### Part 5
        - _Uploaded_: Once the tables were joined, they were uploaded from the local server to an AWS S3 bucket to allow the team to access the database by using Pyspark and the object URL.
-       - ![Amazon S3 Bucket](/images/Amazon_S3_bucket.png) 
+       - ![Amazon S3 Bucket](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/Data_images/Amazon_S3_bucket.png) 
 
  - ### Machine Learning
    The goal of the machine learning aspect of this project is to predict if a county’s voting patterns in the 2020 election are correlated to covid transmission. Specifically, looking at the percentage of votes for Donald Trump and the percentage of votes for Joe Biden and the number of covid cases per county were used to make predictions. 
