@@ -110,7 +110,6 @@ To allow for the greatest possible diversity in our data, we drew our data from 
        For the OLS model, a new column was created titled “normalized_cases” which was created by dividing the number of covid cases per county by the population of that county. This created a more usable variable because it more closely resembled the format of the percentage of votes for Trump and Biden columns. Because both of these columns contained numbers between 0 and 1, it behaved better in the OLS model. Below is an image of the calculation and creation of the normalized_cases column:
 
       ![](images/ml_images/normalized_cases.png)
-
       For the RFR model, the data was scaled using the Robust Scaler for its use of the interquartile range to handle the outliers in our dataset. It was decided that removing the outliers would negatively impact the analysis, because the outliers represented large cities that were critical for undertanding the relationship between social, economic, and political correlation to covid. For both models, the data was preprocessed by another team member to include religion and age metrics by county from other datasets. This was helpful for the correlation matrix and for the ranking of feature importance.
      - #### Testing and Training
        - The OLS model did not require any testing or training of the data.
@@ -235,7 +234,7 @@ From the linear regression models, all R-squared values are small, and therefore
 
 ![ml_deaths](/images/race_analysis/ml_deaths.png)
 
-    Similarly to the linear regressions, the multiple linear regression models returned low R-squared values. Again this shows that these models would be poor predictors of COVID cases and deaths. Asian and Pacific communities were found to be statistically significant in these models. 
+   Similarly to the linear regressions, the multiple linear regression models returned low R-squared values. Again this shows that these models would be poor predictors of COVID cases and deaths. Asian and Pacific communities were found to be statistically significant in these models. 
 
   - **Limitations** 
 
@@ -246,82 +245,82 @@ From the linear regression models, all R-squared values are small, and therefore
      * Missing perspective: Racial demographics of people who contracted COVID or who had died of COVID would have been a key perspective to this analysis. This could have provided insight into which populations are getting COVID or dying from COVID and are those proportions similar to the county racial demographics. 
 
 - ### Machine Learning Analysis
-This analysis is based on the OLS regression model described earlier in the readme under the "Machine Learning" section. The three factors used and their relation to covid were a county's percentage of votes for Trump in the 2020 election, a county's percentage of votes for Biden in the 2020 election, and a county's total votes in the 2020 election.
+  This analysis is based on the OLS regression model described earlier in the readme under the "Machine Learning" section. The three factors used and their relation to covid were a county's percentage of votes for Trump in the 2020 election, a county's percentage of votes for Biden in the 2020 election, and a county's total votes in the 2020 election.
 
  - **Percentage of Trump Votes and Covid Cases (per county)**
 
-The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 68% and the p-value is 0. This means that 68% of the covid cases are explained by a county's votes for Donald Trump, and that we can reject the null hypothesis that this relationship is due to random chance.
+   The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 68% and the p-value is 0. This means that 68% of the covid cases are explained by a county's votes for Donald Trump, and that we can reject the null hypothesis that this relationship is due to random chance.
 ![](images/ml_images/ml_trumpvotes_OLS.png)
 
-The graph below visualizes the distribution of the data and the regression line with confidence intervals.
-![](images/ml_images/ml_trumpvotes_graph.png)
+   The graph below visualizes the distribution of the data and the regression line with confidence intervals.
+   ![](images/ml_images/ml_trumpvotes_graph.png)
 
-**Percentage of Biden Votes and Covid Cases (per county)**
+ - **Percentage of Biden Votes and Covid Cases (per county)**
 
-The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 60% and the p-value is 0. This means that 60% of the covid cases are explained by a county's votes for Joe Biden, and that we can reject the null hypothesis that this relationship is due to random chance.
+   The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 60% and the p-value is 0. This means that 60% of the covid cases are explained by a county's votes for Joe Biden, and that we can reject the null hypothesis that this relationship is due to random chance.
 ![](images/ml_images/ml_bidenvotes_OLS.png)
 
-The graph below visualizes the distribution of the data and the regression line with confidence intervals.
+   The graph below visualizes the distribution of the data and the regression line with confidence intervals.
 ![](images/ml_images/ml_bidenvotes_graph.png)
 
-**Total Votes and Covid Cases (per county)**
+ - **Total Votes and Covid Cases (per county)**
 
-The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 65% and the p-value is 0. This means that 65% of the covid cases are explained by a county's total votes, and that we can reject the null hypothesis that this relationship is due to random chance.
+   The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 65% and the p-value is 0. This means that 65% of the covid cases are explained by a county's total votes, and that we can reject the null hypothesis that this relationship is due to random chance.
 ![](images/ml_images/ml_total_votes_OLS.png)
 
-The graph below visualizes the distribution of the data and the regression line with confidence intervals.
+   The graph below visualizes the distribution of the data and the regression line with confidence intervals.
 ![](images/ml_images/ml_totalvotes_graph.png)
 
-**Model Efficacy: OLS Real Values vs Predictions and Mean Difference**
+ - **Model Efficacy: OLS Real Values vs Predictions and Mean Difference**
 
-Another method for analyzing the regression results apart from the summary statistics is to compare the real values and the predicted values. This was done by creating a dataframe with the real values, predicted values, and the the difference between these values (by subtracting the real values from the predicted values). Next, the mean of these differences was calculated for each model and put into the dataframe below:
+   Another method for analyzing the regression results apart from the summary statistics is to compare the real values and the predicted values. This was done by creating a dataframe with the real values, predicted values, and the the difference between these values (by subtracting the real values from the predicted values). Next, the mean of these differences was calculated for each model and put into the dataframe below:
 
 ![](images/ml_images/ml_comparison.png)
 
-From this dataframe, we can conclude that the OLS model was able to best predict the amount of covid cases based on a county's percentage of votes for Donald Trump. However, there does appear to be a relationship between the R-squared value and the mean of the differences for each model's independent variable: the higher the R-squared, the lower the mean of differences is between the real values and the predicted values for each model's independent variable. From this, we can conclude that the ability of a linear regression model to explain the relationship between a dependent and an independent variable directly affects the ability of that model to make predictions.
+  From this dataframe, we can conclude that the OLS model was able to best predict the amount of covid cases based on a county's percentage of votes for Donald Trump. However, there does appear to be a relationship between the R-squared value and the mean of the differences for each model's independent variable: the higher the R-squared, the lower the mean of differences is between the real values and the predicted values for each model's independent variable. From this, we can conclude that the ability of a linear regression model to explain the relationship between a dependent and an independent variable directly affects the ability of that model to make predictions.
 
-**RFR Model Insights**
+ - **RFR Model Insights**
 
-Below is a correlation matrix graph that indicates the correlation between all features in the dataset. This was useful in helping to determine the levels of correlation between features, most importantly between covid cases per county and everything else.
+   Below is a correlation matrix graph that indicates the correlation between all features in the dataset. This was useful in helping to determine the levels of correlation between features, most importantly between covid cases per county and everything else.
 ![](images/ml_images/correlation_matrix.png)
 
-**RFR Ranking of Feature Importance**
+ - **RFR Ranking of Feature Importance**
 
-One of the main benefits of the RFR model is its ability to rank the importance of features based on the target of covid cases per county. The graph below ranks the top 11 most important features used in the RFR model. This provides further insight into what characteristics have the greatest effect on covid cases per county.
+   One of the main benefits of the RFR model is its ability to rank the importance of features based on the target of covid cases per county. The graph below ranks the top 11 most important features used in the RFR model. This provides further insight into what characteristics have the greatest effect on covid cases per county.
 ![](images/ml_images/feature_importances.png)
 
-**Analysis of Results**
+ - **Analysis of Results**
 
-Based on the above above information, there are several conclusions that can be made. First, the R-squared values are all within 60% to 68%, which tells us that this model only explains the relationship between covid cases and voting behavior to a certain extent. The p-values of 0 are a strong indicator that the relationship of this data is not due to random chance, and that there is a statistically significant relationship between voting behavior and covid cases.
+   Based on the above above information, there are several conclusions that can be made. First, the R-squared values are all within 60% to 68%, which tells us that this model only explains the relationship between covid cases and voting behavior to a certain extent. The p-values of 0 are a strong indicator that the relationship of this data is not due to random chance, and that there is a statistically significant relationship between voting behavior and covid cases.
 
-The RFR model's ranking of feature importance and the correlation matrix both demonstrate that for voting behaviors, votes for Donald Trump seem to be most correlated to covid cases per county. However, the OLS model's coefficient for Trump votes is 0.0411, and the OLS model's coeffecient for Biden Votes is 0.0721. From this information, we can conclude that for every percentage increase in votes for Trump in a county, the amount of covid cases increases by roughly 4.1%; and for every percentage increase in votes for Biden in a county, the amount of covid cases increases roughly 7.2%. This finding can be explained by the fact that densely populated metropolitan areas typically vote for democrats while less populated rural areas typically vote for republicans. Covid cases are more easily transmissable in densely populated areas, which explains the higher coefficient for Biden votes. In essence, the density of populations is probably a stronger indicator of covid transmission than the voting habits of those areas.
+   The RFR model's ranking of feature importance and the correlation matrix both demonstrate that for voting behaviors, votes for Donald Trump seem to be most correlated to covid cases per county. However, the OLS model's coefficient for Trump votes is 0.0411, and the OLS model's coeffecient for Biden Votes is 0.0721. From this information, we can conclude that for every percentage increase in votes for Trump in a county, the amount of covid cases increases by roughly 4.1%; and for every percentage increase in votes for Biden in a county, the amount of covid cases increases roughly 7.2%. This finding can be explained by the fact that densely populated metropolitan areas typically vote for democrats while less populated rural areas typically vote for republicans. Covid cases are more easily transmissable in densely populated areas, which explains the higher coefficient for Biden votes. In essence, the density of populations is probably a stronger indicator of covid transmission than the voting habits of those areas.
 
 ### Summary
 
  - **Race and COVID** 
 
-The analysis conducted provided weak correlations between racial demographics and COVID cases and deaths. Additionally, the linear regressions also showed race to be poor predictors. While this is contrary to a multitude of reports and research, this does illustrate that there are additional factors that contribute to COVID cases and deaths. 
+   The analysis conducted provided weak correlations between racial demographics and COVID cases and deaths. Additionally, the linear regressions also showed race to be poor predictors. While this is contrary to a multitude of reports and research, this does illustrate that there are additional factors that contribute to COVID cases and deaths. 
 
  - **Politics and Covid**
 
-As mentioned above, the machine learning analyses suggests that out of the three per county features used - percentage of votes for Donald Trump, percentage of Votes for Joe Biden, and total votes per county, it appears that increases in covid cases were most correlated to votes for Joe Biden. This is contradicted by the ranking of feature importance by the RFR model. However, the RFR model's ranking of feature importance is based on the amount of votes per county rather than the percentage, which provides different insights into this analysis. This finding does help to answer the question we initially set out to answer by providing some evidence that the percentage of votes for Joe Biden is correlated with higher covid transmission, while the number of votes for Donald Trump is correlated higher with covid transmission. Further analysis would be needed to make a more conclusive decision.
+   As mentioned above, the machine learning analyses suggests that out of the three per county features used - percentage of votes for Donald Trump, percentage of Votes for Joe Biden, and total votes per county, it appears that increases in covid cases were most correlated to votes for Joe Biden. This is contradicted by the ranking of feature importance by the RFR model. However, the RFR model's ranking of feature importance is based on the amount of votes per county rather than the percentage, which provides different insights into this analysis. This finding does help to answer the question we initially set out to answer by providing some evidence that the percentage of votes for Joe Biden is correlated with higher covid transmission, while the number of votes for Donald Trump is correlated higher with covid transmission. Further analysis would be needed to make a more conclusive decision.
 
 ### Recommendations for Future Analysis
 
  - ### Race and COVID 
 
-As stated in the analysis section, additional data would provide a clearer picture of why a disproportionate number of people of color are being impacted by COVID. This data would include racial demographics on people who are sick or who have died, and more accurate data for US populations and COVID records. 
+   As stated in the analysis section, additional data would provide a clearer picture of why a disproportionate number of people of color are being impacted by COVID. This data would include racial demographics on people who are sick or who have died, and more accurate data for US populations and COVID records. 
 
-Further disaggregations of the data may also be helpful - grouping county data by state, grouping county data by income brackets, grouping data population density (population per square mile), and grouping by similar racial demographics. 
+   Further disaggregations of the data may also be helpful - grouping county data by state, grouping county data by income brackets, grouping data population density (population per square mile), and grouping by similar racial demographics. 
 
-Additional questions which could be explored: 
+   Additional questions which could be explored: 
 
-* Are people are being treated in the same counties in which they live? This could provide insight into access to medical care. Are medical facilities equitable accessible across the nation?
+    * Are people are being treated in the same counties in which they live? This could provide insight into access to medical care. Are medical facilities equitable accessible across the nation?
 
-* Are people who are getting sick able to get treated or seeking treatment?
+    * Are people who are getting sick able to get treated or seeking treatment?
 
-While these questions have logistical challenges in getting data to answer them, they could offer deeper insight into the racial disparities of COVID impacts, and more broadly, how these racial disparities are reflected in the US medical system. 
+   While these questions have logistical challenges in getting data to answer them, they could offer deeper insight into the racial disparities of COVID impacts, and more broadly, how these racial disparities are reflected in the US medical system. 
 
 - ### Machine Learning
 
-An addition to this analysis that would prove incredibly beneficial would be to add a dataset that included time series data both before and after the 2020 election. Ideally, this time series data would provide the number of covid cases per county on a weekly or biweekly basis. This would improve the the machine learning model and other analyses by inputing data that is more suited for a regression analysis. Further, this time series data could predict the increase or decrease of covid cases per county using the preexisting demographic, economic, or voting data. This time series data set could be merged into our main table with covid cases per county, and could have dates as the columns with the number of covid cases per county as the row values. Another interesting study would be to find out why the RFR model ranked the votes for Donald Trump as the most important political feature. Further analysis could prove that Trump votes are more highly correlated to increases in covid transmission if the population density of the county was accounted for. This could be accomplished by dividing the amount of votes for each candidate per county by the square mileage of each county.
+  An addition to this analysis that would prove incredibly beneficial would be to add a dataset that included time series data both before and after the 2020 election. Ideally, this time series data would provide the number of covid cases per county on a weekly or biweekly basis. This would improve the the machine learning model and other analyses by inputing data that is more suited for a regression analysis. Further, this time series data could predict the increase or decrease of covid cases per county using the preexisting demographic, economic, or voting data. This time series data set could be merged into our main table with covid cases per county, and could have dates as the columns with the number of covid cases per county as the row values. Another interesting study would be to find out why the RFR model ranked the votes for Donald Trump as the most important political feature. Further analysis could prove that Trump votes are more highly correlated to increases in covid transmission if the population density of the county was accounted for. This could be accomplished by dividing the amount of votes for each candidate per county by the square mileage of each county.
