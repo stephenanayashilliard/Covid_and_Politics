@@ -137,18 +137,17 @@ To allow for the greatest possible diversity in our data, we drew our data from 
        - Bootstrap:  Used to create our responsive, front end.
        - D3.json:  Data format for sorting and presenting data
        - Potly:  Used to create dynamic charts to illustrated our findings.
-       - Leaflet.js: Javascript Library used to build the heatmap portion of the Dashboard
-       - GeoJSON: Used to create feature points for heatmap portion
-       - Mapbox API: Used to pull our Maps for our heatmap portion.
+       - Tableau:  Used to create interactive map of covid spread and deaths attributed to covid.
+     
    
 ## Analysis
  - ### Process 
    Data was first explored through Tableau, which provided framework for further statistical analysis. This exploration looked at the number of cases in each county against 2020 presidential votes, age groups, racial groups, gender and income. 
 
-   It was later decided that R would be used to conduct statistical analysis on economic and racial demographics and its relationship to COVID cases and deaths. Machine learning was utilized to examine political voting behavior and COVID impacts. 
+   R was used to conduct statistical analysis on economic and racial demographics and its relationship to COVID cases and deaths. Machine learning was utilized to examine political voting behavior and COVID impacts. 
 
  - ### Economics vs Cases/Deaths
-   This component of the overall analysis examines the relevance of the economic demographic variables to the strength of the overall Covid19 cases and deaths predicting model that we have endeavor to build here. While this analysis confirms the relevance of economic demographic variables with linear regression models, it leaves quantifying that relevance to the broader analysis in the machine learning section. To substantiate the relevance of the aforementioned variables, see the below for the p-values of the multi-variable linear regressions below with income, poverty rate, and unemployment rate as independent variables and Covid19 deaths and cases as dependent variables.
+   The component of the overall analysis examines the relevance of the economic demographic variables to the strength of the overall Covid19 cases and deaths predicting model that we have endeavor to build here. While this analysis confirms the relevance of economic demographic variables with linear regression models, it leaves quantifying that relevance to the broader analysis in the machine learning section. To substantiate the relevance of the aforementioned variables, see the below for the p-values of the multi-variable linear regressions below with income, poverty rate, and unemployment rate as independent variables and Covid19 deaths and cases as dependent variables.
 
  - ![](/images/ITR/Economics_LinearRegression_on_Deaths.png) 
 
@@ -296,31 +295,19 @@ From the linear regression models, all R-squared values are small, and therefore
    The RFR model's ranking of feature importance and the correlation matrix both demonstrate that for voting behaviors, votes for Donald Trump seem to be most correlated to covid cases per county. However, the OLS model's coefficient for Trump votes is 0.0411, and the OLS model's coeffecient for Biden Votes is 0.0721. From this information, we can conclude that for every percentage increase in votes for Trump in a county, the amount of covid cases increases by roughly 4.1%; and for every percentage increase in votes for Biden in a county, the amount of covid cases increases roughly 7.2%. This finding can be explained by the fact that densely populated metropolitan areas typically vote for democrats while less populated rural areas typically vote for republicans. Covid cases are more easily transmissable in densely populated areas, which explains the higher coefficient for Biden votes. In essence, the density of populations is probably a stronger indicator of covid transmission than the voting habits of those areas.
 
 ### Summary
+Taking anecdotal evidence into account; the daily news reports of large groups of conservatives not using masks or practicing social distancing, as well as a multitude of reports showing that the covid pandemic is affecting minority communities at a much higher rate than predominantly white communities.  The hypothesis was that one or both factors should be a good indicator of future covid spread. 
 
- - **Race and COVID** 
+In the case of race, it turned to be a poor predictor which is contrary to current reports and research, however, it does suggest that there are additional factors in play.  For example, race in combination with social economic status or in combination with the population density of the region.
 
-   The analysis conducted provided weak correlations between racial demographics and COVID cases and deaths. Additionally, the linear regressions also showed race to be poor predictors. While this is contrary to a multitude of reports and research, this does illustrate that there are additional factors that contribute to COVID cases and deaths. 
+As for the political leanings of a region, the opposite proved true, in areas where the greater percentage of votes went to the Democratic ticket, there was marked increase in higher covid transmission.  However, most large, densely populated urban areas have historically lean Democratic while sparsely populated rural areas have typically identified as Republican.
 
- - **Politics and Covid**
-
-   As mentioned above, the machine learning analyses suggests that out of the three per county features used - percentage of votes for Donald Trump, percentage of Votes for Joe Biden, and total votes per county, it appears that increases in covid cases were most correlated to votes for Joe Biden. This is contradicted by the ranking of feature importance by the RFR model. However, the RFR model's ranking of feature importance is based on the amount of votes per county rather than the percentage, which provides different insights into this analysis. This finding does help to answer the question we initially set out to answer by providing some evidence that the percentage of votes for Joe Biden is correlated with higher covid transmission, while the number of votes for Donald Trump is correlated higher with covid transmission. Further analysis would be needed to make a more conclusive decision.
 
 ### Recommendations for Future Analysis
 
- - ### Race and COVID 
+At the time of this study, covid rates were changing rapidly. The study should be approached again once the incoming stream of data stabilizes, and a much clearer picture can be assessed.  In addition, data showing more specific information about individuals who have contracted covid allow for better representation and breakdown of the data.  
 
-   As stated in the analysis section, additional data would provide a clearer picture of why a disproportionate number of people of color are being impacted by COVID. This data would include racial demographics on people who are sick or who have died, and more accurate data for US populations and COVID records. 
+The machine learning model could be improved by including data sets that include data both before and after the 2020 election which would allow data input much better suited for regression analysis. Another interesting study would be to find out why the RFR model ranked the votes for Donald Trump as the most important political feature. Further analysis could prove that Trump votes are more highly correlated to increases in covid transmission if the population density of the county were accounted for. This could be accomplished by dividing the number of votes for each candidate per county by the square mileage of each county.
 
-   Further disaggregations of the data may also be helpful - grouping county data by state, grouping county data by income brackets, grouping data population density (population per square mile), and grouping by similar racial demographics. 
+Additionally, an analysis of comparable counties may reveal even more insight.  For example, multiple counties with approximately the same total population, could prove or disprove if one of the many factors we reviewed could have a significant correlation on Covid spread.
 
-   Additional questions which could be explored: 
 
-    * Are people are being treated in the same counties in which they live? This could provide insight into access to medical care. Are medical facilities equitable accessible across the nation?
-
-    * Are people who are getting sick able to get treated or seeking treatment?
-
-   While these questions have logistical challenges in getting data to answer them, they could offer deeper insight into the racial disparities of COVID impacts, and more broadly, how these racial disparities are reflected in the US medical system. 
-
-- ### Machine Learning
-
-  An addition to this analysis that would prove incredibly beneficial would be to add a dataset that included time series data both before and after the 2020 election. Ideally, this time series data would provide the number of covid cases per county on a weekly or biweekly basis. This would improve the the machine learning model and other analyses by inputing data that is more suited for a regression analysis. Further, this time series data could predict the increase or decrease of covid cases per county using the preexisting demographic, economic, or voting data. This time series data set could be merged into our main table with covid cases per county, and could have dates as the columns with the number of covid cases per county as the row values. Another interesting study would be to find out why the RFR model ranked the votes for Donald Trump as the most important political feature. Further analysis could prove that Trump votes are more highly correlated to increases in covid transmission if the population density of the county was accounted for. This could be accomplished by dividing the amount of votes for each candidate per county by the square mileage of each county.
