@@ -102,92 +102,92 @@ To allow for the greatest possible diversity in our data, we drew our data from 
        - _Uploaded_: Once the tables were joined, they were uploaded from the local server to an AWS S3 bucket to allow the team to access the database by using Pyspark and the object URL.
        - ![Amazon S3 Bucket](/images/Amazon_S3_bucket.png) 
 
-## Machine Learning
+ - ### Machine Learning
    The goal of the machine learning aspect of this project is to predict if a county’s voting patterns in the 2020 election are correlated to covid transmission. Specifically, looking at the percentage of votes for Donald Trump and the percentage of votes for Joe Biden and the number of covid cases per county were used to make predictions. 
-- ### Models Used
+  - #### Models Used
      - An Ordinary Least Squares (OLS) Model was used to analyze one independent variable at a time and its relation to the dependent variable- covid cases. A Random Forest Regressor (RFR) model was used to analyze multiple independent variables in relation to the dependent variable- covid cases. The OLS model was chosen for its ability to produce descriptive summary statistics and for its ability to be graphed using statsmodels packages. The RFR model was used for its ability to rank feature importances and for its compatibility with other sklearn packages such as RobustScaler, Principal Component Analysis (PCA), and Train, Test, Split.
-- ### Scaling and Data Preprocessing
-   - For the OLS model, a new column was created titled “normalized_cases” which was created by dividing the number of covid cases per county by the population of that county. This created a more usable variable because it more closely resembled the format of the percentage of votes for Trump and Biden columns. Because both of these columns contained numbers between 0 and 1, it behaved better in the OLS model. Below is an image of the calculation and creation of the normalized_cases column:
+  - #### Scaling and Data Preprocessing
+    - For the OLS model, a new column was created titled “normalized_cases” which was created by dividing the number of covid cases per county by the population of that county. This created a more usable variable because it more closely resembled the format of the percentage of votes for Trump and Biden columns. Because both of these columns contained numbers between 0 and 1, it behaved better in the OLS model. Below is an image of the calculation and creation of the normalized_cases column:
 
-![](images/ml_images/normalized_cases.png)
+    - ![](images/ml_images/normalized_cases.png)
 
-   - For the RFR model, the data was scaled using the Robust Scaler for its use of the interquartile range to handle the outliers in our dataset. It was decided that removing the outliers would negatively impact the analysis, because the outliers represented large cities that were critical for undertanding the relationship between social, economic, and political correlation to covid. For both models, the data was preprocessed by another team member to include religion and age metrics by county from other datasets. This was helpful for the correlation matrix and for the ranking of feature importance.
-- #### Testing and Training
-   - The OLS model did not require any testing or training of the data.
-   - The RFR model was trained and tested using sklearn's Train, Test, Split package, which split the data into 70% training data and 30% testing data. The random state for the train and testing and the model was set to 48, as recommended by the sklearn docs.
-- #### Targets and Features
-   - For both models, the target was covid cases. The only difference is that the OLS model used the “normalized_cases” calculation and the RFR model used the raw covid cases per county data. The features for the OLS model were the percentage of votes for Donald Trump per county, percentage of votes for Joe Biden per county, and the total votes per county columns. 
-   - For the RFR model, all usable features in the dataset were included. The latitude, longitude, county and state columns were excluded from the features because these columns would not benefit the analysis. It was decided that the raw covid cases data would be used as the target instead of the normalized_cases metric for the RFR model to preserve the data format for the ranking of feature importance.
-- ### Limitations
-  - The main limitation of the machine learning portion of this project is from the dataset. Because the dataset is based on a single moment in time, the linear model can not extrapolate the predictions into the future. If the dataset was organized in a time-series format that tracked the amount of covid cases over time, then this model could predict the amount of covid cases based on the time-series data. Further, the main drawback of the RFR model was its weakness in creating actionable insights. With no ability to create regression result statistics like the OLS model, the only insight into our question that could be gained from the RFR model was from the ranking of feature importance. 
+    - For the RFR model, the data was scaled using the Robust Scaler for its use of the interquartile range to handle the outliers in our dataset. It was decided that removing the outliers would negatively impact the analysis, because the outliers represented large cities that were critical for undertanding the relationship between social, economic, and political correlation to covid. For both models, the data was preprocessed by another team member to include religion and age metrics by county from other datasets. This was helpful for the correlation matrix and for the ranking of feature importance.
+ - #### Testing and Training
+    - The OLS model did not require any testing or training of the data.
+    - The RFR model was trained and tested using sklearn's Train, Test, Split package, which split the data into 70% training data and 30% testing data. The random state for the train and testing and the model was set to 48, as recommended by the sklearn docs.
+ - #### Targets and Features
+    - For both models, the target was covid cases. The only difference is that the OLS model used the “normalized_cases” calculation and the RFR model used the raw covid cases per county data. The features for the OLS model were the percentage of votes for Donald Trump per county, percentage of votes for Joe Biden per county, and the total votes per county columns. 
+    - For the RFR model, all usable features in the dataset were included. The latitude, longitude, county and state columns were excluded from the features because these columns would not benefit the analysis. It was decided that the raw covid cases data would be used as the target instead of the normalized_cases metric for the RFR model to preserve the data format for the ranking of feature importance.
+ - #### Limitations
+   - The main limitation of the machine learning portion of this project is from the dataset. Because the dataset is based on a single moment in time, the linear model can not extrapolate the predictions into the future. If the dataset was organized in a time-series format that tracked the amount of covid cases over time, then this model could predict the amount of covid cases based on the time-series data. Further, the main drawback of the RFR model was its weakness in creating actionable insights. With no ability to create regression result statistics like the OLS model, the only insight into our question that could be gained from the RFR model was from the ranking of feature importance. 
 
-## Dashboard
- - ### Process
-   It was determined from the onset of the project that the dashboard for the project needed to be fully interactive and contain both information about processes for the    individual deliverables, as well as a written report about the analysis. For illustrative purposes, the dashboard allows the user to choose a county from a drop down menu.  From that choice illustrated graphs are created and depicted.
-   - Depicted Graphs:
+ - ### Dashboard
+  - #### Process
+    - It was determined from the onset of the project that the dashboard for the project needed to be fully interactive and contain both information about processes for the    individual deliverables, as well as a written report about the analysis. For illustrative purposes, the dashboard allows the user to choose a county from a drop down menu.  From that choice illustrated graphs are created and depicted.
+     - Depicted Graphs:
        - How the County Voted
        - Racial Demographics for the County
        - Unemployment Rates for the County
        - Occupation Demographics for the County
        - Age Demogrphics for the County
 
-   - Storyboard: A storyboard was created to aid in the programming process.
-     - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
+    - Storyboard: A storyboard was created to aid in the programming process.
+      - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
 
-   - Dashboard Tools: The following tools were used to create the dashboard:
-     - Bootstrap:  Used to create our responsive, front end.
-     - D3.json:  Data format for sorting and presenting data
-     - Potly:  Used to create dynamic charts to illustrated our findings.
-     - Leaflet.js: Javascript Library used to build the heatmap portion of the Dashboard
-     - GeoJSON: Used to create feature points for heatmap portion
-     - Mapbox API: Used to pull our Maps for our heatmap portion.
+    - Dashboard Tools: The following tools were used to create the dashboard:
+      - Bootstrap:  Used to create our responsive, front end.
+      - D3.json:  Data format for sorting and presenting data
+      - Potly:  Used to create dynamic charts to illustrated our findings.
+      - Leaflet.js: Javascript Library used to build the heatmap portion of the Dashboard
+      - GeoJSON: Used to create feature points for heatmap portion
+      - Mapbox API: Used to pull our Maps for our heatmap portion.
    
 ## Analysis
- - ## Process 
+ - ### Process 
 Data was first explored through Tableau, which provided framework for further statistical analysis. This exploration looked at the number of cases in each county against 2020 presidential votes, age groups, racial groups, gender and income. 
 
 It was later decided that R would be used to conduct statistical analysis on economic and racial demographics and its relationship to COVID cases and deaths. Machine learning was utilized to examine political voting behavior and COVID impacts. 
 
-- ## Economics vs Cases/Deaths
+ - ### Economics vs Cases/Deaths
 This component of the overall analysis examines the relevance of the economic demographic variables to the strength of the overall Covid19 cases and deaths predicting model that we have endeavor to build here. While this analysis confirms the relevance of economic demographic variables with linear regression models, it leaves quantifying that relevance to the broader analysis in the machine learning section. To substantiate the relevance of the aforementioned variables, see the below for the p-values of the multi-variable linear regressions below with income, poverty rate, and unemployment rate as independent variables and Covid19 deaths and cases as dependent variables.
 
-![](/images/ITR/Economics_LinearRegression_on_Deaths.png) 
+ - ![](/images/ITR/Economics_LinearRegression_on_Deaths.png) 
 
-![](/images/ITR/Economics_LinearRegression_on_Cases.png)
+ - ![](/images/ITR/Economics_LinearRegression_on_Cases.png)
 
 Here, the p-values establish the statistical significance of each variable. However, the R-squared values of both linear regressions can be interpreted as saying that these variables are very limited in their ability to alone predict Covid cases and deaths. Which brings us to a point where we should explore each of these variables.
 
-##### Income
+   - #### Income
 The average incomes per county represented in the databased are distributed around approximately $49k.
 
-##### Poverty Rates 
+   - #### Poverty Rates 
 The poverty rates in the database are predominantly distributed around 15% per county.
 
-![](/images/ITR/Distribution_of_PovertyRates.png)
+   - ![](/images/ITR/Distribution_of_PovertyRates.png)
 
-##### Unemployment Rates
+   - #### Unemployment Rates
 The unemployment rates in the database are predominantly distributed around 6-7% per county.
 
-![](/images/ITR/Distribution_of_UnemploymentRates.png)
+   - ![](/images/ITR/Distribution_of_UnemploymentRates.png)
 
-- ## Race vs Cases/Deaths
+ - ### Race vs Cases/Deaths
 This analysis examines the relationship between race and COVID-19 reported cases and deaths using RStudio to conduct statistical testing. The data explored comes from two separate sources. Racial demographics disaggregated by county were extracted from the US Census and presented as population percentages of six racial categories: Asian, Black, Hispanic, Native, Pacific, and White. COVID report cases and deaths were extracted from The New York Times, which has been tracking cases and deaths since January 2021.  
 
-**Distribution of Racial Demographics within Counties**
+ - **Distribution of Racial Demographics within Counties**
 
-![density_asian](/images/race_analysis/AsianPopulationDistribution.png)
+ - ![density_asian](/images/race_analysis/AsianPopulationDistribution.png)
 
-![density_black](/images/race_analysis/BlackPopulationDistribution.png)
+ - ![density_black](/images/race_analysis/BlackPopulationDistribution.png)
 
-![density_hispanic](/images/race_analysis/HispanicPopulationDistribution.png)
+ - ![density_hispanic](/images/race_analysis/HispanicPopulationDistribution.png)
 
-![density_native](/images/race_analysis/NativePopulationDistribution.png)
+ - ![density_native](/images/race_analysis/NativePopulationDistribution.png)
+ 
+ - ![density_pacific](/images/race_analysis/PacificPopulationDistribution.png)
 
-![density_pacific](/images/race_analysis/PacificPopulationDistribution.png)
+ - ![density_white](/images/race_analysis/WhitePopulationDistribution.png)
 
-![density_white](/images/race_analysis/WhitePopulationDistribution.png)
-
-![histogram](/images/race_analysis/histograms_all.png)
+ - ![histogram](/images/race_analysis/histograms_all.png)
 
 Density plots and histograms for each racial category illustrate that populations do not have normal distribution across the selected counties. Further, that racial groups are not equally represented within each county and within the entire dataset. For Asian, Black, Hispanic, Native, and Pacific populations, the data is right skewed. In contrast, white populations are left skewed. This shows that there is more data on counties with larger white populations. 
 
@@ -201,7 +201,7 @@ One-sample t-tests were conducted to compare if the distributions of race across
 
 P-values for each racial category from the one-sample t-tests are calculated under the 0.05 significance level. Therefore, there is sufficient evidence to reject the null hypothesis. There is a statistical difference between the means of each racial category and its national percentage, showing that racial representation differ at the county level. 
 
-**Correlations Between Race and COVID Cases and Deaths**
+- **Correlations Between Race and COVID Cases and Deaths**
 
 Pearson correlation coefficients were calculated for each racial category against the number of COVID cases and deaths. Subsets of the data were filtered to remove counties that reported 0% populations of specific ethnicities. Calculating correlation coefficients with these subsets showed that correlations were generally weaker. It should be noted that there were no counties that reported 0% white. 
 
@@ -215,7 +215,7 @@ Racial categories against the number of COVID related deaths performed similarly
 
 These coefficients for both the number of cases and deaths offer opposing ideas to other public studies and reports. One specific instance of this is the correlation coefficients for Native populations. From this data, the coefficient shows a negative correlation between COVID cases and Native populations. In contrast, the CDC has reported that cases in American Indian/Native Americans are 3.5 times that of non-Hispanic whites (https://www.cdc.gov/media/releases/2020/p0819-covid-19-impact-american-indian-alaska-native.html). Additionally, there are several reports that minority communities have been disproportionately impacted by COVID-19, however, these correlation coefficients do not substantiate those claims. 
 
-**Linear Regression Models** 
+- **Linear Regression Models** 
 
 Linear regressions were performed between individual racial categories and the number of COVID-related deaths to examine further if race is a predictor. 
 
@@ -227,7 +227,7 @@ Linear regressions were performed between individual racial categories and the n
 
 From the linear regression models, all R-squared values are small, and therefore, the models would be poor predictors of deaths. While p-values for Asian, Black, Hispanic, and white populations are below the significance level, p-values for Native and Pacific populations are above the significance level. Therefore, the slope of the linear model is 0, which is illustrated when the graphs are plotted. This could be interpretted that deaths in Native and Pacific populations could be due to randm chance and error. 
 
-**Multiple Linear Regression Models** 
+- **Multiple Linear Regression Models** 
 
 Multiple linear regressions were performed utilizing all racial categories and the number of COVID deaths and cases. 
 
@@ -237,18 +237,18 @@ Multiple linear regressions were performed utilizing all racial categories and t
 
 Similarly to the linear regressions, the multiple linear regression models returned low R-squared values. Again this shows that these models would be poor predictors of COVID cases and deaths. Asian and Pacific communities were found to be statistically significant in these models. 
 
-**Limitations** 
+- **Limitations** 
 
 While this analysis shows weak correlations between race and COVID impacts, there are various public reports and studies that provide opposing conclusions, specifically stating that Black and brown communities have been disproportionately impacted. This disconnect may be happening for the following reasons: 
 
-* Inaccurate or missing data: While the data has been sourced from the New York Times and the US Census, two reputable sources, these data may be inaccurate. The New York Times disclaims that their "patchwork reporting methods" led to "difficult interpretations about how to count and record cases". Additionally, COVID cases were reported from counties where patients were being treated and not necessarily where they lived. In regards to census data, these data may be inaccurate due to the political debates around who is counted, as well as results of the Trump administration.
+  - * Inaccurate or missing data: While the data has been sourced from the New York Times and the US Census, two reputable sources, these data may be inaccurate. The New York Times disclaims that their "patchwork reporting methods" led to "difficult interpretations about how to count and record cases". Additionally, COVID cases were reported from counties where patients were being treated and not necessarily where they lived. In regards to census data, these data may be inaccurate due to the political debates around who is counted, as well as results of the Trump administration.
 
-* Missing perspective: Racial demographics of people who contracted COVID or who had died of COVID would have been a key perspective to this analysis. This could have provided insight into which populations are getting COVID or dying from COVID and are those proportions similar to the county racial demographics. 
+  - * Missing perspective: Racial demographics of people who contracted COVID or who had died of COVID would have been a key perspective to this analysis. This could have provided insight into which populations are getting COVID or dying from COVID and are those proportions similar to the county racial demographics. 
 
 - ### Machine Learning Analysis
 This analysis is based on the OLS regression model described earlier in the readme under the "Machine Learning" section. The three factors used and their relation to covid were a county's percentage of votes for Trump in the 2020 election, a county's percentage of votes for Biden in the 2020 election, and a county's total votes in the 2020 election.
 
-**Percentage of Trump Votes and Covid Cases (per county)**
+ - **Percentage of Trump Votes and Covid Cases (per county)**
 
 The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 68% and the p-value is 0. This means that 68% of the covid cases are explained by a county's votes for Donald Trump, and that we can reject the null hypothesis that this relationship is due to random chance.
 ![](images/ml_images/ml_trumpvotes_OLS.png)
@@ -256,7 +256,7 @@ The chart below shows the OLS summary statistcs for this analysis. Notably, the 
 The graph below visualizes the distribution of the data and the regression line with confidence intervals.
 ![](images/ml_images/ml_trumpvotes_graph.png)
 
-**Percentage of Biden Votes and Covid Cases (per county)**
+ - **Percentage of Biden Votes and Covid Cases (per county)**
 
 The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 60% and the p-value is 0. This means that 60% of the covid cases are explained by a county's votes for Joe Biden, and that we can reject the null hypothesis that this relationship is due to random chance.
 ![](images/ml_images/ml_bidenvotes_OLS.png)
@@ -264,7 +264,7 @@ The chart below shows the OLS summary statistcs for this analysis. Notably, the 
 The graph below visualizes the distribution of the data and the regression line with confidence intervals.
 ![](images/ml_images/ml_bidenvotes_graph.png)
 
-**Total Votes and Covid Cases (per county)**
+ - **Total Votes and Covid Cases (per county)**
 
 The chart below shows the OLS summary statistcs for this analysis. Notably, the R-squared is 65% and the p-value is 0. This means that 65% of the covid cases are explained by a county's total votes, and that we can reject the null hypothesis that this relationship is due to random chance.
 ![](images/ml_images/ml_total_votes_OLS.png)
@@ -272,7 +272,7 @@ The chart below shows the OLS summary statistcs for this analysis. Notably, the 
 The graph below visualizes the distribution of the data and the regression line with confidence intervals.
 ![](images/ml_images/ml_totalvotes_graph.png)
 
-**Model Efficacy: OLS Real Values vs Predictions and Mean Difference**
+ - **Model Efficacy: OLS Real Values vs Predictions and Mean Difference**
 
 Another method for analyzing the regression results apart from the summary statistics is to compare the real values and the predicted values. This was done by creating a dataframe with the real values, predicted values, and the the difference between these values (by subtracting the real values from the predicted values). Next, the mean of these differences was calculated for each model and put into the dataframe below:
 
@@ -280,12 +280,12 @@ Another method for analyzing the regression results apart from the summary stati
 
 From this dataframe, we can conclude that the OLS model was able to best predict the amount of covid cases based on a county's percentage of votes for Donald Trump. However, there does appear to be a relationship between the R-squared value and the mean of the differences for each model's independent variable: the higher the R-squared, the lower the mean of differences is between the real values and the predicted values for each model's independent variable. From this, we can conclude that the ability of a linear regression model to explain the relationship between a dependent and an independent variable directly affects the ability of that model to make predictions.
 
-**RFR Model Insights**
+ - **RFR Model Insights**
 
 Below is a correlation matrix graph that indicates the correlation between all features in the dataset. This was useful in helping to determine the levels of correlation between features, most importantly between covid cases per county and everything else.
 ![](images/ml_images/correlation_matrix.png)
 
-**RFR Ranking of Feature Importance**
+ - **RFR Ranking of Feature Importance**
 
 One of the main benefits of the RFR model is its ability to rank the importance of features based on the target of covid cases per county. The graph below ranks the top 11 most important features used in the RFR model. This provides further insight into what characteristics have the greatest effect on covid cases per county.
 ![](images/ml_images/feature_importances.png)
@@ -298,17 +298,17 @@ The RFR model's ranking of feature importance and the correlation matrix both de
 
 ### Summary
 
-**Race and COVID** 
+ - **Race and COVID** 
 
 The analysis conducted provided weak correlations between racial demographics and COVID cases and deaths. Additionally, the linear regressions also showed race to be poor predictors. While this is contrary to a multitude of reports and research, this does illustrate that there are additional factors that contribute to COVID cases and deaths. 
 
-**Politics and Covid**
+ - **Politics and Covid**
 
 As mentioned above, the machine learning analyses suggests that out of the three per county features used - percentage of votes for Donald Trump, percentage of Votes for Joe Biden, and total votes per county, it appears that increases in covid cases were most correlated to votes for Joe Biden. This is contradicted by the ranking of feature importance by the RFR model. However, the RFR model's ranking of feature importance is based on the amount of votes per county rather than the percentage, which provides different insights into this analysis. This finding does help to answer the question we initially set out to answer by providing some evidence that the percentage of votes for Joe Biden is correlated with higher covid transmission, while the number of votes for Donald Trump is correlated higher with covid transmission. Further analysis would be needed to make a more conclusive decision.
 
 ### Recommendations for Future Analysis
 
-- ### Race and COVID 
+ - ### Race and COVID 
 
 As stated in the analysis section, additional data would provide a clearer picture of why a disproportionate number of people of color are being impacted by COVID. This data would include racial demographics on people who are sick or who have died, and more accurate data for US populations and COVID records. 
 
