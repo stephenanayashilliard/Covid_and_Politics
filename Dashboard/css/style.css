@@ -41,7 +41,7 @@ body {
 }
 /* Change Color of Active Button */
 .tab button.active{
-    background-color: #72a0c5
+    background-color: #b9c1c7
 }
 /* Style Tab Contents */
 .tabcontent{

@@ -66,19 +66,19 @@ console.log("This is value index: " + valueIndex);
       console.log(data)
       // Variables for voting
         var samplePop =  data.totalpop[valueIndex];
-        var sampleVote = data.total_votes20[valueIndex];
+        var totalVote = data.total_votes20[valueIndex];
         var republican = data.votes20_donald_trump[valueIndex];
         var democrat = data.votes20_joe_biden[valueIndex];
         var sampleRepublicanPer = data.percentage20_donald_trump[valueIndex];
         var sampleDemocraticPer = data.percentage20_joe_biden[valueIndex];
       // Variables for Race 
         var sampleNames = data.county_state[valueIndex];
-        var hispanic =  data.hispanic [valueIndex]; 
-        var caucasion  = data.white[valueIndex]; 
-        var africanAmerican = data.black[valueIndex]; 
-        var nativeAmerican = data.native[valueIndex];
-        var asianAmerican = data.asian[valueIndex];
-        var pacificIslander = data.pacific[valueIndex];
+        var hispanicSamp =  data.hispanic [valueIndex]; 
+        var caucasionSamp  = data.white[valueIndex]; 
+        var africanAmericanSamp = data.black[valueIndex]; 
+        var nativeAmericanSamp = data.native[valueIndex];
+        var asianAmericanSamp = data.asian[valueIndex];
+        var pacificIslanderSamp = data.pacific[valueIndex];
       // Variables for Economics
         var samplePoverty =  data.poverty[valueIndex]; 
         var employed = data.employed[valueIndex]; 
@@ -125,6 +125,16 @@ console.log("This is value index: " + valueIndex);
       let selfEmployed = (samplePop*selfEmployedPercent/100);
       let homeMaker = (samplePop*homeMakerPercent/100);
 
+      // Function to change race percentages to numbers
+       // Variables for Race 
+       var sampleNames = data.county_state[valueIndex];
+       var hispanic =  (samplePop*hispanicSamp/100);; 
+       var caucasion  = (samplePop*caucasionSamp/100);; 
+       var africanAmerican = (samplePop*africanAmericanSamp/100);; 
+       var nativeAmerican = (samplePop*nativeAmericanSamp/100);;
+       var asianAmerican = (samplePop*asianAmericanSamp/100);;
+       var pacificIslander = (samplePop*pacificIslanderSamp/100);;
+
       
    
       // Age Bubble Graph
@@ -158,14 +168,14 @@ console.log("This is value index: " + valueIndex);
   
    var barData = [
     { 
-      x: ['Democrat', 'Republican'],
-      y: [ democrat, republican],
+      x: ['Total Vote', 'Democrat', 'Republican'],
+      y: [ totalVote, democrat, republican],
       offset: 1.0,
-      text: ['Democrat', 'Republican'],
+      // text: ['Democrat', 'Republican'],
       name: 'Votes by Population',
       type: "bar",
       marker: {
-        color: ['rgb(74, 166, 247)', 'rgb(240, 30, 38)']
+        color: ['	rgb(152,152,152)','rgb(74, 166, 247)', 'rgb(240, 30, 38)']
       },
     
     }
