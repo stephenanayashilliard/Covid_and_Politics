@@ -8,8 +8,8 @@ ml_seg2/sv_regression.ipynb
 .clustering_exploration.ipynb.icloud
 linear_model.ipynb
 county_data_mlseg2.csv
-rfr_regressor_model.ipynb
-county_statistics_for_model.ipynb
+rf_regressor_model.ipynb
+county_statistics_for_model.csv
 
 # adding Melyssa's files
 Technologies.md
