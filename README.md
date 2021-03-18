@@ -90,15 +90,15 @@ To allow for the greatest possible diversity in our data, we drew our data from 
  
        - ![Creating Column State Key](/images/Creating_column_state_key.png)
  
-    - #### Part 3
+     - #### Part 3
        - _Joining in Parts_: To execute the join, the two tables were joined into interim tables, table_one. Then a third table was joined, creating a table_two. This process was repeated again to join the fourth table into the final database.
 
        - ![Database Joins](/images/Database_Joins.png)
 
-    - #### Part 4
+     - #### Part 4
        - _Troubleshooting Issues_: The fields that were null after the joins from part two needed to be filled in in order to not obstruct the upcoming machine learning model. The null values  were converted into zeros and the result saved.
 
-    - #### Part 5
+     - #### Part 5
        - _Uploaded_: Once the tables were joined, they were uploaded from the local server to an AWS S3 bucket to allow the team to access the database by using Pyspark and the object URL.
        - ![Amazon S3 Bucket](/images/Amazon_S3_bucket.png) 
 
