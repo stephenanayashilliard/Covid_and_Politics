@@ -1,5 +1,5 @@
 # Covid_and_Politics
-Final Project for UC Berkeley Extension Bootcamp in Data Analytics (March 2021)
+
 
 The Covid 19 pandemic has devastated and disrupted the lives of billions of people as well as forcing many of the world’s economies to come to a screeching halt.  As of March 18, 2021, the United States has over 29,493,436 confirmed cases of Covid 19 infection and 535,841 confirmed deaths.  The U.S has the highest infection rate and death rate in the world per capita and yet the need to keep the pandemic under control has been very divisive, ultimately splitting into two camps; those who view school closures, stay at home orders and mask wearing as affronts to personal freedoms and those who see them as important steps to curb the pandemic.      The two camps politically divide along party lines with much of those leaning Republican falling in the first camp and those leaning Democratic in the second.  
 
@@ -311,3 +311,7 @@ The machine learning model could be improved by including data sets that include
 Additionally, an analysis of comparable counties may reveal even more insight.  For example, multiple counties with approximately the same total population, could prove or disprove if one of the many factors we reviewed could have a significant correlation on Covid spread.
 
 
+# Contact Information
+Email: Stephenanayashilliard@gmail.com
+
+Linkedin: [Linkedin for Stephen Anayas-Hilliard](https://www.linkedin.com/in/stephen-anayas-hilliard-942a8431/)
