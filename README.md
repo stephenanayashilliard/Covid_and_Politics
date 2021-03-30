@@ -35,10 +35,10 @@ Using data acquired from multiple sources, we set out to discover if there are c
 To allow for the greatest possible diversity in our data, we drew our data from over 3000 counties in the United States. We retrieved our data on race, ethnicity, age, gender and economic status from the United States Census Bureau.  the Association of Statisticians of American Religious Bodies (ASARB) provided our data for the religious affiliations of a counties population.  We used statistics from kaggle for details on individual countie's Covid 19 rates of infections and death rates. 
 
   - ### Team Members in Alphabetical Order
-   - Stephen Anayas-Hilliard [Github Link](https://github.com/stephenanayashilliard)
-   - John Phillips [Github Link](https://github.com/jcp650)
-   - Melyssa Sibal [Github Link](https://github.com/melyssasibal)
-   - Isaac D. Tucker-Rasbury [Github Link](https://github.com/TuckerRasbury)
+    - Stephen Anayas-Hilliard [Github Link](https://github.com/stephenanayashilliard)
+    - John Phillips [Github Link](https://github.com/jcp650)
+    - Melyssa Sibal [Github Link](https://github.com/melyssasibal)
+    - Isaac D. Tucker-Rasbury [Github Link](https://github.com/TuckerRasbury)
 
  - ### Resources
    - Data Source: 
