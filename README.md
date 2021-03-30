@@ -8,7 +8,6 @@ Anecdotal evidence would suggest that, since mask wearing and social distancing 
 
 ## Table of Contents
  - Overview of the Project
-   - Project Breakdown
    - Team Members
    - Resources
      - Data
@@ -35,24 +34,7 @@ Using data acquired from multiple sources, we set out to discover if there are c
 
 To allow for the greatest possible diversity in our data, we drew our data from over 3000 counties in the United States. We retrieved our data on race, ethnicity, age, gender and economic status from the United States Census Bureau.  the Association of Statisticians of American Religious Bodies (ASARB) provided our data for the religious affiliations of a counties population.  We used statistics from kaggle for details on individual countie's Covid 19 rates of infections and death rates. 
 
- - ### Project Breakdown
-   The project was broken down into four segments.
-   - Segment One: 
-     - Flesh out overall project
-     - Build a model of our fabricated database
-     - Build a simple model for machine learning.
-   - Segment Two:
-     - Refine our database
-     - Train our model
-     - Role Breakdown:
-   - Segment Three:
-     - Connect final database to our model.
-     - Continue to train our model
-     - Create dashboard and presentation
-   - Segment Four:
-     - Final touches on model, database and dashboard
-
- - ### Team Members in Alphabetical Order
+  - ### Team Members in Alphabetical Order
    - Stephen Anayas-Hilliard [Github Link](https://github.com/stephenanayashilliard)
    - John Phillips [Github Link](https://github.com/jcp650)
    - Melyssa Sibal [Github Link](https://github.com/melyssasibal)
