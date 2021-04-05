@@ -1,5 +1,5 @@
 # Covid_and_Politics
-Final Project for UC Berkeley Extension Bootcamp in Data Analytics (March 2021)
+
 
 The Covid 19 pandemic has devastated and disrupted the lives of billions of people as well as forcing many of the world’s economies to come to a screeching halt.  As of March 18, 2021, the United States has over 29,493,436 confirmed cases of Covid 19 infection and 535,841 confirmed deaths.  The U.S has the highest infection rate and death rate in the world per capita and yet the need to keep the pandemic under control has been very divisive, ultimately splitting into two camps; those who view school closures, stay at home orders and mask wearing as affronts to personal freedoms and those who see them as important steps to curb the pandemic.      The two camps politically divide along party lines with much of those leaning Republican falling in the first camp and those leaning Democratic in the second.  
 
@@ -8,7 +8,6 @@ Anecdotal evidence would suggest that, since mask wearing and social distancing 
 
 ## Table of Contents
  - Overview of the Project
-   - Project Breakdown
    - Team Members
    - Resources
      - Data
@@ -35,28 +34,11 @@ Using data acquired from multiple sources, we set out to discover if there are c
 
 To allow for the greatest possible diversity in our data, we drew our data from over 3000 counties in the United States. We retrieved our data on race, ethnicity, age, gender and economic status from the United States Census Bureau.  the Association of Statisticians of American Religious Bodies (ASARB) provided our data for the religious affiliations of a counties population.  We used statistics from kaggle for details on individual countie's Covid 19 rates of infections and death rates. 
 
- - ### Project Breakdown
-   The project was broken down into four segments.
-   - Segment One: 
-     - Flesh out overall project
-     - Build a model of our fabricated database
-     - Build a simple model for machine learning.
-   - Segment Two:
-     - Refine our database
-     - Train our model
-     - Role Breakdown:
-   - Segment Three:
-     - Connect final database to our model.
-     - Continue to train our model
-     - Create dashboard and presentation
-   - Segment Four:
-     - Final touches on model, database and dashboard
-
- - ### Team Members in Alphabetical Order
-   - Stephen Anayas-Hilliard [Github Link](https://github.com/stephenanayashilliard)
-   - John Phillips [Github Link](https://github.com/jcp650)
-   - Melyssa Sibal [Github Link](https://github.com/melyssasibal)
-   - Isaac D. Tucker-Rasbury [Github Link](https://github.com/TuckerRasbury)
+  - ### Team Members in Alphabetical Order
+    - Stephen Anayas-Hilliard [Github Link](https://github.com/stephenanayashilliard)
+    - John Phillips [Github Link](https://github.com/jcp650)
+    - Melyssa Sibal [Github Link](https://github.com/melyssasibal)
+    - Isaac D. Tucker-Rasbury [Github Link](https://github.com/TuckerRasbury)
 
  - ### Resources
    - Data Source: 
@@ -311,3 +293,7 @@ The machine learning model could be improved by including data sets that include
 Additionally, an analysis of comparable counties may reveal even more insight.  For example, multiple counties with approximately the same total population, could prove or disprove if one of the many factors we reviewed could have a significant correlation on Covid spread.
 
 
+# Contact Information
+Email: Stephenanayashilliard@gmail.com
+
+Linkedin: [Linkedin for Stephen Anayas-Hilliard](https://www.linkedin.com/in/stephen-anayas-hilliard-942a8431/)
