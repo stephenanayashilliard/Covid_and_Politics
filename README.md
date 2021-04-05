@@ -105,12 +105,19 @@ To allow for the greatest possible diversity in our data, we drew our data from 
  - ### Dashboard
    - #### Process
      It was determined from the onset of the project that the dashboard for the project needed to be fully interactive and contain both information about processes for the    individual deliverables, as well as a written report about the analysis. For illustrative purposes, the dashboard allows the user to choose a county from a drop down menu.  From that choice illustrated graphs are created and depicted.
+     - Dashboard and Information Tabs
+     - ![Dashboard Title Page](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/dash_board_images/dashboard_title_page.png)
+     
      - Depicted Graphs:
        - How the County Voted
        - Racial Demographics for the County
        - Unemployment Rates for the County
        - Occupation Demographics for the County
        - Age Demogrphics for the County
+       - ![Screenshot of Graphs](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/dash_board_images/graphs.png)
+
+     - Pulldown Menu
+     - ![Screenshot of Pulldown Menu](https://github.com/stephenanayashilliard/Covid_and_Politics/blob/main/images/dash_board_images/pull_down_menu.png)
 
      - Storyboard: A storyboard was created to aid in the programming process.
        - [Google Slides of Dashboard  First Draft](https://docs.google.com/presentation/d/1pdmZe6_bEvOAb7rD1yRc64DmFuYZrB4FGuGW2Jl7vnw/edit?usp=sharing)
