@@ -31,14 +31,12 @@ console.log("This is value index: " + valueIndex);
         var sampleNames = data.county_state[valueIndex];
         var samplePop =  data.totalpop[valueIndex]; 
         var sampleIncome = data.income[valueIndex]; 
-        var sampleCommute = data.meancommute[valueIndex];
         var sampleCases = data.cases_per_capita_100k[valueIndex]; 
         var sampleDeaths = data.deaths[valueIndex];
     
      
       // Filter the data for the object with the desired sample number
-      // var resultArray = metadata.filter(sampleObj => sampleObj.id == sample);
-      // var result = resultArray[0];
+    
       // Use d3 to select the panel with id of `#sample-metadata`
       var PANEL = d3.select("#sample-metadata");
   
